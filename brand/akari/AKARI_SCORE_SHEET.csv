@@ -1,1 +1,4 @@
 image_file,tool,model,seed,outfit,face,camera,face_match(1-5),hair(1-5),age(1-5),brand(1-5),naturalness(1-5),total,verdict,reviewer,date,notes
+avatar_tests/base_stills/AKARI_BASE_A_16x9.png,燈の制作側から受領,不明,不明,AKARI_OUTFIT_01,AKARI_FACE_01,AKARI_CAMERA_01,4,5,5,5,5,24,採用（仮採点・要オーナー確認）,Claude Code,2026-09-24,基準と同一人物に見える。目元がやや切れ長で顔がわずかに面長のため顔一致は4。1672x941（依頼の1920x1080よりやや小さいが顔は約440pxで口パク用途に十分）
+avatar_tests/base_stills/AKARI_BASE_E_9x16.png,燈の制作側から受領,不明,不明,AKARI_OUTFIT_01,AKARI_FACE_01,AKARI_CAMERA_01(縦),4,5,5,5,5,24,採用（仮採点・要オーナー確認）,Claude Code,2026-09-24,941x1672。顔が大きく口パク用途に最適。背景モニターの上昇チャートも世界観に合う
+avatar_tests/base_stills/AKARI_BASE_B_desk.png,燈の制作側から受領,不明,不明,AKARI_OUTFIT_01,AKARI_FACE_01,AKARI_CAMERA_03,4,5,5,5,5,24,採用（仮採点・要オーナー確認）,Claude Code,2026-09-24,手の破綻なし。顔が小さめ（約270px）のため口パクの精度は正面カットより落ちる可能性
