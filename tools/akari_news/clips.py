@@ -14,7 +14,9 @@ import argparse
 import csv
 
 from .build_episode import tts_text
-from .common import episode_dir, load_json
+import json
+
+from .common import ROOT, episode_dir, load_json
 
 
 def main(argv=None):
@@ -35,34 +37,65 @@ def main(argv=None):
         pass
     groups = [(sc["id"], sc["title"], sc["shots"]) for sc in ep["scenes"]]
     groups.append(("SHORTS", "Shorts", ep["shorts"]["shots"]))
-    clips, voices = [], []
+    masters = load_json(ROOT / "brand" / "PRODUCTION_MASTERS.json")
+    clips, voices, cmap = [], [], {}
+    counters = {}
+
+    def next_name(prefix):
+        counters[prefix] = counters.get(prefix, 0) + 1
+        return f"{prefix}_{counters[prefix]:03}"
+
     for sid, title, shots in groups:
         for i, s in enumerate(shots):
-            base = f"{sid}_{i:02}_{s['speaker']}"
-            row = {"id": base, "scene": f"{sid} {title}", "speaker": "燈" if s["speaker"] == "akari" else "大家M",
-                   "text": s["text"], "tts_reading": tts_text(s["text"]), "est_sec": round(est.get((sid, i), 0), 1)}
+            shot_id = f"{sid}_{i:02}_{s['speaker']}"
+            talk = s["visual"].startswith("talk:")
+            pre = ("AKARI" if s["speaker"] == "akari" else "M") + ("" if talk else "_VO")
+            base = next_name(pre)
+            cmap[shot_id] = base
+            vm = masters["voices"]["akari" if s["speaker"] == "akari" else "ooka_m"]
+            row = {"id": base, "shot": shot_id, "scene": f"{sid} {title}",
+                   "speaker": "燈" if s["speaker"] == "akari" else "大家M",
+                   "text": s["text"], "tts_text": s["text"].replace("燈", "あかり"),
+                   "reading_if_misread": tts_text(s["text"]), "voice": vm["name"], "voice_id": vm["heygen_voice_id"],
+                   "speed": vm["speed"], "est_sec": round(est.get((sid, i), 0), 1)}
             voices.append(dict(row, file=f"voice/final/{base}.wav"))
-            if s["visual"].startswith("talk:"):
+            if talk:
                 c = cuts.get(s["visual"][5:], {})
+                img = masters["images"][c.get("image", "AKARI_TALKING_BASE_16x9_v1" if s["speaker"] == "akari" else "OOKA_M_TALKING_BASE_16x9_v1")]
                 clips.append(dict(row, file=f"clips/{base}.mp4", cut=s["visual"][5:], video_cut=c.get("video_cut", ""),
                                   camera=c.get("camera", ""), outfit=c.get("outfit", ""), desc=c.get("desc", ""),
-                                  aspect="9:16" if c.get("vertical") else "16:9"))
+                                  aspect="9:16" if c.get("vertical") else "16:9", image=img["file"],
+                                  image_id=c.get("image", ""), settings=masters["talking_video_settings"]["summary"]))
     out = d / "production"
     out.mkdir(exist_ok=True)
-    cf = ["id", "file", "scene", "speaker", "cut", "video_cut", "camera", "outfit", "aspect", "desc", "est_sec", "text", "tts_reading"]
+    (out / f"clip_map_{ver}.json").write_text(json.dumps(cmap, ensure_ascii=False, indent=2), encoding="utf-8")
+    cf = ["id", "file", "shot", "scene", "speaker", "image_id", "image", "aspect", "voice", "voice_id", "speed",
+          "settings", "est_sec", "text", "tts_text", "reading_if_misread"]
     with open(out / f"clip_manifest_{ver}.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, cf, extrasaction="ignore"); w.writeheader(); w.writerows(clips)
-    vf = ["id", "file", "scene", "speaker", "est_sec", "text", "tts_reading"]
+    vf = ["id", "file", "shot", "scene", "speaker", "voice", "voice_id", "speed", "est_sec", "text", "tts_text",
+          "reading_if_misread"]
     with open(out / f"voice_manifest_{ver}.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, vf, extrasaction="ignore"); w.writeheader(); w.writerows(voices)
-    L = [f"# {a.episode} 話しているカット 発注リスト（{ver}）", "",
-         f"- クリップ数：{len(clips)}（燈 {sum(c['speaker'] == '燈' for c in clips)} / 大家M {sum(c['speaker'] == '大家M' for c in clips)}）",
-         f"- 合計尺（目安）：{sum(c['est_sec'] for c in clips):.0f}秒　※仮音声での目安。本番音声の長さが正",
-         "- 作り方：本番音声（voice_manifest）を先に作り、その音声で口パク動画を作る（音声駆動）。",
-         "- 置き場所：`clips/<id>.mp4`（音声入り）。置けば `timeline` → `video` で自動的に差し替わる。", "",
-         "| id | 話者 | カット | 構図 | 比率 | 目安秒 | セリフ |", "|---|---|---|---|---|---|---|"]
+    vo = [v for v in voices if "_VO_" in v["id"]]
+    L = [f"# {a.episode} HeyGen 制作シート（{ver}）", "",
+         f"- 話しているカット：{len(clips)}本（燈 {sum(c['speaker'] == '燈' for c in clips)} / 大家M {sum(c['speaker'] == '大家M' for c in clips)}）",
+         f"- 声だけのパート（図表の上に流れるナレーション）：{len(vo)}本",
+         f"- 合計尺（目安）：カット {sum(c['est_sec'] for c in clips):.0f}秒 ／ 声だけ {sum(v['est_sec'] for v in vo):.0f}秒（仮音声での目安。本番音声の長さが正）",
+         "- 共通設定：" + masters["talking_video_settings"]["summary"],
+         "- 声：燈＝" + masters["voices"]["akari"]["name"] + f"（voice_id {masters['voices']['akari']['heygen_voice_id']}、速度 {masters['voices']['akari']['speed']}）"
+         + "／大家M＝" + masters["voices"]["ooka_m"]["name"] + f"（voice_id {masters['voices']['ooka_m']['heygen_voice_id']}、速度 {masters['voices']['ooka_m']['speed']}）",
+         "- 入力する文章は「HeyGenに入れる文章」列（燈→あかり のみ置換）。読み間違えたときだけ「誤読時の読み」列を使う。",
+         "- 字幕・BGM・編集は付けずに書き出す。1発話＝1本。ファイル名は id と完全一致させる。",
+         "- 置き場所：話しているカット → `clips/<id>.mp4`、声だけ → `voice/final/<id>.wav`（mp4 のままでも可。音声を取り出して使う）", "",
+         "## 話しているカット", "",
+         "| id | 話者 | 基本画像 | 比率 | 目安秒 | HeyGenに入れる文章 |", "|---|---|---|---|---|---|"]
     for c in clips:
-        L.append(f"| {c['id']} | {c['speaker']} | {c['video_cut']} | {c['desc']} | {c['aspect']} | {c['est_sec']} | {c['text']} |")
+        L.append(f"| {c['id']} | {c['speaker']} | {c['image_id']} | {c['aspect']} | {c['est_sec']} | {c['tts_text']} |")
+    L += ["", "## 声だけのパート（映像は使わない。音声だけ書き出す）", "",
+          "| id | 話者 | 目安秒 | HeyGenに入れる文章 |", "|---|---|---|---|"]
+    for v in vo:
+        L.append(f"| {v['id']} | {v['speaker']} | {v['est_sec']} | {v['tts_text']} |")
     (out / f"clip_manifest_{ver}.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     print(f"clips={len(clips)} voices={len(voices)} -> {out}")
 

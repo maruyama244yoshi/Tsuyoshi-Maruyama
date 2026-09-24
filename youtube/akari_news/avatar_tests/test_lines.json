@@ -39,14 +39,16 @@
   "video_test": {
     "akari": {
       "text": "こんにちは、燈です。今日は、大家さんにとって気になる金利のニュースを見ていきます。",
-      "image": "base_stills/AKARI_BASE_A_16x9.png",
-      "image_vertical": "base_stills/AKARI_BASE_E_9x16.png",
-      "voice": "AKARI_VOICE_MASTER_v1（音声選定で決まった声）"
+      "image": "brand/akari/talking_base/AKARI_TALKING_BASE_16x9_v1.png",
+      "image_vertical": "brand/akari/talking_base/AKARI_TALKING_BASE_9x16_v1.png",
+      "voice": "Jhenny（HeyGen voice_id 9530fac2d1f148f8b57b51b783b0df13、速度0.90）",
+      "heygen_text": "こんにちは、あかりです。\n今日は、大家さんにとって気になる金利のニュースを見ていきます。"
     },
     "ooka_m": {
       "text": "私は、金利が上がったからすぐに買わない、とは考えません。まずは数字を見ます。",
-      "image": "base_stills/OOKA_M_BASE_A_16x9.png",
-      "voice": "M_VOICE_MASTER_v1（音声選定で決まった声）"
+      "image": "brand/ooka_m/talking_base/OOKA_M_TALKING_BASE_16x9_v1.png",
+      "voice": "Satoshi（HeyGen voice_id 662e1397965c484e8f65fa58c77effde、速度0.95）",
+      "heygen_text": "私は、金利が上がったからすぐに買わない、とは考えません。\nまずは数字を見ます。"
     }
   },
   "file_names": {

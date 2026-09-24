@@ -443,7 +443,8 @@
       "video_cut": "AKARI_VIDEO_A",
       "outfit": "AKARI_OUTFIT_01",
       "desc": "正面胸上で話す基本カット",
-      "fallback": "cut:akari_front"
+      "fallback": "cut:akari_front",
+      "image": "AKARI_TALKING_BASE_16x9_v1"
     },
     "akari_B": {
       "speaker": "akari",
@@ -451,7 +452,8 @@
       "video_cut": "AKARI_VIDEO_B",
       "outfit": "AKARI_OUTFIT_01",
       "desc": "デスク着席で話すカット（まとめ・締め）",
-      "fallback": "cut:akari_desk"
+      "fallback": "cut:akari_desk",
+      "image": "AKARI_DESK_BASE_v1"
     },
     "akari_C": {
       "speaker": "akari",
@@ -459,7 +461,9 @@
       "video_cut": "AKARI_VIDEO_C",
       "outfit": "AKARI_OUTFIT_01",
       "desc": "大型モニター横で話すカット",
-      "fallback": "cut:akari_front"
+      "fallback": "cut:akari_front",
+      "image": "AKARI_TALKING_BASE_16x9_v1",
+      "note": "第2稿は正面胸上の基本画像で作る（モニター横の画像は未作成）"
     },
     "akari_D": {
       "speaker": "akari",
@@ -467,7 +471,9 @@
       "video_cut": "AKARI_VIDEO_D",
       "outfit": "AKARI_OUTFIT_01",
       "desc": "少し斜めの会話カット",
-      "fallback": "cut:akari_front"
+      "fallback": "cut:akari_front",
+      "image": "AKARI_TALKING_BASE_16x9_v1",
+      "note": "第2稿は正面胸上の基本画像で作る（斜めの画像は未作成）"
     },
     "akari_E": {
       "speaker": "akari",
@@ -476,7 +482,8 @@
       "outfit": "AKARI_OUTFIT_01",
       "desc": "Shorts用 縦構図9:16で話すカット",
       "fallback": "cut:akari_front",
-      "vertical": true
+      "vertical": true,
+      "image": "AKARI_TALKING_BASE_9x16_v1"
     },
     "ooka_m": {
       "speaker": "ooka_m",
@@ -484,7 +491,8 @@
       "video_cut": "OOKA_M_VIDEO_A",
       "outfit": "OOKA_M_OUTFIT_01",
       "desc": "大家Mが話すコメントカット",
-      "fallback": "cut:ooka_m"
+      "fallback": "cut:ooka_m",
+      "image": "OOKA_M_TALKING_BASE_16x9_v1"
     }
   }
 }

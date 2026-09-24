@@ -72,8 +72,28 @@ def normalize_rms(x, target_db=-20.0):
     return x * (10 ** (target_db / 20) / rms)
 
 
-def clip_path(d, scene_id, idx, speaker):
-    return d / "clips" / f"{scene_id}_{idx:02}_{speaker}.mp4"
+def names_for(d, ver):
+    p = d / "production" / f"clip_map_{ver}.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+
+
+def clip_path(d, scene_id, idx, speaker, names=None):
+    shot = f"{scene_id}_{idx:02}_{speaker}"
+    name = (names or {}).get(shot)
+    if name and (d / "clips" / f"{name}.mp4").exists():
+        return d / "clips" / f"{name}.mp4"
+    return d / "clips" / f"{shot}.mp4"
+
+
+def final_voice(d, scene_id, idx, speaker, names=None):
+    """本番音声：voice/final/<正式名>.wav（.mp4 も可）→ 旧名。無ければ None。"""
+    shot = f"{scene_id}_{idx:02}_{speaker}"
+    for n in [x for x in ((names or {}).get(shot), shot) if x]:
+        for ext in (".wav", ".mp4", ".flac"):
+            p = d / "voice" / "final" / f"{n}{ext}"
+            if p.exists():
+                return p
+    return None
 
 
 def audio_from_clip(mp4: Path, out_wav: Path):
@@ -94,6 +114,7 @@ def build(ep_id, shorts=False, use_existing=False):
     ep = load_json(d / "script" / f"{ep_id}.json")
     tag = f"{ep_id}_shorts" if shorts else ep_id
     scenes = [{"id": "SHORTS", "title": "Shorts", "shots": ep["shorts"]["shots"]}] if shorts else ep["scenes"]
+    names = names_for(d, ep.get("script_version", "v1"))
     vdir = d / "voice" / ("guide_shorts" if shorts else "guide")
     vdir.mkdir(parents=True, exist_ok=True)
 
@@ -114,12 +135,12 @@ def build(ep_id, shorts=False, use_existing=False):
             cue_texts = cues_for_shot(shot["text"])
             sentences = split_sentences(shot["text"])
             sent_timing = []
-            clip = clip_path(d, sc["id"], hi, shot["speaker"])
-            final = d / "voice" / "final" / f"{sc['id']}_{hi:02}_{shot['speaker']}.wav"
+            clip = clip_path(d, sc["id"], hi, shot["speaker"], names)
+            final = final_voice(d, sc["id"], hi, shot["speaker"], names)
             if shot["visual"].startswith("talk:") and clip.exists():
                 src = "clip"
                 x = normalize_rms(read_wav(audio_from_clip(clip, vdir / f"_clip_{sc['id']}_{hi:02}.wav")))
-            elif final.exists():
+            elif final is not None:
                 src = "final"
                 x = normalize_rms(read_wav(final))
             else:

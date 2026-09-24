@@ -22,12 +22,31 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 from .common import episode_dir, load_json
-from .graphics import C, fit_size, hexrgb, text, tw, visual_path
+import re
+
+from .graphics import ANIMATED, C, fit_size, font, hexrgb, render_graphic, text, tw, visual_path
 
 SPEAKER = {"akari": ("燈", "GOLD"), "ooka_m": ("大家M", "BEIGE")}
 NAMEPLATE = {"akari": ("燈", "不動産ニュース専門AIキャスター"), "ooka_m": ("現役会社員大家M", "会社員・不動産投資家")}
 FPS = 30
-BGM_DB = -27  # 声がないときのBGM音量（声の下ではさらに下げる）
+BGM_DB = -22  # BGM（-16 LUFSに揃えたもの）をさらに下げる量。声がある間はサイドチェインでもっと下がる
+ANIM_SEC = 1.0  # 図表が出てから動く時間（そのあとは静止）
+# 字幕で金色に強調する重要語（指示書 2026-09-25 §15）
+KEYWORDS = ["1.25％", "444万円", "459万円", "15万円", "返済比率", "DSCR", "0.5％", "1.0％", "年間返済額"]
+KW_RE = re.compile("(" + "|".join(re.escape(k) for k in sorted(KEYWORDS, key=len, reverse=True)) + ")")
+
+
+def draw_rich(d, center, line, size):
+    """重要語だけ金色にして1行を中央に描く。"""
+    f = font("sans_bold", size)
+    segs = [x for x in KW_RE.split(line) if x]
+    widths = [d.textbbox((0, 0), x, font=f)[2] - d.textbbox((0, 0), x, font=f)[0] for x in segs]
+    x = center[0] - sum(widths) / 2
+    for seg, w in zip(segs, widths):
+        col = C["GOLD"] if KW_RE.fullmatch(seg) else C["WHITE"]
+        d.text((x, center[1]), seg, font=f, fill=hexrgb(col), anchor="lm", stroke_width=3,
+               stroke_fill=hexrgb(C["NAVY_DEEP"]))
+        x += w
 
 
 def ffmpeg():
@@ -96,7 +115,7 @@ def overlay_layer(size, cue, vertical, draft_label, nameplate=None, missing=None
     d.rectangle([0, top, W, top + 4], fill=hexrgb(C[col], 230))
     for i, ln in enumerate(lines):
         y = top + 26 + lh * i + lh / 2
-        text(d, (W / 2, y), ln, size_, "WHITE", "sans_bold", "mm", stroke_width=3, stroke_fill=hexrgb(C["NAVY_DEEP"]))
+        draw_rich(d, (W / 2, y), ln, size_)
     lab_w = tw(d, name, 28) + 36
     lx, ly = 40, top - 46
     d.rounded_rectangle([lx, ly, lx + lab_w, ly + 42], 8, fill=hexrgb(C[col]))
@@ -139,7 +158,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
         return None
 
     tmp = Path(tempfile.mkdtemp(prefix=f"{tag}_parts_"))
-    parts, missing, used_clips, clip_dur = [], set(), set(), {}
+    parts, missing, used_clips, clip_dur, shown_before = [], set(), set(), {}, {}
     for n, (a, b) in enumerate(zip(pts, pts[1:])):
         dur = b - a
         if dur < 1 / FPS / 2:
@@ -170,13 +189,41 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
             run(["-ss", f"{off:.3f}", "-i", str(clip), "-i", str(ov),
                  "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
         else:
-            img = Image.open(still_for(ep_id, ep, scene, visual)).convert("RGB")
-            if img.size != (W, H):
-                img = img.resize((W, H))
-            img = Image.alpha_composite(img.convert("RGBA"), Image.open(ov)).convert("RGB")
-            fr = tmp / f"f{n:04}.png"
-            img.save(fr)
-            run(["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out)])
+            key = visual.split(":", 1)[1]
+            ovl = Image.open(ov)
+            # 図表が新しく出た最初の区間だけ、ANIM_SEC 秒アニメーションさせる
+            anim = (visual.startswith("gfx:") and key in ANIMATED and shot is not None
+                    and abs(a - shot["start"]) < 1e-3 and shown_before.get(shot["scene"], {}).get(key) is None
+                    and not shorts)
+            shown_before.setdefault(shot["scene"] if shot else "_", {})[key] = True
+            if anim:
+                na = int(min(ANIM_SEC, dur) * FPS)
+                fdir = tmp / f"anim{n:04}"
+                fdir.mkdir()
+                for i in range(na):
+                    fr_im = render_graphic(ep["simulation"], key, (i + 1) / na)
+                    Image.alpha_composite(fr_im.convert("RGBA"), ovl).convert("RGB").save(fdir / f"{i:04}.png")
+                run(["-framerate", str(FPS), "-i", str(fdir / "%04d.png"), "-frames:v", str(na), *enc, str(out)])
+                rest = dur - na / FPS
+                if rest > 1 / FPS / 2:
+                    out2 = tmp / f"p{n:04}b.mp4"
+                    img = Image.alpha_composite(render_graphic(ep["simulation"], key, 1.0).convert("RGBA"), ovl).convert("RGB")
+                    fr = tmp / f"f{n:04}.png"
+                    img.save(fr)
+                    run(["-loop", "1", "-framerate", str(FPS), "-t", f"{rest:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out2)])
+                    for pp, dd in ((out, na / FPS), (out2, rest)):
+                        if abs(media_duration(pp) - dd) > 0.1:
+                            raise RuntimeError(f"部品の尺が不正: {pp.name}")
+                        parts.append(pp)
+                    continue
+            else:
+                img = Image.open(still_for(ep_id, ep, scene, visual)).convert("RGB")
+                if img.size != (W, H):
+                    img = img.resize((W, H))
+                img = Image.alpha_composite(img.convert("RGBA"), ovl).convert("RGB")
+                fr = tmp / f"f{n:04}.png"
+                img.save(fr)
+                run(["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out)])
         pd = media_duration(out)
         if abs(pd - dur) > 0.1:
             raise RuntimeError(f"部品の尺が不正: {out.name} 期待{dur:.2f}s 実際{pd:.2f}s ({visual})")
@@ -213,10 +260,16 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("episode")
     ap.add_argument("--shorts", action="store_true")
-    ap.add_argument("--bgm", help="BGM音源ファイル（mp3/wav 等）")
+    ap.add_argument("--bgm", help="BGM音源ファイル（wav 等）。auto なら自作BGM（tools/akari_news/bgm.py）を使う")
     ap.add_argument("--final", action="store_true", help="下書き表示を外す（本番音声・本番クリップ差し替え後のみ）")
     a = ap.parse_args(argv)
-    build(a.episode, a.shorts, None if a.final else "第2稿・仮音声", a.bgm)
+    bgm = a.bgm
+    if bgm == "auto":
+        from .bgm import main as bgm_main
+        bgm = str(episode_dir(a.episode) / "voice" / "bgm_auto.wav")
+        if not Path(bgm).exists():
+            bgm_main([bgm, "--sec", "64"])
+    build(a.episode, a.shorts, None if a.final else "第2稿・仮音声", bgm)
 
 
 if __name__ == "__main__":

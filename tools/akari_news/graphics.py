@@ -30,6 +30,31 @@ CUTS = {
 PROVISIONAL = "仮素材：AKARI_REFERENCE_001 より切り出し（本番は AKARI_MASTER 準拠の生成画像に差替）"
 
 
+# ---------------------------------------------------------------- 控えめなアニメーション
+# P_ANIM：図表の出だしの進み具合（0→1）。静止画出力では 1.0。video.py が図表の最初の約1秒だけ動かす。
+P_ANIM = 1.0
+
+
+def prog(t0, t1):
+    """P_ANIM の区間 [t0, t1] を 0→1 に写す（イーズアウト）。"""
+    if t1 <= t0:
+        return 1.0
+    x = min(1.0, max(0.0, (P_ANIM - t0) / (t1 - t0)))
+    return 1 - (1 - x) ** 3
+
+
+def fade_in(im, alpha, draw_fn):
+    """draw_fn(d) で描いたものを alpha（0〜1）で重ねる（段階表示用）。"""
+    if alpha <= 0:
+        return
+    layer = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    draw_fn(ImageDraw.Draw(layer))
+    if alpha < 1:
+        a = layer.getchannel("A").point(lambda v: int(v * alpha))
+        layer.putalpha(a)
+    im.paste(layer, (0, 0), layer)
+
+
 def hexrgb(h, a=255):
     h = h.lstrip("#")
     return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4)) + (a,)
@@ -176,14 +201,22 @@ def g_rate_change():
     text(d, (490, 335), "これまで", 36, "LIGHT_GRAY", "sans_medium", "ma")
     text(d, (490, 470), "1.0％", 150, "WHITE", "sans_black", "mm")
     text(d, (490, 590), "程度", 40, "LIGHT_GRAY", "sans_medium", "mm")
-    # 矢印
-    d.polygon([(870, 420), (1010, 420), (1010, 380), (1080, 465), (1010, 550), (1010, 510), (870, 510)], fill=hexrgb(C["GOLD"]))
+    # 矢印（左から伸びる）
+    k = prog(0.0, 0.35)
+    if k > 0:
+        dx = (1 - k) * 170
+        d.polygon([(870, 420), (1010 - dx, 420), (1010 - dx, 380), (1080 - dx, 465), (1010 - dx, 550), (1010 - dx, 510),
+                   (870, 510)], fill=hexrgb(C["GOLD"]))
     panel(d, (1110, 290, 1750, 640), "NAVY_DEEP", 235, "GOLD")
     text(d, (1430, 335), "今回", 36, "GOLD", "sans_bold", "ma")
-    text(d, (1430, 470), "1.25％", 150, "GOLD", "sans_black", "mm")
+    v = 1.0 + 0.25 * prog(0.2, 0.8)
+    text(d, (1430, 470), "1.25％" if P_ANIM >= 1 else f"{v:.2f}％", 150, "GOLD", "sans_black", "mm")
     text(d, (1430, 590), "程度", 40, "BEIGE", "sans_medium", "mm")
-    d.rounded_rectangle([760, 690, 1160, 780], 45, fill=hexrgb(C["GOLD"]))
-    text(d, (960, 735), "＋0.25ポイント", 46, "NAVY_DEEP", "sans_black", "mm")
+
+    def pill(dd):
+        dd.rounded_rectangle([760, 690, 1160, 780], 45, fill=hexrgb(C["GOLD"]))
+        text(dd, (960, 735), "＋0.25ポイント", 46, "NAVY_DEEP", "sans_black", "mm")
+    fade_in(im, prog(0.75, 1.0), pill)
     footer_note(im, "出典：日本銀行「金融市場調節方針の変更について」（2026年9月18日）")
     return im
 
@@ -234,10 +267,13 @@ def g_three_numbers(active=None):
     for i, (n, t, s) in enumerate(items):
         x0 = 150 + i * 560
         on = active is None or active == i
-        panel(d, (x0, 230, x0 + 500, 720), "NAVY_DEEP", 235 if on else 150, "GOLD" if on else "TEXT_MUTED")
-        text(d, (x0 + 250, 330), n, 90, "GOLD" if on else "TEXT_MUTED", "sans_black", "mm")
-        text(d, (x0 + 250, 480), t, fit_size(d, t, 76, 440, "sans_black"), "WHITE" if on else "TEXT_MUTED", "sans_black", "mm")
-        text(d, (x0 + 250, 610), s, 36, "BEIGE" if on else "TEXT_MUTED", "sans_medium", "mm")
+
+        def card(dd, x0=x0, n=n, t=t, s=s, on=on):
+            panel(dd, (x0, 230, x0 + 500, 720), "NAVY_DEEP", 235 if on else 150, "GOLD" if on else "TEXT_MUTED")
+            text(dd, (x0 + 250, 330), n, 90, "GOLD" if on else "TEXT_MUTED", "sans_black", "mm")
+            text(dd, (x0 + 250, 480), t, fit_size(dd, t, 76, 440, "sans_black"), "WHITE" if on else "TEXT_MUTED", "sans_black", "mm")
+            text(dd, (x0 + 250, 610), s, 36, "BEIGE" if on else "TEXT_MUTED", "sans_medium", "mm")
+        fade_in(im, prog(i * 0.25, i * 0.25 + 0.4), card)
     return im
 
 
@@ -248,9 +284,13 @@ def bar_chart(d, x0, y0, w, h, rows, vmax, fmt, colors, label_size=40):
     for i, (lab, v) in enumerate(rows):
         y = y0 + i * h / n + (h / n - bh) / 2
         text(d, (x0 - 30, y + bh / 2), lab, label_size, "WHITE", "sans_bold", "rm")
-        L = w * v / vmax
+        k = prog(i * 0.15, i * 0.15 + 0.6)
+        if k <= 0:
+            continue
+        L = max(16, w * v * k / vmax)
         d.rounded_rectangle([x0, y, x0 + L, y + bh], 8, fill=hexrgb(C[colors[i]]))
-        text(d, (x0 + L + 24, y + bh / 2), fmt(v), label_size + 6, colors[i] if colors[i] != "LIGHT_GRAY" else "WHITE",
+        shown = v if k >= 1 else (round(v * k) if isinstance(v, int) else v * k)
+        text(d, (x0 + L + 24, y + bh / 2), fmt(shown), label_size + 6, colors[i] if colors[i] != "LIGHT_GRAY" else "WHITE",
              "sans_black", "lm")
 
 
@@ -262,9 +302,11 @@ def g_annual_payment(sim):
     text(d, (110, 170), f"借入{P // 100_000_000}億円・{Y}年・元利均等返済", 44, "BEIGE", "sans_bold")
     bar_chart(d, 400, 280, 1000, 360, [("金利 2.00％", man(a0)), ("金利 2.25％", man(a1))], 520,
               lambda v: f"約{v}万円／年", ["LIGHT_GRAY", "GOLD"], 44)
-    d.rounded_rectangle([1360, 660, 1810, 790], 20, fill=hexrgb(C["GOLD"]))
-    text(d, (1585, 700), "0.25pt上昇で", 32, "NAVY_DEEP", "sans_bold", "mm")
-    text(d, (1585, 752), f"年間 約＋{man(a1 - a0)}万円", 50, "NAVY_DEEP", "sans_black", "mm")
+    def callout(dd):
+        dd.rounded_rectangle([1360, 660, 1810, 790], 20, fill=hexrgb(C["GOLD"]))
+        text(dd, (1585, 700), "0.25pt上昇で", 32, "NAVY_DEEP", "sans_bold", "mm")
+        text(dd, (1585, 752), f"年間 約＋{man(a1 - a0)}万円", 50, "NAVY_DEEP", "sans_black", "mm")
+    fade_in(im, prog(0.8, 1.0), callout)
     text(d, (110, 740), f"毎月返済額：{annual_payment(P, 2.00, Y) // 12:,}円 → {annual_payment(P, 2.25, Y) // 12:,}円", 34, "LIGHT_GRAY", "sans_medium")
     footer_note(im, NOTE)
     return im
@@ -381,13 +423,16 @@ def g_ippo_table(sim):
     for i, (lab, r, col) in enumerate(cols):
         x0 = 150 + i * 560
         a = annual_payment(P, r, Y)
-        panel(d, (x0, 260, x0 + 500, 760), "NAVY_DEEP", 235, col)
-        text(d, (x0 + 250, 320), lab, 50, col, "sans_black", "mm")
-        text(d, (x0 + 250, 390), f"（{r:.2f}％）", 36, "WHITE", "sans_medium", "mm")
-        text(d, (x0 + 250, 510), f"約{man(a)}万円", 76, "WHITE", "sans_black", "mm")
-        text(d, (x0 + 250, 585), "年間返済額", 32, "LIGHT_GRAY", "sans_medium", "mm")
-        if i:
-            text(d, (x0 + 250, 680), f"＋約{man(a - base_a)}万円／年", 42, col, "sans_black", "mm")
+
+        def card(dd, x0=x0, lab=lab, r=r, col=col, a=a, i=i):
+            panel(dd, (x0, 260, x0 + 500, 760), "NAVY_DEEP", 235, col)
+            text(dd, (x0 + 250, 320), lab, 50, col, "sans_black", "mm")
+            text(dd, (x0 + 250, 390), f"（{r:.2f}％）", 36, "WHITE", "sans_medium", "mm")
+            text(dd, (x0 + 250, 510), f"約{man(a)}万円", 76, "WHITE", "sans_black", "mm")
+            text(dd, (x0 + 250, 585), "年間返済額", 32, "LIGHT_GRAY", "sans_medium", "mm")
+            if i:
+                text(dd, (x0 + 250, 680), f"＋約{man(a - base_a)}万円／年", 42, col, "sans_black", "mm")
+        fade_in(im, prog(i * 0.28, i * 0.28 + 0.4), card)
     footer_note(im, NOTE)
     return im
 
@@ -401,11 +446,14 @@ def g_summary():
     for i, (t, s) in enumerate((("年間返済額", "自分の借入でいくら増えるか"), ("返済比率", "経費上昇と合わせて余力を確認"),
                                 ("DSCR", "金利ストレスをかけて確認"))):
         y = 410 + i * 140
-        panel(d, (250, y, 1670, y + 115), "NAVY_DEEP", 235, "TEXT_MUTED")
-        d.ellipse([285, y + 27, 345, y + 87], fill=hexrgb(C["GOLD"]))
-        text(d, (315, y + 57), "✓", 38, "NAVY_DEEP", "sans_black", "mm")
-        text(d, (380, y + 57), t, 52, "WHITE", "sans_black", "lm")
-        text(d, (820, y + 60), s, 38, "LIGHT_GRAY", "sans_bold", "lm")
+
+        def row(dd, y=y, t=t, s=s):
+            panel(dd, (250, y, 1670, y + 115), "NAVY_DEEP", 235, "TEXT_MUTED")
+            dd.ellipse([285, y + 27, 345, y + 87], fill=hexrgb(C["GOLD"]))
+            text(dd, (315, y + 57), "✓", 38, "NAVY_DEEP", "sans_black", "mm")
+            text(dd, (380, y + 57), t, 52, "WHITE", "sans_black", "lm")
+            text(dd, (820, y + 60), s, 38, "LIGHT_GRAY", "sans_bold", "lm")
+        fade_in(im, prog(0.1 + i * 0.25, 0.1 + i * 0.25 + 0.4), row)
     return im
 
 
@@ -555,13 +603,12 @@ SCENE_KEYWORDS = {
 }
 
 
-def render_episode(ep_id):
-    d = episode_dir(ep_id)
-    ep = load_json(d / "script" / f"{ep_id}.json")
-    sim = ep["simulation"]
-    g = d / "graphics"
-    g.mkdir(exist_ok=True)
-    gf = {
+ANIMATED = {"G02_rate_change", "G05_three_numbers", "G06_annual_payment", "G06b_scale", "G08b_dscr_stress",
+            "G09b_ippo_table", "G10_summary"}
+
+
+def graphic_funcs(sim):
+    return {
         "G02_rate_change": g_rate_change, "G03_effective_date": g_effective_date, "G04_not_same": g_not_same,
         "G05_three_numbers": g_three_numbers, "G06_annual_payment": lambda: g_annual_payment(sim),
         "G06b_scale": lambda: g_scale(sim), "G07_repayment_ratio": lambda: g_repayment_ratio(sim),
@@ -569,6 +616,25 @@ def render_episode(ep_id):
         "G09_ippo_card": g_ippo_card, "G09b_ippo_table": lambda: g_ippo_table(sim), "G10_summary": g_summary,
         "G10b_lending": g_lending, "G11_ending": g_ending,
     }
+
+
+def render_graphic(sim, key, p=1.0):
+    """図表を進み具合 p（0〜1）で描く。"""
+    global P_ANIM
+    P_ANIM = p
+    try:
+        return graphic_funcs(sim)[key]().convert("RGB")
+    finally:
+        P_ANIM = 1.0
+
+
+def render_episode(ep_id):
+    d = episode_dir(ep_id)
+    ep = load_json(d / "script" / f"{ep_id}.json")
+    sim = ep["simulation"]
+    g = d / "graphics"
+    g.mkdir(exist_ok=True)
+    gf = graphic_funcs(sim)
     for k, fn in gf.items():
         fn().convert("RGB").save(g / f"{ep_id}_{k}.png")
     # キャラクターカット（シーンごとにキーワードを変える）

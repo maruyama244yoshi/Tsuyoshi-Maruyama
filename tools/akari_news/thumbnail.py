@@ -9,15 +9,23 @@ import math
 
 from PIL import Image, ImageDraw, ImageFilter
 
-from .common import AKARI, episode_dir, load_json
+from .common import AKARI, ROOT, episode_dir, load_json
 from .graphics import C, CUTS, draw_logo_mark, fit_size, gradient, hexrgb, text, tw
 
 TW, TH = 1280, 720
 
 
+# 高解像度の正式基本画像（AKARI_TALKING_BASE_16x9_v1）から顔まわりを切り出して使う
+HIRES = {"akari_talking": (ROOT / "brand/akari/talking_base/AKARI_TALKING_BASE_16x9_v1.png", (520, 60, 1190, 900))}
+
+
 def akari_panel(im, key, x0, fade=True):
     """燈の顔を右側に配置し、左端をグラデーションで背景になじませる。"""
-    src = Image.open(CUTS[key]).convert("RGB")
+    if key in HIRES:
+        path, box = HIRES[key]
+        src = Image.open(path).convert("RGB").crop(box)
+    else:
+        src = Image.open(CUTS[key]).convert("RGB")
     h = TH
     k = h / src.height * 1.05
     src = src.resize((math.ceil(src.width * k), math.ceil(src.height * k)), Image.LANCZOS)
@@ -45,7 +53,7 @@ def check_words(words):
                 raise SystemExit(f"サムネ文言に禁止ワード「{b}」が含まれます: {w}")
 
 
-def compose(variant, top, main, sub, face_key="akari_serious"):
+def compose(variant, top, main, sub, face_key="akari_talking"):
     check_words([top, main, sub])
     if variant == "C":
         im = gradient(TW, TH, C["WHITE"], C["LIGHT_GRAY"])

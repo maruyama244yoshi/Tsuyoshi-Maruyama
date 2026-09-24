@@ -8,9 +8,9 @@
 | 工程 | 状態 |
 |---|---|
 | 0. 基本画像 | ✅ 2026-09-24 受領 → `base_stills/`。燈は仮採点24/25で採用（オーナー確認待ち）。大家Mは本人非類似の確認待ち |
-| 1. 声の候補5本（燈3・大家M2） | 未着 → `voice_test/` |
-| 2. 声の採点・決定 | 未 → `review/voice_scores.csv` |
-| 3. 動画テスト（HeyGen/Hedra × 燈・大家M） | 未着 → `video_test/heygen/`・`video_test/hedra/` |
+| 1. 声の候補5本（燈3・大家M2） | ✅ 比較済み（燈側で実施） |
+| 2. 声の採点・決定 | ✅ 2026-09-25 正式採用：燈＝Jhenny（速度0.90）、大家M＝Satoshi（速度0.95）→ `brand/PRODUCTION_MASTERS.md` |
+| 3. 動画テスト（HeyGen × 燈・大家M） | 未着 → `video_test/heygen/heygen_akari.mp4`・`heygen_ooka_m.mp4`（原稿は `test_lines.json` の `heygen_text`） |
 | 4. 動画の採点・方式決定 | 未 → `review/video_scores.csv` |
 | 5. 規約確認 | 未 → `review/commercial_terms_check.md` |
 | 6. 正式決定の記録 | 未 → `brand/PRODUCTION_MASTERS.md` |

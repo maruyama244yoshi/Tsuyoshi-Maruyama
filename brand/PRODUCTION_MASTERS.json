@@ -1,0 +1,87 @@
+{
+  "updated": "2026-09-25",
+  "rule": "正式決定後は勝手に変更しない。変更は v2 として比較テストし、オーナー承認後に切り替える。",
+  "voices": {
+    "akari": {
+      "master": "AKARI_VOICE_MASTER_v1",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "name": "Jhenny",
+      "candidate": "AKARI_VOICE_C",
+      "service": "HeyGen",
+      "heygen_voice_id": "9530fac2d1f148f8b57b51b783b0df13",
+      "speed": 0.9,
+      "language": "Japanese",
+      "reading_rule": "音声生成時のみ「燈」→「あかり」。表示・字幕は「燈」"
+    },
+    "ooka_m": {
+      "master": "M_VOICE_MASTER_v1",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "name": "Satoshi",
+      "candidate": "M_VOICE_A",
+      "service": "HeyGen",
+      "heygen_voice_id": "662e1397965c484e8f65fa58c77effde",
+      "speed": 0.95,
+      "language": "Japanese"
+    }
+  },
+  "audio_format": {
+    "master": "WAV 48kHz 24bit",
+    "no_mp3_roundtrip": true,
+    "resample": "soxr（tools/akari_news/audio_prep.py）"
+  },
+  "images": {
+    "AKARI_TALKING_BASE_16x9_v1": {
+      "file": "brand/akari/talking_base/AKARI_TALKING_BASE_16x9_v1.png",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "size": "1672x941",
+      "sha256": "2bc124060347e617a22ca635948038f69744938e0fb6b064be5424b9a267d89c"
+    },
+    "AKARI_TALKING_BASE_9x16_v1": {
+      "file": "brand/akari/talking_base/AKARI_TALKING_BASE_9x16_v1.png",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "size": "941x1672",
+      "sha256": "7024ebe8b56efa424a632b95617cb03399b9b6bd3827961c00ad4df3bd9e5640"
+    },
+    "AKARI_DESK_BASE_v1": {
+      "file": "brand/akari/talking_base/AKARI_DESK_BASE_v1.png",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "size": "1672x941",
+      "sha256": "a93dfa799a73baaa43041f4123d468f27e966d4e933c4e412dc7ee722e0c2aad"
+    },
+    "OOKA_M_TALKING_BASE_16x9_v1": {
+      "file": "brand/ooka_m/talking_base/OOKA_M_TALKING_BASE_16x9_v1.png",
+      "status": "approved",
+      "approved": "2026-09-25",
+      "size": "1672x941",
+      "note": "本人非類似はオーナー確認済みとして指示書で正式採用",
+      "sha256": "511bd70a84427d3fa39f8d8f9e0db47c704354eecc461fa246cdd81e5781c517"
+    }
+  },
+  "talking_video_engine": {
+    "master": "TALKING_VIDEO_ENGINE_v1",
+    "status": "pending_test",
+    "candidate": "HeyGen",
+    "decided": null,
+    "test_files": [
+      "youtube/akari_news/avatar_tests/video_test/heygen/heygen_akari.mp4",
+      "youtube/akari_news/avatar_tests/video_test/heygen/heygen_ooka_m.mp4"
+    ]
+  },
+  "talking_video_settings": {
+    "master": "TALKING_VIDEO_SETTINGS_v1",
+    "status": "pending_test",
+    "summary": "動き Minimal/Subtle・表情 Low・頭の動き Minimal・手の動き Minimal・視線 Camera/Front・口は自然（大きく開きすぎない）",
+    "values": {
+      "motion": "Minimal/Subtle",
+      "expression": "Low",
+      "head_movement": "Minimal",
+      "gesture": "Minimal",
+      "eye_contact": "Camera"
+    }
+  }
+}
