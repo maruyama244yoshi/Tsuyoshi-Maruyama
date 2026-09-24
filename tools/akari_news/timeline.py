@@ -1,4 +1,9 @@
-"""仮音声（ガイド音声）を合成してタイムラインと字幕（SRT/VTT）を作る。
+"""音声を並べてタイムラインと字幕（SRT/VTT）を作る。
+
+ショットごとの音声は次の優先順で使う:
+  1. clips/<scene>_<nn>_<speaker>.mp4      … 話しているカットの動画（口パク動画の音声をそのまま使う）
+  2. voice/final/<scene>_<nn>_<speaker>.wav … 本番TTS音声（ショット単位）
+  3. Open JTalk のガイド音声（文単位で合成。尺合わせ専用・公開不可）
 
   python3 -m tools.akari_news.timeline episode_001            # 本編
   python3 -m tools.akari_news.timeline episode_001 --shorts   # Shorts
@@ -65,6 +70,17 @@ def normalize_rms(x, target_db=-20.0):
     return x * (10 ** (target_db / 20) / rms)
 
 
+def clip_path(d, scene_id, idx, speaker):
+    return d / "clips" / f"{scene_id}_{idx:02}_{speaker}.mp4"
+
+
+def audio_from_clip(mp4: Path, out_wav: Path):
+    from .video import ffmpeg
+    subprocess.run([ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", "-i", str(mp4), "-vn", "-ac", "1",
+                    "-ar", str(SR), "-c:a", "pcm_s16le", str(out_wav)], check=True)
+    return out_wav
+
+
 def ts(sec, sep=","):
     ms = int(round(sec * 1000))
     h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
@@ -81,31 +97,55 @@ def build(ep_id, shorts=False, use_existing=False):
 
     audio = [np.zeros(int(SR * LEAD_IN), np.float32)]
     t = LEAD_IN
-    shots_out, cues_out, events = [], [], []
+    shots_out, cues_out, events, sources = [], [], [], {}
     for si, sc in enumerate(scenes):
         if si > 0:
             audio.append(np.zeros(int(SR * GAP_SCENE), np.float32)); t += GAP_SCENE
         if sc.get("jingle_before"):
-            events.append({"type": "jingle", "start": t, "end": t + JINGLE_SEC})
+            events.append({"type": "jingle", "start": t, "end": t + JINGLE_SEC,
+                           "visual": sc.get("jingle_visual", "gfx:G09_ippo_card"), "scene": sc["id"]})
             audio.append(jingle()); t += JINGLE_SEC
         for hi, shot in enumerate(sc["shots"]):
             if hi > 0:
                 audio.append(np.zeros(int(SR * GAP_SHOT), np.float32)); t += GAP_SHOT
             shot_start = t
-            # 文単位で合成→字幕キューは文内の文字数比で配分
             cue_texts = cues_for_shot(shot["text"])
             sentences = split_sentences(shot["text"])
             sent_timing = []
-            for ni, sent in enumerate(sentences):
-                if ni > 0:
-                    audio.append(np.zeros(int(SR * GAP_SENT), np.float32)); t += GAP_SENT
-                wav = vdir / f"{sc['id']}_{hi:02}_{ni:02}_{shot['speaker']}.wav"
-                if not (use_existing and wav.exists()):
-                    synth(tts_text(sent), shot["speaker"], wav)
-                x = normalize_rms(read_wav(wav))
+            clip = clip_path(d, sc["id"], hi, shot["speaker"])
+            final = d / "voice" / "final" / f"{sc['id']}_{hi:02}_{shot['speaker']}.wav"
+            if shot["visual"].startswith("talk:") and clip.exists():
+                src = "clip"
+                x = normalize_rms(read_wav(audio_from_clip(clip, vdir / f"_clip_{sc['id']}_{hi:02}.wav")))
+            elif final.exists():
+                src = "final"
+                x = normalize_rms(read_wav(final))
+            else:
+                src = "guide"
+                x = None
+            if x is not None:
+                # ショット単位の音声：文の区切りは文字数比で配分
                 audio.append(x)
-                sent_timing.append((sent, t, t + len(x) / SR))
+                total = sum(len(z) for z in sentences)
+                acc = 0
+                for sent in sentences:
+                    a0 = t + len(x) / SR * acc / total
+                    acc += len(sent)
+                    sent_timing.append((sent, a0, t + len(x) / SR * acc / total))
                 t += len(x) / SR
+            else:
+                # 文単位で合成→字幕キューは文内の文字数比で配分
+                for ni, sent in enumerate(sentences):
+                    if ni > 0:
+                        audio.append(np.zeros(int(SR * GAP_SENT), np.float32)); t += GAP_SENT
+                    wav = vdir / f"{sc['id']}_{hi:02}_{ni:02}_{shot['speaker']}.wav"
+                    if not (use_existing and wav.exists()):
+                        synth(tts_text(sent), shot["speaker"], wav)
+                    x = normalize_rms(read_wav(wav))
+                    audio.append(x)
+                    sent_timing.append((sent, t, t + len(x) / SR))
+                    t += len(x) / SR
+            sources[src] = sources.get(src, 0) + 1
             # キュー → 文タイミングへ割付け
             ci = 0
             for sent, s0, s1 in sent_timing:
@@ -120,25 +160,32 @@ def build(ep_id, shorts=False, use_existing=False):
                     ci += 1
             shots_out.append({"scene": sc["id"], "scene_title": sc["title"], "index": hi, "speaker": shot["speaker"],
                               "visual": shot["visual"], "face": shot.get("face"), "text": shot["text"],
+                              "audio_source": src, "clip": str(clip.relative_to(d)) if src == "clip" else None,
                               "start": round(shot_start, 3), "end": round(t, 3)})
     audio.append(np.zeros(int(SR * TAIL), np.float32)); t += TAIL
     full = np.concatenate(audio)
     peak = np.abs(full).max()
     if peak > 0.95:
         full *= 0.95 / peak
-    wav_out = d / "voice" / f"{tag}_guide_v1.wav"
+    wav_out = d / "voice" / f"{tag}_mix_{ep.get('script_version', 'v1')}.wav"
     write_wav(wav_out, full)
 
     # ショットの表示区間は次のショット開始まで延長（間で画面が途切れないように）
     for a, b in zip(shots_out, shots_out[1:]):
         a["display_end"] = b["start"]
-    shots_out[-1]["display_end"] = round(t, 3)
+    outro = (ep["shorts"] if shorts else ep).get("outro_visual")
+    last_end = shots_out[-1]["end"]
+    shots_out[-1]["display_end"] = round(last_end + 0.4, 3) if outro else round(t, 3)
+    if outro:
+        events.append({"type": "outro", "start": shots_out[-1]["display_end"], "end": round(t, 3), "visual": outro, "scene": "OUTRO"})
     shots_out[0]["start_display"] = 0.0
 
-    tl = {"episode": ep_id, "kind": "shorts" if shorts else "long", "duration": round(t, 3),
-          "audio": str(wav_out.relative_to(d)), "shots": shots_out, "cues": cues_out, "events": events,
-          "note": "仮音声（Open JTalk）による尺。本番音声差し替え後に再計算すること。"}
-    (d / "script" / f"{tag}_timeline_v1.json").write_text(json.dumps(tl, ensure_ascii=False, indent=2), encoding="utf-8")
+    ver = ep.get("script_version", "v1")
+    tl = {"episode": ep_id, "kind": "shorts" if shorts else "long", "version": ver, "duration": round(t, 3),
+          "audio": str(wav_out.relative_to(d)), "audio_sources": sources, "shots": shots_out, "cues": cues_out,
+          "events": events,
+          "note": "guide=Open JTalk仮音声（公開不可）/ final=本番TTS / clip=話しているカットの音声"}
+    (d / "script" / f"{tag}_timeline_{ver}.json").write_text(json.dumps(tl, ensure_ascii=False, indent=2), encoding="utf-8")
 
     sub = d / "subtitles"
     sub.mkdir(exist_ok=True)
@@ -147,17 +194,42 @@ def build(ep_id, shorts=False, use_existing=False):
         body = "\n".join(c["lines"])
         srt += [str(i), f"{ts(c['start'])} --> {ts(c['end'])}", body, ""]
         vtt += [f"{ts(c['start'], '.')} --> {ts(c['end'], '.')}", body, ""]
-    (sub / f"{tag}_v1.srt").write_text("\n".join(srt), encoding="utf-8")
-    (sub / f"{tag}_v1.vtt").write_text("\n".join(vtt), encoding="utf-8")
+    (sub / f"{tag}_{ver}.srt").write_text("\n".join(srt), encoding="utf-8")
+    (sub / f"{tag}_{ver}.vtt").write_text("\n".join(vtt), encoding="utf-8")
 
-    by = {}
-    for s in shots_out:
-        k = "akari_cut" if s["visual"].startswith("cut:akari") else "ooka_m_cut" if s["visual"].startswith("cut:ooka") else "graphics"
-        by[k] = by.get(k, 0) + s["display_end"] - s.get("start_display", s["start"])
-    print(f"{tag}: {t:.1f}s ({int(t // 60)}:{t % 60:04.1f})  cues={len(cues_out)}  shots={len(shots_out)}")
+    by = screen_ratio(tl)
+    print(f"{tag}: {t:.1f}s ({int(t // 60)}:{t % 60:04.1f})  cues={len(cues_out)}  shots={len(shots_out)}  audio={sources}")
     for k, v in by.items():
         print(f"  {k:10s} {v:6.1f}s  {100 * v / t:5.1f}%")
     return tl
+
+
+def who_on_screen(visual):
+    kind, key = visual.split(":", 1)
+    if kind in ("talk", "cut"):
+        return "ooka_m" if key.startswith("ooka") else "akari"
+    return "graphics"
+
+
+def visual_at(tl, t):
+    """時刻 t に画面に出ている visual（ジングル・アウトロを優先）。video.py と同じ規則。"""
+    for e in tl["events"]:
+        if e["start"] <= t < e["end"]:
+            return e["visual"], e.get("scene"), None
+    cur = tl["shots"][0]
+    for s in tl["shots"]:
+        if s["start"] <= t + 1e-6:
+            cur = s
+    return cur["visual"], cur["scene"], cur
+
+
+def screen_ratio(tl, step=0.05):
+    """画面に燈／大家M／図表が映っている秒数（step秒ごとに判定）。"""
+    by = {"akari": 0.0, "ooka_m": 0.0, "graphics": 0.0}
+    n = int(tl["duration"] / step)
+    for i in range(n):
+        by[who_on_screen(visual_at(tl, (i + 0.5) * step)[0])] += step
+    return by
 
 
 def main(argv=None):

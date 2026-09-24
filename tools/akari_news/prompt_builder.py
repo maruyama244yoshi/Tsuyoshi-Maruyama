@@ -18,8 +18,8 @@ from .common import AKARI, OOKA_M
 CHAR = {
     "akari": dict(dir=AKARI / "prompts", identity="AKARI_IDENTITY_MASTER", studio="AKARI_STUDIO_01",
                   lighting="AKARI_LIGHTING", negative="AKARI_NEGATIVE", no_text="AKARI_RULE_NO_TEXT"),
-    "ooka_m": dict(dir=OOKA_M / "prompts", identity="OOKA_M_IDENTITY_MASTER", studio=None,
-                   lighting=None, negative="OOKA_M_NEGATIVE", no_text=None),
+    "ooka_m": dict(dir=OOKA_M / "prompts", identity="OOKA_M_IDENTITY_MASTER", studio="OOKA_M_STUDIO",
+                   lighting="OOKA_M_LIGHTING", negative="OOKA_M_NEGATIVE", no_text=None),
 }
 
 TEST_SET = [

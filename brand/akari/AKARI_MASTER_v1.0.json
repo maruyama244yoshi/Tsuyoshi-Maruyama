@@ -1,6 +1,6 @@
 {
   "id": "AKARI_MASTER",
-  "version": "1.0",
+  "version": "1.1",
   "adopted": "2026-09-24",
   "status": "official",
   "name": {
@@ -112,7 +112,7 @@
   "screen_time_ratio": {
     "akari": [
       0.3,
-      0.5
+      0.4
     ]
   },
   "acceptance": {
@@ -160,5 +160,63 @@
       "大家崩壊",
       "不動産終了"
     ]
+  },
+  "video": {
+    "output": "photoreal_talking_presenter",
+    "priority": [
+      "photoreal_talking_video",
+      "still_plus_lipsync",
+      "still_only(補助素材のみ・本体には不可)"
+    ],
+    "required_motion": [
+      "自然な口パク",
+      "自然な瞬き",
+      "わずかな首の動き",
+      "軽い頷き",
+      "自然な視線",
+      "呼吸感",
+      "少しの表情変化"
+    ],
+    "optional_motion": [
+      "軽い手の動き",
+      "大型モニターを示す控えめなジェスチャー"
+    ],
+    "forbidden_motion": [
+      "頭が揺れすぎる",
+      "大きな手振り",
+      "落ち着きがない",
+      "目線が泳ぐ",
+      "大げさな口の動き",
+      "強すぎる感情表現",
+      "YouTuber的オーバーリアクション"
+    ],
+    "cuts": {
+      "AKARI_VIDEO_A": "正面胸上（最優先）",
+      "AKARI_VIDEO_B": "デスク着席",
+      "AKARI_VIDEO_C": "大型モニター横",
+      "AKARI_VIDEO_D": "少し斜めの会話",
+      "AKARI_VIDEO_E": "Shorts縦構図"
+    },
+    "screen_time_ratio_5min": [
+      0.3,
+      0.4
+    ],
+    "adoption_test": {
+      "items": [
+        "identity",
+        "mouth",
+        "gaze",
+        "expression",
+        "japanese_sync",
+        "news_quality"
+      ],
+      "max_each": 5,
+      "adopt": 24,
+      "hold": [
+        20,
+        23
+      ],
+      "reject_max": 19
+    }
   }
 }

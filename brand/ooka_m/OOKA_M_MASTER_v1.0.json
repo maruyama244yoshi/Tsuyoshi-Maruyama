@@ -1,6 +1,6 @@
 {
   "id": "OOKA_M_MASTER",
-  "version": "1.0",
+  "version": "1.1",
   "adopted": "2026-09-24",
   "status": "official_pending_owner_check",
   "name": {
@@ -8,7 +8,7 @@
     "short": "大家M"
   },
   "role": "実戦コメント担当／大家の一手",
-  "display_mode": "ai_avatar",
+  "display_mode": "photoreal_talking_avatar",
   "display_mode_fallbacks": [
     "silhouette",
     "back_view",
@@ -62,12 +62,26 @@
   ],
   "screen_time_ratio": [
     0.1,
-    0.2
+    0.15
   ],
   "reference_images": [
     {
       "id": "OOKA_M_REFERENCE_001",
       "path": "references/OOKA_M_REFERENCE_001_board.png"
     }
-  ]
+  ],
+  "video": {
+    "tone": "燈より少し会話的・考えながら話す・軽い頷き・強すぎない手振り",
+    "screen_time_ratio_5min": [
+      0.1,
+      0.15
+    ],
+    "forbidden": [
+      "本人写真ベース",
+      "本人声ベース",
+      "本人そっくり化",
+      "勤務先や生活圏が推測できる背景",
+      "本人特有の外見要素の再現"
+    ]
+  }
 }

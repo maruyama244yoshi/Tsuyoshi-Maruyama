@@ -1,0 +1,217 @@
+{
+  "episode": "episode_001",
+  "kind": "shorts",
+  "version": "v2",
+  "duration": 59.125,
+  "audio": "voice/episode_001_shorts_mix_v2.wav",
+  "audio_sources": {
+    "guide": 6
+  },
+  "shots": [
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 0,
+      "speaker": "akari",
+      "visual": "talk:akari_E",
+      "face": null,
+      "text": "日銀が政策金利を1.25％程度へ引き上げました。9月24日から適用です。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 0.6,
+      "end": 8.02,
+      "display_end": 8.42,
+      "start_display": 0.0
+    },
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 1,
+      "speaker": "akari",
+      "visual": "vgfx:V02_three",
+      "face": null,
+      "text": "では、大家さんが見るべき数字は何か。ポイントは3つです。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 8.42,
+      "end": 13.76,
+      "display_end": 14.16
+    },
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 2,
+      "speaker": "akari",
+      "visual": "vgfx:V03_payment",
+      "face": null,
+      "text": "1つ目は年間返済額。1億円・30年の単純試算では、2.00％から2.25％になると、年間およそ15万円増えます。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 14.16,
+      "end": 25.74,
+      "display_end": 26.14
+    },
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 3,
+      "speaker": "akari",
+      "visual": "talk:akari_E",
+      "face": null,
+      "text": "2つ目は返済比率、3つ目はDSCR。金利がさらに上がっても返済できるか、確認しておきましょう。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 26.14,
+      "end": 34.63,
+      "display_end": 35.03
+    },
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 4,
+      "speaker": "ooka_m",
+      "visual": "talk:ooka_m",
+      "face": null,
+      "text": "今日の大家の一手です。現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 35.03,
+      "end": 50.42,
+      "display_end": 50.82
+    },
+    {
+      "scene": "SHORTS",
+      "scene_title": "Shorts",
+      "index": 5,
+      "speaker": "akari",
+      "visual": "vgfx:V06_cta",
+      "face": null,
+      "text": "詳しい解説は本編でお届けしています。燈の不動産ニュースでした。",
+      "audio_source": "guide",
+      "clip": null,
+      "start": 50.82,
+      "end": 56.625,
+      "display_end": 57.025
+    }
+  ],
+  "cues": [
+    {
+      "start": 0.6,
+      "end": 5.165,
+      "speaker": "akari",
+      "lines": [
+        "日銀が政策金利を1.25％程度へ引き上げました。"
+      ]
+    },
+    {
+      "start": 5.415,
+      "end": 8.02,
+      "speaker": "akari",
+      "lines": [
+        "9月24日から適用です。"
+      ]
+    },
+    {
+      "start": 8.42,
+      "end": 11.64,
+      "speaker": "akari",
+      "lines": [
+        "では、大家さんが見るべき数字は何か。"
+      ]
+    },
+    {
+      "start": 11.89,
+      "end": 13.76,
+      "speaker": "akari",
+      "lines": [
+        "ポイントは3つです。"
+      ]
+    },
+    {
+      "start": 14.16,
+      "end": 16.495,
+      "speaker": "akari",
+      "lines": [
+        "1つ目は年間返済額。"
+      ]
+    },
+    {
+      "start": 16.745,
+      "end": 25.74,
+      "speaker": "akari",
+      "lines": [
+        "1億円・30年の単純試算では、",
+        "2.00％から2.25％になると、年間およそ15万円増えます。"
+      ]
+    },
+    {
+      "start": 26.14,
+      "end": 29.985,
+      "speaker": "akari",
+      "lines": [
+        "2つ目は返済比率、3つ目はDSCR。"
+      ]
+    },
+    {
+      "start": 30.235,
+      "end": 34.63,
+      "speaker": "akari",
+      "lines": [
+        "金利がさらに上がっても返済で",
+        "きるか、確認しておきましょう。"
+      ]
+    },
+    {
+      "start": 35.03,
+      "end": 37.09,
+      "speaker": "ooka_m",
+      "lines": [
+        "今日の大家の一手です。"
+      ]
+    },
+    {
+      "start": 37.34,
+      "end": 45.0,
+      "speaker": "ooka_m",
+      "lines": [
+        "現在金利、プラス0.5％、",
+        "プラス1.0％の3パターンで年間返済額を出してみる。"
+      ]
+    },
+    {
+      "start": 45.25,
+      "end": 50.42,
+      "speaker": "ooka_m",
+      "lines": [
+        "金利を予想するより、上がっても",
+        "耐えられる経営を作る方が重要です。"
+      ]
+    },
+    {
+      "start": 50.82,
+      "end": 54.08,
+      "speaker": "akari",
+      "lines": [
+        "詳しい解説は本編でお届けしています。"
+      ]
+    },
+    {
+      "start": 54.33,
+      "end": 56.625,
+      "speaker": "akari",
+      "lines": [
+        "燈の不動産ニュースでした。"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "outro",
+      "start": 57.025,
+      "end": 59.125,
+      "visual": "vgfx:V06_cta",
+      "scene": "OUTRO"
+    }
+  ],
+  "note": "guide=Open JTalk仮音声（公開不可）/ final=本番TTS / clip=話しているカットの音声"
+}

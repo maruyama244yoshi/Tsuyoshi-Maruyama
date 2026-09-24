@@ -576,6 +576,8 @@ def render_episode(ep_id):
     for sc in ep["scenes"]:
         for s in sc["shots"]:
             v = s["visual"]
+            if v.startswith("talk:"):  # 話しているカットの素材待ち用フォールバック
+                v = ep.get("talk_cuts", {}).get(v[5:], {}).get("fallback", "cut:akari_front")
             if not v.startswith("cut:"):
                 continue
             key = v[4:]
@@ -588,6 +590,14 @@ def render_episode(ep_id):
             else:
                 img = cut_frame(key, sc["title"], "現役会社員大家M", "会社員・不動産投資家", SCENE_KEYWORDS.get(sc["id"], [sc["title"]]))
             img.convert("RGB").save(fn)
+    # Shorts の話しているカット：素材待ち用の縦型フォールバック
+    for s in ep.get("shorts", {}).get("shots", []):
+        if not s["visual"].startswith("talk:"):
+            continue
+        key = ep.get("talk_cuts", {}).get(s["visual"][5:], {}).get("fallback", "cut:akari_front")[4:]
+        name = "燈" if key.startswith("akari") else "現役会社員大家M"
+        im, _ = vbase("燈の不動産ニュース", key, name)
+        im.convert("RGB").save(g / f"{ep_id}_SHORTS_{key}.png")
     for k, im in v_frames(sim).items():
         im.convert("RGB").save(g / f"{ep_id}_{k}.png")
     print("wrote", g)

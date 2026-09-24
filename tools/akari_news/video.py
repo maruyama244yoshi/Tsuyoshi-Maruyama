@@ -1,12 +1,20 @@
-"""タイムライン＋グラフィック＋字幕＋音声から動画（初稿）を組み立てる。
+"""タイムライン＋図表＋話しているカット（動画クリップ）＋字幕＋音声から動画を組み立てる。
 
-  python3 -m tools.akari_news.video episode_001            # 本編 16:9
-  python3 -m tools.akari_news.video episode_001 --shorts   # Shorts 9:16
+  python3 -m tools.akari_news.video episode_001                    # 本編 16:9
+  python3 -m tools.akari_news.video episode_001 --shorts           # Shorts 9:16
+  python3 -m tools.akari_news.video episode_001 --bgm path/to.mp3  # BGM（声の下で自動的に下げる）
 
 前提: graphics / timeline を先に実行しておくこと。
-字幕は画面に焼き込み（オープンキャプション）。YouTube字幕用には subtitles/*.srt を別途アップロード。
+
+visual の種類:
+  gfx:/vgfx:  図表（静止）
+  talk:<cut>  燈／大家Mが話しているカット。clips/<scene>_<nn>_<speaker>.mp4 があれば動画を使い、
+              無ければ仮の静止カットに「動画素材待ち」を表示する（本番には使わない）
+  cut:<key>   旧形式の静止カット
+字幕・話者名・ネームプレートは透過レイヤーで重ねる（オープンキャプション）。
 """
 import argparse
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -17,7 +25,9 @@ from .common import episode_dir, load_json
 from .graphics import C, fit_size, hexrgb, text, tw, visual_path
 
 SPEAKER = {"akari": ("燈", "GOLD"), "ooka_m": ("大家M", "BEIGE")}
+NAMEPLATE = {"akari": ("燈", "不動産ニュース専門AIキャスター"), "ooka_m": ("現役会社員大家M", "会社員・不動産投資家")}
 FPS = 30
+BGM_DB = -27  # 声がないときのBGM音量（声の下ではさらに下げる）
 
 
 def ffmpeg():
@@ -25,7 +35,18 @@ def ffmpeg():
         import imageio_ffmpeg
         return imageio_ffmpeg.get_ffmpeg_exe()
     except ImportError:
-        return "ffmpeg"
+        return shutil.which("ffmpeg") or "ffmpeg"
+
+
+def media_duration(path):
+    out = subprocess.run([ffmpeg(), "-hide_banner", "-i", str(path)], capture_output=True, text=True).stderr
+    import re
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", out)
+    return int(m[1]) * 3600 + int(m[2]) * 60 + float(m[3]) if m else 0.0
+
+
+def run(cmd):
+    subprocess.run([ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", *cmd], check=True)
 
 
 def rewrap(t, n):
@@ -37,15 +58,27 @@ def rewrap(t, n):
     return [t[:i]] + rewrap(t[i:], n)
 
 
-def overlay_subtitle(im, cue, vertical, draft_label):
-    im = im.convert("RGB").copy()
-    d = ImageDraw.Draw(im, "RGBA")
-    W, H = im.size
+def overlay_layer(size, cue, vertical, draft_label, nameplate=None, missing=None):
+    """透過レイヤー：字幕・話者ラベル・ネームプレート・下書き表示。"""
+    W, H = size
+    im = Image.new("RGBA", size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
     if draft_label:
         s = draft_label
-        d.rounded_rectangle([W - tw(d, s, 22, "sans_bold") - 60, 106 if not vertical else 106, W - 24, 144 if not vertical else 144],
-                            8, fill=hexrgb(C["ALERT_RED"], 200))
+        d.rounded_rectangle([W - tw(d, s, 22, "sans_bold") - 60, 106, W - 24, 144], 8, fill=hexrgb(C["ALERT_RED"], 200))
         text(d, (W - 42, 125), s, 22, "WHITE", "sans_bold", "rm")
+    if missing:
+        s = f"動画素材待ち：{missing}"
+        d.rounded_rectangle([24, 160, 60 + tw(d, s, 28, "sans_bold"), 210], 8, fill=hexrgb(C["ALERT_RED"], 220))
+        text(d, (42, 185), s, 28, "WHITE", "sans_bold", "lm")
+    if nameplate:
+        name, role = nameplate
+        x, y = (60, H - 560) if vertical else (70, 690)
+        w = tw(d, name, 40) + 60 + tw(d, role, 24, "sans_medium") + 30
+        d.rounded_rectangle([x, y, x + w, y + 80], 10, fill=hexrgb(C["NAVY_DEEP"], 225))
+        d.rectangle([x, y, x + 8, y + 80], fill=hexrgb(C["GOLD"]))
+        text(d, (x + 30, y + 40), name, 40, "WHITE", "sans_bold", "lm")
+        text(d, (x + 30 + tw(d, name, 40) + 26, y + 42), role, 24, "BEIGE", "sans_medium", "lm")
     if not cue:
         return im
     lines = cue["lines"]
@@ -53,33 +86,41 @@ def overlay_subtitle(im, cue, vertical, draft_label):
         lines = rewrap("".join(lines), 16)
     name, col = SPEAKER[cue["speaker"]]
     if vertical:
-        size, lh, y_center, maxw = 62, 84, 1540, W - 100
+        size_, lh, y_center, maxw = 62, 84, 1540, W - 100
     else:
-        size, lh, y_center, maxw = 54, 72, 968, W - 260
-    size = min(fit_size(d, ln, size, maxw) for ln in lines)
+        size_, lh, y_center, maxw = 54, 72, 968, W - 260
+    size_ = min(fit_size(d, ln, size_, maxw) for ln in lines)
     block = lh * len(lines)
     top = y_center - block / 2 - 26
     d.rectangle([0, top, W, top + block + 52], fill=hexrgb(C["NAVY_DEEP"], 205))
     d.rectangle([0, top, W, top + 4], fill=hexrgb(C[col], 230))
     for i, ln in enumerate(lines):
         y = top + 26 + lh * i + lh / 2
-        # 縁取りで可読性を確保
-        text(d, (W / 2, y), ln, size, "WHITE", "sans_bold", "mm", stroke_width=3, stroke_fill=hexrgb(C["NAVY_DEEP"]))
-    # 話者ラベル
+        text(d, (W / 2, y), ln, size_, "WHITE", "sans_bold", "mm", stroke_width=3, stroke_fill=hexrgb(C["NAVY_DEEP"]))
     lab_w = tw(d, name, 28) + 36
-    if vertical:
-        lx, ly = 40, top - 46
-    else:
-        lx, ly = 40, top - 46
+    lx, ly = 40, top - 46
     d.rounded_rectangle([lx, ly, lx + lab_w, ly + 42], 8, fill=hexrgb(C[col]))
     text(d, (lx + lab_w / 2, ly + 21), name, 28, "NAVY_DEEP", "sans_black", "mm")
     return im
 
 
-def build(ep_id, shorts=False, draft_label="初稿・仮音声"):
+def still_for(ep_id, ep, scene, visual):
+    """静止画のパス。talk: は素材待ち用のフォールバック静止カット。"""
+    kind, key = visual.split(":", 1)
+    if kind == "talk":
+        fb = ep.get("talk_cuts", {}).get(key, {}).get("fallback", "cut:akari_front")
+        return visual_path(ep_id, scene, fb)
+    return visual_path(ep_id, scene, visual.replace("vgfx:", "gfx:"))
+
+
+def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
     d = episode_dir(ep_id)
+    ep = load_json(d / "script" / f"{ep_id}.json")
+    ver = ep.get("script_version", "v1")
     tag = f"{ep_id}_shorts" if shorts else ep_id
-    tl = load_json(d / "script" / f"{tag}_timeline_v1.json")
+    tl = load_json(d / "script" / f"{tag}_timeline_{ver}.json")
+    from .timeline import visual_at
+    W, H = (1080, 1920) if shorts else (1920, 1080)
     shots, cues, events = tl["shots"], tl["cues"], tl["events"]
     T = tl["duration"]
     pts = {0.0, T}
@@ -91,52 +132,80 @@ def build(ep_id, shorts=False, draft_label="初稿・仮音声"):
         pts |= {e["start"], e["end"]}
     pts = sorted(p for p in pts if 0 <= p <= T)
 
-    def shot_at(t):
-        for e in events:  # ジングル中は次のショット（大家の一手カード）を先出し
-            if e["start"] <= t < e["end"]:
-                return next(s for s in shots if s["start"] >= e["end"] - 1e-6)
-        cur = shots[0]
-        for s in shots:
-            if s["start"] <= t + 1e-6:
-                cur = s
-        return cur
-
     def cue_at(t):
         for i, c in enumerate(cues):
             if c["start"] <= t + 1e-6 < c["end"]:
                 return i
         return None
 
-    tmp = Path(tempfile.mkdtemp(prefix=f"{tag}_frames_"))
-    cache, entries = {}, []
-    for a, b in zip(pts, pts[1:]):
-        if b - a < 1 / FPS / 2:
+    tmp = Path(tempfile.mkdtemp(prefix=f"{tag}_parts_"))
+    parts, missing, used_clips, clip_dur = [], set(), set(), {}
+    for n, (a, b) in enumerate(zip(pts, pts[1:])):
+        dur = b - a
+        if dur < 1 / FPS / 2:
             continue
-        m = (a + b) / 2
-        s = shot_at(m)
-        ci = cue_at(m)
-        key = (s["scene"], s["visual"], ci)
-        if key not in cache:
-            img = Image.open(visual_path(ep_id, s["scene"], s["visual"].replace("vgfx:", "gfx:")))
-            fr = overlay_subtitle(img, cues[ci] if ci is not None else None, shorts, draft_label)
-            p = tmp / f"f{len(cache):04}.png"
-            fr.save(p)
-            cache[key] = p
-        entries.append((cache[key], b - a))
+        visual, scene, shot = visual_at(tl, (a + b) / 2)
+        ci = cue_at((a + b) / 2)
+        cue = cues[ci] if ci is not None else None
+        is_talk = visual.startswith("talk:")
+        clip = d / shot["clip"] if (is_talk and shot and shot.get("clip")) else None
+        if is_talk and not clip:
+            missing.add(visual[5:])
+        plate = NAMEPLATE[shot["speaker"]] if (is_talk and shot) else None
+        ov = tmp / f"ov{n:04}.png"
+        overlay_layer((W, H), cue, shorts, draft_label, plate if clip else None,
+                      visual[5:] if (is_talk and not clip) else None).save(ov)
+        out = tmp / f"p{n:04}.mp4"
+        # 部品ごとに時間の刻み（timescale）とフレームレートを揃えないと concat で尺が崩れる
+        enc = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS),
+               "-fps_mode", "cfr", "-video_track_timescale", "15360", "-an"]
+        if clip:
+            used_clips.add(str(clip))
+            # 発話後の「間」はクリップの最後のフレームで埋める（クリップ終端を越えて読まない）
+            cdur = clip_dur.setdefault(clip, media_duration(clip))
+            off = min(max(0.0, a - shot["start"]), max(0.0, cdur - 2 / FPS))
+            # 画面いっぱいに拡大して中央を切り出す（縦型にも対応）。動きは元動画のまま
+            vf = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
+                  f"tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[v];[v][1:v]overlay=0:0")
+            run(["-ss", f"{off:.3f}", "-i", str(clip), "-i", str(ov),
+                 "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
+        else:
+            img = Image.open(still_for(ep_id, ep, scene, visual)).convert("RGB")
+            if img.size != (W, H):
+                img = img.resize((W, H))
+            img = Image.alpha_composite(img.convert("RGBA"), Image.open(ov)).convert("RGB")
+            fr = tmp / f"f{n:04}.png"
+            img.save(fr)
+            run(["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out)])
+        pd = media_duration(out)
+        if abs(pd - dur) > 0.1:
+            raise RuntimeError(f"部品の尺が不正: {out.name} 期待{dur:.2f}s 実際{pd:.2f}s ({visual})")
+        parts.append(out)
     lst = tmp / "list.txt"
-    with open(lst, "w") as f:
-        for p, dur in entries:
-            f.write(f"file '{p}'\nduration {dur:.4f}\n")
-        f.write(f"file '{entries[-1][0]}'\n")
+    lst.write_text("".join(f"file '{p}'\n" for p in parts))
+    silent = tmp / "video.mp4"
+    run(["-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(silent)])
+    vd = media_duration(silent)
+    if abs(vd - T) > 0.5:
+        raise RuntimeError(f"連結後の尺が不正: 期待{T:.1f}s 実際{vd:.1f}s")
+
     out_dir = d / ("shorts" if shorts else "video")
     out_dir.mkdir(exist_ok=True)
-    out = out_dir / (f"{ep_id}_shorts_v1.mp4" if shorts else f"{ep_id}_long_v1.mp4")
-    cmd = [ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst),
-           "-i", str(d / tl["audio"]), "-vsync", "cfr", "-r", str(FPS), "-c:v", "libx264", "-preset", "medium",
-           "-tune", "stillimage", "-crf", "22", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
-           "-shortest", "-movflags", "+faststart", str(out)]
-    subprocess.run(cmd, check=True)
-    print(f"wrote {out}  frames={len(cache)} segments={len(entries)} duration={T:.1f}s")
+    out = out_dir / (f"{ep_id}_shorts_{ver}.mp4" if shorts else f"{ep_id}_long_{ver}.mp4")
+    voice = d / tl["audio"]
+    if bgm:
+        # BGMはループさせ、声がある間は自動で下げる（サイドチェイン）
+        fc = (f"[2:a]aloop=loop=-1:size=2e9,atrim=0:{T:.3f},volume={BGM_DB}dB[bg];"
+              f"[1:a]asplit=2[vo][sc];[bg][sc]sidechaincompress=threshold=0.02:ratio=6:attack=20:release=400[duck];"
+              f"[vo][duck]amix=inputs=2:duration=first:normalize=0[a]")
+        run(["-i", str(silent), "-i", str(voice), "-i", str(bgm), "-filter_complex", fc, "-map", "0:v", "-map", "[a]",
+             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)])
+    else:
+        run(["-i", str(silent), "-i", str(voice), "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac",
+             "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)])
+    shutil.rmtree(tmp, ignore_errors=True)
+    print(f"wrote {out}  parts={len(parts)} duration={T:.1f}s clips_used={len(used_clips)}"
+          + (f"  動画素材待ち={sorted(missing)}" if missing else ""))
     return out
 
 
@@ -144,9 +213,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("episode")
     ap.add_argument("--shorts", action="store_true")
-    ap.add_argument("--final", action="store_true", help="「初稿・仮音声」表示を外す（本番音声差し替え後のみ）")
+    ap.add_argument("--bgm", help="BGM音源ファイル（mp3/wav 等）")
+    ap.add_argument("--final", action="store_true", help="下書き表示を外す（本番音声・本番クリップ差し替え後のみ）")
     a = ap.parse_args(argv)
-    build(a.episode, a.shorts, None if a.final else "初稿・仮音声")
+    build(a.episode, a.shorts, None if a.final else "第2稿・仮音声", a.bgm)
 
 
 if __name__ == "__main__":
