@@ -1,22 +1,28 @@
-# テスト時の設定記録
+# HeyGen 生成時の設定記録
 
-後で同じ品質を再現できるよう、生成するたびに記録する（指示書 §28：採用後は TALKING_VIDEO_SETTINGS_v1 として固定）。
+合格した設定を TALKING_VIDEO_SETTINGS_v1 として固定する（指示書 2026-09-25 §10）。**動画ごとに設定を変えない。**
 
-## 音声（ElevenLabs）
+## アバター登録
 
-| voice_id | 声の名前 | ライブラリ／Voice Design | モデル | 速度 | Stability | Style | Speaker Boost | 出力形式 | 日付 |
-|---|---|---|---|---|---|---|---|---|---|
-| AKARI_VOICE_A | | | | | | | | WAV | |
-| AKARI_VOICE_B | | | | | | | | WAV | |
-| AKARI_VOICE_C | | | | | | | | WAV | |
-| M_VOICE_A | | | | | | | | WAV | |
-| M_VOICE_B | | | | | | | | WAV | |
+| HeyGen内の名前 | 画像 | 方式 | Avatar ID | 登録日 |
+|---|---|---|---|---|
+| AKARI_MASTER_v1 | AKARI_TALKING_BASE_16x9_v1 | Photo Avatar 等 | | |
+| OOKA_M_MASTER_v1 | OOKA_M_TALKING_BASE_16x9_v1 | Photo Avatar 等（本人登録ではない） | | |
 
-## 動画（HeyGen / Hedra）
+## テスト動画
 
-| ファイル | ツール | プラン | アバター方式（Photo Avatar／Avatar IV 等） | 動き | 表情 | 頭の動き | 手の動き | 視線 | その他 | 日付 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| heygen_akari.mp4 | HeyGen | | | | | | | | | |
-| heygen_ooka_m.mp4 | HeyGen | | | | | | | | | |
-| hedra_akari.mp4 | Hedra | | | | | | | | | |
-| hedra_ooka_m.mp4 | Hedra | | | | | | | | | |
+| 項目 | heygen_akari.mp4 | heygen_ooka_m.mp4 |
+|---|---|---|
+| Avatar方式 | | |
+| Avatar ID | | |
+| Voice ID | 9530fac2d1f148f8b57b51b783b0df13（Jhenny） | 662e1397965c484e8f65fa58c77effde（Satoshi） |
+| Speed | 0.90 | 0.95 |
+| Motion | | |
+| Expression | | |
+| Head Movement | | |
+| Hand Movement | | |
+| Eye Contact | | |
+| Resolution | | |
+| Aspect Ratio | 16:9 | 16:9 |
+| 生成日 | | |
+| プラン名 | | |

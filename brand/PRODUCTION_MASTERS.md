@@ -12,13 +12,15 @@
 | M_VOICE_MASTER_v1 | 大家Mの声：**Satoshi**（HeyGen voice_id `662e1397965c484e8f65fa58c77effde`、速度 0.95、Japanese、元候補 M_VOICE_A） | ✅ 正式採用 | 2026-09-25 | 同上 |
 | AKARI_TALKING_BASE_16x9_v1 ／ _9x16_v1 ／ AKARI_DESK_BASE_v1 | 燈の基本画像（`brand/akari/talking_base/`） | ✅ 正式採用 | 2026-09-25 | 同上 |
 | OOKA_M_TALKING_BASE_16x9_v1 | 大家Mの基本画像（`brand/ooka_m/talking_base/`） | ✅ 正式採用 | 2026-09-25 | 同上 |
+| HeyGen アバター（燈） | 名前 **AKARI_MASTER_v1**（画像 AKARI_TALKING_BASE_16x9_v1、Photo Avatar 等） | 手動登録待ち（avatar_id 未記録） | — | 指示書 2026-09-25「HeyGen手動登録後の生成フロー」 |
+| HeyGen アバター（大家M） | 名前 **OOKA_M_MASTER_v1**（画像 OOKA_M_TALKING_BASE_16x9_v1）。本人登録（デジタルツイン）ではない | 手動登録待ち（avatar_id 未記録） | — | 同上 |
 | TALKING_VIDEO_ENGINE_v1 | 話している動画の生成ツール（第一候補：HeyGen） | 未決定（heygen_akari / heygen_ooka_m のテスト待ち） | — | `youtube/akari_news/avatar_tests/review/video_scores.csv`・`compare_*.json` |
 | TALKING_VIDEO_SETTINGS_v1 | 採用ツールの設定（予定：動き Minimal/Subtle、表情 Low、頭 Minimal、手 Minimal、視線 Camera） | 未決定（テストで確定） | — | `youtube/akari_news/avatar_tests/review/settings_log.md` |
 
 ## 決定時に記録すること
 
 - 声：サービス名、声の名前とID、ライブラリか Voice Design か、モデル、速度、Stability、Style、Speaker Boost、出力形式（WAV → 48kHz/24bit）
-- 動画：ツール名、プラン、アバター方式、全設定値、使用した基本画像（`avatar_tests/base_stills/`）
+- 動画：Avatar方式、Avatar ID、Voice ID、Speed、Motion、Expression、Head Movement、Hand Movement、Eye Contact、Resolution、Aspect Ratio、生成日、プラン名（`avatar_tests/review/settings_log.md` の表）
 - 規約：`avatar_tests/review/commercial_terms_check.md` の確認日とURL
 
 ## API自動化に進む条件（指示書 §25）

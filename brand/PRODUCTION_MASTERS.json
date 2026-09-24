@@ -82,6 +82,45 @@
       "head_movement": "Minimal",
       "gesture": "Minimal",
       "eye_contact": "Camera"
+    },
+    "record_fields": [
+      "avatar_method",
+      "avatar_id",
+      "voice_id",
+      "speed",
+      "motion",
+      "expression",
+      "head_movement",
+      "hand_movement",
+      "eye_contact",
+      "resolution",
+      "aspect_ratio",
+      "generated_date",
+      "plan"
+    ],
+    "output": {
+      "subtitles": false,
+      "bgm": false,
+      "edit": false,
+      "resolution": "1080p以上",
+      "aspect_ratio": "16:9（Shorts用 AKARI_017・018 は 9:16）"
+    }
+  },
+  "heygen_avatars": {
+    "akari": {
+      "name": "AKARI_MASTER_v1",
+      "method": "Photo Avatar（または同等の画像から話すアバター）",
+      "image": "AKARI_TALKING_BASE_16x9_v1",
+      "avatar_id": null,
+      "status": "手動登録待ち"
+    },
+    "ooka_m": {
+      "name": "OOKA_M_MASTER_v1",
+      "method": "Photo Avatar（または同等の画像から話すアバター）",
+      "image": "OOKA_M_TALKING_BASE_16x9_v1",
+      "avatar_id": null,
+      "status": "手動登録待ち",
+      "note": "デジタルツイン（本人登録）ではない。本人の顔・声は使わない"
     }
   }
 }
