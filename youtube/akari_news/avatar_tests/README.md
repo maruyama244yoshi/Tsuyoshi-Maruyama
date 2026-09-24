@@ -1,56 +1,83 @@
-# 燈・大家M 自然動画テスト（指示書 2026-09-24 §9）
+# 燈・大家M 音声選定＋HeyGen/Hedra 比較テスト（指示書 2026-09-25）
 
-目的：燈と大家Mが「実写寄りのキャスターとして自然に話す」映像を作れるツールと方式を、10〜20秒のテスト動画で比較して決める。
+目的：燈と大家Mの正式な声と、自然に話す動画の方式を決める。
+進め方：**品質比較 → 方式決定 → 標準化 → API自動化**。今回は画面操作（UI）で作り、API自動化はしない（§24）。
 
 ## 進捗
 
 | 工程 | 状態 |
 |---|---|
-| 0. 基本画像 | ✅ 2026-09-24 受領（燈：正面・縦型・デスク／大家M：正面）→ `base_stills/*.png`。燈は仮採点24/25で採用（オーナー確認待ち）。大家Mは本人非類似の確認待ち |
-| 1. 声 | 未 |
-| 2. テスト動画 | 未 |
-| 3. 採点 | 未 |
+| 0. 基本画像 | ✅ 2026-09-24 受領 → `base_stills/`。燈は仮採点24/25で採用（オーナー確認待ち）。大家Mは本人非類似の確認待ち |
+| 1. 声の候補5本（燈3・大家M2） | 未着 → `voice_test/` |
+| 2. 声の採点・決定 | 未 → `review/voice_scores.csv` |
+| 3. 動画テスト（HeyGen/Hedra × 燈・大家M） | 未着 → `video_test/heygen/`・`video_test/hedra/` |
+| 4. 動画の採点・方式決定 | 未 → `review/video_scores.csv` |
+| 5. 規約確認 | 未 → `review/commercial_terms_check.md` |
+| 6. 正式決定の記録 | 未 → `brand/PRODUCTION_MASTERS.md` |
 
-## 手順
+## フォルダ
 
-### 0. 元になる高解像度の基本画像を作る
-今の基準画像（キャラクターボードからの切り抜き）は、顔が300〜400px程度で口パク動画には解像度が足りない。先に1枚作る。
+```
+avatar_tests/
+  base_stills/          基本画像（燈：正面・縦型・デスク／大家M：正面）
+  test_lines.json       音声テスト原稿・動画テスト原稿・ElevenLabs設定の目安・ファイル名
+  voice_test/           AKARI_VOICE_A/B/C.wav、M_VOICE_A/B.wav（WAVで。MP3経由は不可）
+    48k/                受け入れ後の48kHz版（audio_prepが作る）
+  video_test/heygen/    heygen_akari.mp4、heygen_ooka_m.mp4（任意：heygen_akari_vertical.mp4）
+  video_test/hedra/     hedra_akari.mp4、hedra_ooka_m.mp4（任意：hedra_akari_vertical.mp4）
+  review/
+    voice_scores.csv            声の採点（7項目×5点＝35点）
+    video_scores.csv            動画の採点（6項目×5点＝30点）
+    commercial_terms_check.md   規約の確認記録（確認日とURL）
+    settings_log.md             生成時の設定記録
+    compare_*.mp4 / .json       HeyGen と Hedra の並列比較（compare_video が作る）
+```
 
-- プロンプト：`base_stills/BASE_STILL_PROMPTS.md`（燈：正面胸上・縦型・デスク／大家M：正面）
-- 必ず基準画像（AKARI_REFERENCE_001）を画像参照に指定する
-- 採用条件：AKARI_MASTER §14 の一致度25点で **22点以上かつ顔一致4点以上**
-- 口は閉じ気味・正面・顔が均一に明るい（口パク動画にしやすい）こと
-- 大家Mは **本人に似ていないことを本人が確認** してから使う
+## 1. 声の候補を作る（ElevenLabs）
 
-### 1. 声を作る（両キャラ共通の音声を先に作る）
-- セリフ：`test_lines.json`
-- 同じ音声を各アバターツールに入れて比較する（ツールごとに声を変えると比較にならない）
-- 燈の声は女性。**男性の声を加工して代用しない**
+- 原稿：`test_lines.json` の `voice_test`（燈・大家Mとも**完全に同じ文章**で）
+- 設定の目安
+  - 燈：速度 0.88〜0.94／Stability 中（高すぎると棒読み）／Style 低〜中／Speaker Boost は自然さが良くなるときだけ ON
+  - 大家M：速度 0.92〜0.98／感情 低〜中
+  - モデルは Eleven v3 と Multilingual v2 を比べる
+- 禁止：本人や著名人に似せる、ボイスクローン
+- 書き出しは WAV。設定は `review/settings_log.md` に記録
 
-### 2. 各ツールでテスト動画を作る（音声駆動）
-- 入力：基本画像（手順0）＋音声（手順1）
-- 出力：mp4（音声入り）→ `results/<tool>_<character>.mp4` に保存
-- 各ツールの設定（動きの強さ・表情の強さ等）は「控えめ」側に寄せる
+受け入れ（48kHz / 24bit に統一、MP3は拒否、ラウドネス等を記録）：
 
-### 3. 採点（`AVATAR_TEST_SCORE_SHEET.csv`）
-6項目 × 5点 ＝ 30点満点。
+```bash
+python3 -m tools.akari_news.audio_prep youtube/akari_news/avatar_tests/voice_test/*.wav
+```
 
-| 項目 | 5点 | 3点 | 1点 |
-|---|---|---|---|
-| 1. 同一人物性 | 基準画像と並べて同一人物 | 似ているが別人の可能性 | 別人 |
-| 2. 自然な口の動き | 実写と区別しにくい | ときどき不自然 | 明らかにズレ・崩れ |
-| 3. 目線 | 安定・自然な瞬き | たまに泳ぐ／瞬きが機械的 | 泳ぐ・瞬きなし |
-| 4. 表情 | 内容に合わせて控えめに変化 | 硬い／やや大げさ | 無表情 or 過剰 |
-| 5. 日本語との一致 | 口の形が日本語の音と合う | 一部ズレ | 常にズレ |
-| 6. ニュース番組らしさ | そのまま番組に使える | 補助的なら使える | 使えない |
+## 2. 声を採点して決める（`review/voice_scores.csv`）
 
-判定：**24点以上＝採用候補／20〜23点＝保留／19点以下＝不採用**。
-追加の足切り（点数に関係なく不採用）：頭が揺れすぎる・手振りが大きい・商用利用不可・（大家M）本人に似ている。
+7項目×5点＝35点：人間らしさ／日本語のイントネーション／知性／柔らかさ／間／長時間聞けるか／見た目との一致。
+**28点以上が採用候補**。点数に関係なく不採用：アニメ声、男性っぽい燈、棒読み、不自然な日本語、本人の声に似た大家M、聞き疲れする声。
+決まったら `AKARI_VOICE_MASTER_v1`・`M_VOICE_MASTER_v1` として固定する。
 
-### 4. 方式を決める
-採用候補の中から、指示書 §8 の優先順（① 顔の同一性 → ② 口 → ③ 瞬き・視線 → ④ 日本語の同期 → ⑤ 頭の揺れ → ⑥ 商用利用 → ⑦ 制作時間 → ⑧ 費用）で1つに決める。
+## 3. 動画テストを作る（HeyGen / Hedra）
 
-## 決まったあと（第1回 第2稿）
-1. `python3 -m tools.akari_news.clips episode_001` の発注リスト（`episode_001/production/`）どおりに、本番音声と話しているカット24本を作る
-2. `clips/` と `voice/final/` に置く
-3. `timeline` → `video --bgm <BGM>` で第2稿が自動で組み上がる
+- **同じ音声（決まった声で作った動画テスト原稿）＋同じ基本画像**で、両ツールを作る（映像エンジンの差だけを比べる）
+- 原稿：`test_lines.json` の `video_test`（10〜20秒）
+- 設定はすべて控えめ：動き Subtle/Low、表情 Low、頭の動き Minimal、手の動き Minimal、視線はカメラ
+- 字幕・BGM・編集は付けない
+
+並列比較（尺と音声が同じかを自動チェック）：
+
+```bash
+python3 -m tools.akari_news.compare_video akari
+python3 -m tools.akari_news.compare_video ooka_m
+```
+
+## 4. 動画を採点して方式を決める（`review/video_scores.csv`）
+
+6項目×5点＝30点：同一人物性／口の自然さ／目線／表情／日本語との一致／ニュース番組らしさ。
+**24点以上＝採用候補、20〜23点＝保留、19点以下＝不採用**。
+点数に関係なく不採用：商用利用不可、燈が別人、大家Mが本人に似すぎ、頭が揺れすぎ、口が不自然、同期の大きなずれ、視線が頻繁に外れる、不自然な笑顔、不気味さ。
+「動かない」より「**動きすぎる**」ほうを強く警戒する。
+
+## 5. 決まったあと
+
+1. `brand/PRODUCTION_MASTERS.md` に AKARI_VOICE_MASTER_v1／M_VOICE_MASTER_v1／TALKING_VIDEO_ENGINE_v1／TALKING_VIDEO_SETTINGS_v1 を記録（以後は勝手に変えない。変更は v2 として比較テスト）
+2. 第1回の話しているカット24本＋本番音声を作る（発注リスト：`episode_001/production/`）
+3. `clips/` と `voice/final/` に置き、`timeline` → `video --bgm` で第2稿を組む

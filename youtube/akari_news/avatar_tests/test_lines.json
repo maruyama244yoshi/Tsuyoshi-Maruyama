@@ -1,16 +1,69 @@
 {
-  "akari": {
-    "id": "TEST_AKARI_01",
-    "text": "こんにちは、燈です。今日は、大家さんにとって気になる金利のニュースを見ていきます。",
-    "tts_reading": "こんにちは、あかりです。きょうは、おおやさんにとって気になる金利のニュースを見ていきます。",
-    "base_still": "AKARI_BASE_A_16x9",
-    "voice": "女性・20代後半〜30代前半・落ち着いた知的な声・ややゆっくり・ニュースキャスター調"
+  "voice_test": {
+    "akari": {
+      "ids": [
+        "AKARI_VOICE_A",
+        "AKARI_VOICE_B",
+        "AKARI_VOICE_C"
+      ],
+      "text": "こんにちは、燈です。\n今日は、大家さんにとって気になる金利のニュースを見ていきます。\n日銀が、政策金利にあたる短期金利の誘導目標を、1.25％程度へ引き上げました。\nただし。\nここで、金利が上がったから不動産投資は終わり、と考えるのは少し早いです。\nここが今日、一番お伝えしたいポイントです。",
+      "settings": {
+        "model": [
+          "Eleven v3",
+          "Multilingual v2"
+        ],
+        "speed": "0.88〜0.94",
+        "stability": "中",
+        "style": "低〜中",
+        "speaker_boost": "自然さが改善する場合のみON"
+      },
+      "reading_notes": "「燈」は「あかり」と読ませる。読み違える場合は、読み上げ用の文章だけ「あかり」とひらがなにする（字幕は「燈」のまま）"
+    },
+    "ooka_m": {
+      "ids": [
+        "M_VOICE_A",
+        "M_VOICE_B"
+      ],
+      "text": "私は、金利が上がったからすぐに買わない、とは考えません。\nまず見るのは、その金利でもキャッシュフローが残るかどうかです。\nさらに0.5％上がったらどうなるのか。\nそこまで計算してから判断しますね。",
+      "settings": {
+        "model": [
+          "Eleven v3",
+          "Multilingual v2"
+        ],
+        "speed": "0.92〜0.98",
+        "stability": "中",
+        "style": "低〜中"
+      }
+    }
   },
-  "ooka_m": {
-    "id": "TEST_OOKA_M_01",
-    "text": "私は、金利が上がったからすぐに買わない、とは考えません。まずは数字を見ます。",
-    "tts_reading": "わたしは、金利が上がったからすぐに買わない、とは考えません。まずは数字を見ます。",
-    "base_still": "OOKA_M_BASE_A_16x9",
-    "voice": "男性・40代・落ち着いた・少し会話的・押しつけない（本人の声は使わない）"
+  "video_test": {
+    "akari": {
+      "text": "こんにちは、燈です。今日は、大家さんにとって気になる金利のニュースを見ていきます。",
+      "image": "base_stills/AKARI_BASE_A_16x9.png",
+      "image_vertical": "base_stills/AKARI_BASE_E_9x16.png",
+      "voice": "AKARI_VOICE_MASTER_v1（音声選定で決まった声）"
+    },
+    "ooka_m": {
+      "text": "私は、金利が上がったからすぐに買わない、とは考えません。まずは数字を見ます。",
+      "image": "base_stills/OOKA_M_BASE_A_16x9.png",
+      "voice": "M_VOICE_MASTER_v1（音声選定で決まった声）"
+    }
+  },
+  "file_names": {
+    "voice": [
+      "voice_test/AKARI_VOICE_A.wav",
+      "voice_test/AKARI_VOICE_B.wav",
+      "voice_test/AKARI_VOICE_C.wav",
+      "voice_test/M_VOICE_A.wav",
+      "voice_test/M_VOICE_B.wav"
+    ],
+    "video": [
+      "video_test/heygen/heygen_akari.mp4",
+      "video_test/heygen/heygen_ooka_m.mp4",
+      "video_test/hedra/hedra_akari.mp4",
+      "video_test/hedra/hedra_ooka_m.mp4",
+      "video_test/heygen/heygen_akari_vertical.mp4（任意）",
+      "video_test/hedra/hedra_akari_vertical.mp4（任意）"
+    ]
   }
 }

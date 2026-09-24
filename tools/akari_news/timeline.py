@@ -42,9 +42,11 @@ def synth(text, speaker, out: Path):
 
 
 def read_wav(p):
-    with wave.open(str(p)) as w:
-        assert w.getframerate() == SR and w.getsampwidth() == 2
-        return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
+    """任意の音声ファイル（16/24bit WAV・任意サンプルレート）を 48kHz モノラル float で読む。"""
+    from .video import ffmpeg
+    raw = subprocess.run([ffmpeg(), "-hide_banner", "-loglevel", "error", "-i", str(p), "-ac", "1", "-ar", str(SR),
+                          "-af", "aresample=resampler=soxr", "-f", "f32le", "-"], capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.float32).copy()
 
 
 def write_wav(p, x):

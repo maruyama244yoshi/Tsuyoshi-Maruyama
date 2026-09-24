@@ -1,0 +1,6 @@
+voice_id,character,voice_name(ElevenLabs),library_or_voice_design,model,speed,stability,style,speaker_boost,human_likeness(1-5),intonation(1-5),intelligence(1-5),softness(1-5),pacing(1-5),long_listening(1-5),matches_look(1-5),total(/35),auto_reject(anime/male-ish/monotone/unnatural/resembles_owner/fatiguing),decision,reviewer,date,notes
+AKARI_VOICE_A,akari,,,,,,,,,,,,,,,,,,,,
+AKARI_VOICE_B,akari,,,,,,,,,,,,,,,,,,,,
+AKARI_VOICE_C,akari,,,,,,,,,,,,,,,,,,,,
+M_VOICE_A,ooka_m,,,,,,,,,,,,,,,,,,,,
+M_VOICE_B,ooka_m,,,,,,,,,,,,,,,,,,,,

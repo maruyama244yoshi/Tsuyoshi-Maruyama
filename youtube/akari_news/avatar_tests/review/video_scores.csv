@@ -1,0 +1,5 @@
+tool,character,file,voice_master,image,settings(motion/expression/head/gesture/eye),identity,lip_sync,eye_contact,expression,japanese_sync,news_quality,total,decision,auto_reject(commercial/identity/resembles_owner/head_motion/mouth/sync/gaze/smile/uncanny),notes
+heygen,akari,video_test/heygen/heygen_akari.mp4,AKARI_VOICE_MASTER_v1,base_stills/AKARI_BASE_A_16x9.png,,,,,,,,,,,
+hedra,akari,video_test/hedra/hedra_akari.mp4,AKARI_VOICE_MASTER_v1,base_stills/AKARI_BASE_A_16x9.png,,,,,,,,,,,
+heygen,ooka_m,video_test/heygen/heygen_ooka_m.mp4,M_VOICE_MASTER_v1,base_stills/OOKA_M_BASE_A_16x9.png,,,,,,,,,,,
+hedra,ooka_m,video_test/hedra/hedra_ooka_m.mp4,M_VOICE_MASTER_v1,base_stills/OOKA_M_BASE_A_16x9.png,,,,,,,,,,,

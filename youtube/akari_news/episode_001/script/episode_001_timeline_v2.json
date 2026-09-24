@@ -2,11 +2,10 @@
   "episode": "episode_001",
   "kind": "long",
   "version": "v2",
-  "duration": 313.82,
+  "duration": 313.815,
   "audio": "voice/episode_001_mix_v2.wav",
   "audio_sources": {
-    "guide": 37,
-    "clip": 1
+    "guide": 38
   },
   "shots": [
     {
@@ -32,11 +31,11 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "今日、大家さんにとってかなり重要な変化が始まりました。",
-      "audio_source": "clip",
-      "clip": "clips/S01_01_akari.mp4",
+      "audio_source": "guide",
+      "clip": null,
       "start": 3.385,
-      "end": 7.63,
-      "display_end": 8.03
+      "end": 7.625,
+      "display_end": 8.025
     },
     {
       "scene": "S01",
@@ -48,9 +47,9 @@
       "text": "日銀の政策金利が、1.25％程度へ引き上げられました。",
       "audio_source": "guide",
       "clip": null,
-      "start": 8.03,
-      "end": 13.05,
-      "display_end": 13.45
+      "start": 8.025,
+      "end": 13.045,
+      "display_end": 13.445
     },
     {
       "scene": "S01",
@@ -62,9 +61,9 @@
       "text": "では、不動産投資はこれから厳しくなるのでしょうか。",
       "audio_source": "guide",
       "clip": null,
-      "start": 13.45,
-      "end": 17.39,
-      "display_end": 17.79
+      "start": 13.445,
+      "end": 17.385,
+      "display_end": 17.785
     },
     {
       "scene": "S01",
@@ -76,9 +75,9 @@
       "text": "今日は、大家が見るべき3つの数字に絞って解説します。",
       "audio_source": "guide",
       "clip": null,
-      "start": 17.79,
-      "end": 22.2,
-      "display_end": 22.95
+      "start": 17.785,
+      "end": 22.195,
+      "display_end": 22.945
     },
     {
       "scene": "S02",
@@ -90,9 +89,9 @@
       "text": "日本銀行は9月18日の金融政策決定会合で、無担保コールレート、オーバーナイト物を1.25％程度で推移するよう促すことを決定しました。",
       "audio_source": "guide",
       "clip": null,
-      "start": 22.95,
-      "end": 41.56,
-      "display_end": 41.96
+      "start": 22.945,
+      "end": 41.555,
+      "display_end": 41.955
     },
     {
       "scene": "S02",
@@ -104,9 +103,9 @@
       "text": "それまでの1.0％程度から、0.25ポイントの引き上げです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 41.96,
-      "end": 47.005,
-      "display_end": 47.405
+      "start": 41.955,
+      "end": 47.0,
+      "display_end": 47.4
     },
     {
       "scene": "S02",
@@ -118,9 +117,9 @@
       "text": "新しい金利水準は、9月24日から適用されます。",
       "audio_source": "guide",
       "clip": null,
-      "start": 47.405,
-      "end": 52.11,
-      "display_end": 52.86
+      "start": 47.4,
+      "end": 52.105,
+      "display_end": 52.855
     },
     {
       "scene": "S03",
@@ -132,9 +131,9 @@
       "text": "ただし、ここはとても大切です。",
       "audio_source": "guide",
       "clip": null,
-      "start": 52.86,
-      "end": 55.825,
-      "display_end": 56.225
+      "start": 52.855,
+      "end": 55.82,
+      "display_end": 56.22
     },
     {
       "scene": "S03",
@@ -146,9 +145,9 @@
       "text": "日銀の政策金利が0.25ポイント上がったからといって、大家さんが借りている不動産融資の金利が、その日に一律0.25ポイント上がるわけではありません。",
       "audio_source": "guide",
       "clip": null,
-      "start": 56.225,
-      "end": 66.74,
-      "display_end": 67.14
+      "start": 56.22,
+      "end": 66.735,
+      "display_end": 67.135
     },
     {
       "scene": "S03",
@@ -160,9 +159,9 @@
       "text": "金融機関、商品、固定か変動か、金利の見直し条件によって影響は違います。",
       "audio_source": "guide",
       "clip": null,
-      "start": 67.14,
-      "end": 73.88,
-      "display_end": 74.28
+      "start": 67.135,
+      "end": 73.875,
+      "display_end": 74.275
     },
     {
       "scene": "S03",
@@ -174,9 +173,9 @@
       "text": "ですから大家が見るべきなのは、ニュースの金利そのものではありません。自分の借入に、いくら影響するのか。ここです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 74.28,
-      "end": 83.94,
-      "display_end": 84.69
+      "start": 74.275,
+      "end": 83.935,
+      "display_end": 84.685
     },
     {
       "scene": "S04",
@@ -188,9 +187,9 @@
       "text": "例えば、1億円を30年間、元利均等返済で借りたケースを考えてみます。",
       "audio_source": "guide",
       "clip": null,
-      "start": 84.69,
-      "end": 90.965,
-      "display_end": 91.365
+      "start": 84.685,
+      "end": 90.96,
+      "display_end": 91.36
     },
     {
       "scene": "S04",
@@ -202,9 +201,9 @@
       "text": "仮に借入金利が2.00％なら、年間返済額はおよそ444万円です。これが2.25％になると、およそ459万円。",
       "audio_source": "guide",
       "clip": null,
-      "start": 91.365,
-      "end": 102.93,
-      "display_end": 103.33
+      "start": 91.36,
+      "end": 102.925,
+      "display_end": 103.325
     },
     {
       "scene": "S04",
@@ -216,9 +215,9 @@
       "text": "0.25ポイントの上昇で、年間約15万円、返済負担が増えます。",
       "audio_source": "guide",
       "clip": null,
-      "start": 103.33,
-      "end": 109.225,
-      "display_end": 109.625
+      "start": 103.325,
+      "end": 109.22,
+      "display_end": 109.62
     },
     {
       "scene": "S04",
@@ -230,9 +229,9 @@
       "text": "1億円だけなら15万円でも、借入額が数億円になれば影響も大きくなります。",
       "audio_source": "guide",
       "clip": null,
-      "start": 109.625,
-      "end": 115.74,
-      "display_end": 116.14
+      "start": 109.62,
+      "end": 115.735,
+      "display_end": 116.135
     },
     {
       "scene": "S04",
@@ -244,9 +243,9 @@
       "text": "大切なのは、金利が上がったというニュースではなく、自分の年間返済額がいくら増えるかです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 116.14,
-      "end": 122.72,
-      "display_end": 123.47
+      "start": 116.135,
+      "end": 122.715,
+      "display_end": 123.465
     },
     {
       "scene": "S05",
@@ -258,9 +257,9 @@
       "text": "2つ目は、返済比率です。",
       "audio_source": "guide",
       "clip": null,
-      "start": 123.47,
-      "end": 126.16,
-      "display_end": 126.56
+      "start": 123.465,
+      "end": 126.155,
+      "display_end": 126.555
     },
     {
       "scene": "S05",
@@ -272,9 +271,9 @@
       "text": "家賃収入が同じままで返済額だけが増えれば、当然、経営の余力は小さくなります。",
       "audio_source": "guide",
       "clip": null,
-      "start": 126.56,
-      "end": 133.4,
-      "display_end": 133.8
+      "start": 126.555,
+      "end": 133.395,
+      "display_end": 133.795
     },
     {
       "scene": "S05",
@@ -286,9 +285,9 @@
       "text": "さらに今は、金利だけを見るわけにはいきません。修繕費、人件費、設備費なども上昇しています。",
       "audio_source": "guide",
       "clip": null,
-      "start": 133.8,
-      "end": 142.075,
-      "display_end": 142.475
+      "start": 133.795,
+      "end": 142.07,
+      "display_end": 142.47
     },
     {
       "scene": "S05",
@@ -300,9 +299,9 @@
       "text": "金利上昇と経費上昇が同時に起きたとき、物件にどれだけ余力が残っているのか。ここを確認する必要があります。",
       "audio_source": "guide",
       "clip": null,
-      "start": 142.475,
-      "end": 151.475,
-      "display_end": 152.225
+      "start": 142.47,
+      "end": 151.47,
+      "display_end": 152.22
     },
     {
       "scene": "S06",
@@ -314,9 +313,9 @@
       "text": "そして3つ目が、DSCRです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 152.225,
-      "end": 155.395,
-      "display_end": 155.795
+      "start": 152.22,
+      "end": 155.39,
+      "display_end": 155.79
     },
     {
       "scene": "S06",
@@ -328,9 +327,9 @@
       "text": "簡単に言えば、物件が生み出す利益で、借入返済をどれだけ余裕を持って支払えるかを見る数字です。",
       "audio_source": "guide",
       "clip": null,
-      "start": 155.795,
-      "end": 166.53,
-      "display_end": 166.93
+      "start": 155.79,
+      "end": 166.525,
+      "display_end": 166.925
     },
     {
       "scene": "S06",
@@ -342,9 +341,9 @@
       "text": "金利上昇局面では、表面利回りだけを見ていても分かりません。",
       "audio_source": "guide",
       "clip": null,
-      "start": 166.93,
-      "end": 171.79,
-      "display_end": 172.19
+      "start": 166.925,
+      "end": 171.785,
+      "display_end": 172.185
     },
     {
       "scene": "S06",
@@ -356,9 +355,9 @@
       "text": "金利がもう少し上がった場合でも返済できるか。ストレスをかけて確認しておくことが重要になります。",
       "audio_source": "guide",
       "clip": null,
-      "start": 172.19,
-      "end": 182.68,
-      "display_end": 183.43
+      "start": 172.185,
+      "end": 182.675,
+      "display_end": 183.425
     },
     {
       "scene": "S07",
@@ -370,9 +369,9 @@
       "text": "では、現役会社員大家Mさんは、この利上げをどう見ているのでしょうか。",
       "audio_source": "guide",
       "clip": null,
-      "start": 183.43,
-      "end": 188.735,
-      "display_end": 189.135
+      "start": 183.425,
+      "end": 188.73,
+      "display_end": 189.13
     },
     {
       "scene": "S07",
@@ -384,9 +383,9 @@
       "text": "私なら、まず金利が上がったから買わないとは考えません。見るのは、金利が上がってもキャッシュフローが残る物件なのかどうかですね。",
       "audio_source": "guide",
       "clip": null,
-      "start": 189.135,
-      "end": 198.835,
-      "display_end": 199.235
+      "start": 189.13,
+      "end": 198.83,
+      "display_end": 199.23
     },
     {
       "scene": "S07",
@@ -398,9 +397,9 @@
       "text": "特にこれから買う物件なら、現在の金利だけではなく、さらに0.5％、1％上がったケースも計算しておきたいです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 199.235,
-      "end": 208.585,
-      "display_end": 208.985
+      "start": 199.23,
+      "end": 208.58,
+      "display_end": 208.98
     },
     {
       "scene": "S07",
@@ -412,9 +411,9 @@
       "text": "それでも返済できるのか。DSCRがどこまで下がるのか。返済比率がどこまで上がるのか。そこまで見てから判断します。",
       "audio_source": "guide",
       "clip": null,
-      "start": 208.985,
-      "end": 219.875,
-      "display_end": 220.275
+      "start": 208.98,
+      "end": 219.87,
+      "display_end": 220.27
     },
     {
       "scene": "S07",
@@ -426,9 +425,9 @@
       "text": "それと、同じ価格の物件でも、融資期間が取れるかどうかでキャッシュフローはかなり変わります。ですから今後は、物件選びと金融機関選びをセットで考えることが、以前より重要になると思います。",
       "audio_source": "guide",
       "clip": null,
-      "start": 220.275,
-      "end": 234.7,
-      "display_end": 237.45
+      "start": 220.27,
+      "end": 234.695,
+      "display_end": 237.445
     },
     {
       "scene": "S08",
@@ -440,9 +439,9 @@
       "text": "今日の大家の一手です。",
       "audio_source": "guide",
       "clip": null,
-      "start": 237.45,
-      "end": 239.51,
-      "display_end": 239.91
+      "start": 237.445,
+      "end": 239.505,
+      "display_end": 239.905
     },
     {
       "scene": "S08",
@@ -454,9 +453,9 @@
       "text": "保有物件と購入候補について、現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。まずはこれです。",
       "audio_source": "guide",
       "clip": null,
-      "start": 239.91,
-      "end": 251.855,
-      "display_end": 252.255
+      "start": 239.905,
+      "end": 251.85,
+      "display_end": 252.25
     },
     {
       "scene": "S08",
@@ -468,9 +467,9 @@
       "text": "金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
       "audio_source": "guide",
       "clip": null,
-      "start": 252.255,
-      "end": 257.425,
-      "display_end": 258.175
+      "start": 252.25,
+      "end": 257.42,
+      "display_end": 258.17
     },
     {
       "scene": "S09",
@@ -482,9 +481,9 @@
       "text": "今日のポイントを整理します。",
       "audio_source": "guide",
       "clip": null,
-      "start": 258.175,
-      "end": 260.54,
-      "display_end": 260.94
+      "start": 258.17,
+      "end": 260.535,
+      "display_end": 260.935
     },
     {
       "scene": "S09",
@@ -496,9 +495,9 @@
       "text": "今回、日銀は政策金利を1.25％程度へ引き上げました。ただ、大家さんが見るべき数字は3つです。年間返済額。返済比率。DSCR。",
       "audio_source": "guide",
       "clip": null,
-      "start": 260.94,
-      "end": 275.675,
-      "display_end": 276.075
+      "start": 260.935,
+      "end": 275.67,
+      "display_end": 276.07
     },
     {
       "scene": "S09",
@@ -510,9 +509,9 @@
       "text": "そして日銀は、足元の金融環境について、金融機関の貸出態度は引き続き積極的との見方も示しています。ですから、今回の利上げだけを見て、融資が止まると決めつけるのも早いでしょう。",
       "audio_source": "guide",
       "clip": null,
-      "start": 276.075,
-      "end": 290.5,
-      "display_end": 291.25
+      "start": 276.07,
+      "end": 290.495,
+      "display_end": 291.245
     },
     {
       "scene": "S10",
@@ -524,9 +523,9 @@
       "text": "ニュースを知るだけで終わらず、大家としてどう考えるか。燈の不動産ニュースでは、これからも不動産の最新ニュースを、大家の経営目線で分かりやすくお届けします。",
       "audio_source": "guide",
       "clip": null,
-      "start": 291.25,
-      "end": 302.835,
-      "display_end": 303.235
+      "start": 291.245,
+      "end": 302.83,
+      "display_end": 303.23
     },
     {
       "scene": "S10",
@@ -538,9 +537,9 @@
       "text": "よければチャンネル登録をお願いします。それでは、また次のニュースでお会いしましょう。燈でした。",
       "audio_source": "guide",
       "clip": null,
-      "start": 303.235,
-      "end": 311.32,
-      "display_end": 311.72
+      "start": 303.23,
+      "end": 311.315,
+      "display_end": 311.715
     }
   ],
   "cues": [
@@ -554,39 +553,39 @@
     },
     {
       "start": 3.385,
-      "end": 7.63,
+      "end": 7.625,
       "speaker": "akari",
       "lines": [
         "今日、大家さんにとってかなり重要な変化が始まりました。"
       ]
     },
     {
-      "start": 8.03,
-      "end": 13.05,
+      "start": 8.025,
+      "end": 13.045,
       "speaker": "akari",
       "lines": [
         "日銀の政策金利が、1.25％程度へ引き上げられました。"
       ]
     },
     {
-      "start": 13.45,
-      "end": 17.39,
+      "start": 13.445,
+      "end": 17.385,
       "speaker": "akari",
       "lines": [
         "では、不動産投資はこれから厳しくなるのでしょうか。"
       ]
     },
     {
-      "start": 17.79,
-      "end": 22.2,
+      "start": 17.785,
+      "end": 22.195,
       "speaker": "akari",
       "lines": [
         "今日は、大家が見るべき3つの数字に絞って解説します。"
       ]
     },
     {
-      "start": 22.95,
-      "end": 31.691,
+      "start": 22.945,
+      "end": 31.686,
       "speaker": "akari",
       "lines": [
         "日本銀行は9月18日の金融政策決定会合で、",
@@ -594,8 +593,8 @@
       ]
     },
     {
-      "start": 31.691,
-      "end": 41.56,
+      "start": 31.686,
+      "end": 41.555,
       "speaker": "akari",
       "lines": [
         "オーバーナイト物を1.25％程度で",
@@ -603,8 +602,8 @@
       ]
     },
     {
-      "start": 41.96,
-      "end": 47.005,
+      "start": 41.955,
+      "end": 47.0,
       "speaker": "akari",
       "lines": [
         "それまでの1.0％程度から、",
@@ -612,24 +611,24 @@
       ]
     },
     {
-      "start": 47.405,
-      "end": 52.11,
+      "start": 47.4,
+      "end": 52.105,
       "speaker": "akari",
       "lines": [
         "新しい金利水準は、9月24日から適用されます。"
       ]
     },
     {
-      "start": 52.86,
-      "end": 55.825,
+      "start": 52.855,
+      "end": 55.82,
       "speaker": "akari",
       "lines": [
         "ただし、ここはとても大切です。"
       ]
     },
     {
-      "start": 56.225,
-      "end": 60.772,
+      "start": 56.22,
+      "end": 60.767,
       "speaker": "akari",
       "lines": [
         "日銀の政策金利が",
@@ -637,8 +636,8 @@
       ]
     },
     {
-      "start": 60.772,
-      "end": 66.74,
+      "start": 60.767,
+      "end": 66.735,
       "speaker": "akari",
       "lines": [
         "借りている不動産融資の金利が、その日に",
@@ -646,8 +645,8 @@
       ]
     },
     {
-      "start": 67.14,
-      "end": 73.88,
+      "start": 67.135,
+      "end": 73.875,
       "speaker": "akari",
       "lines": [
         "金融機関、商品、固定か変動か、",
@@ -655,8 +654,8 @@
       ]
     },
     {
-      "start": 74.28,
-      "end": 78.895,
+      "start": 74.275,
+      "end": 78.89,
       "speaker": "akari",
       "lines": [
         "ですから大家が見るべきなのは、",
@@ -664,24 +663,24 @@
       ]
     },
     {
-      "start": 79.145,
-      "end": 82.395,
+      "start": 79.14,
+      "end": 82.39,
       "speaker": "akari",
       "lines": [
         "自分の借入に、いくら影響するのか。"
       ]
     },
     {
-      "start": 82.645,
-      "end": 83.94,
+      "start": 82.64,
+      "end": 83.935,
       "speaker": "akari",
       "lines": [
         "ここです。"
       ]
     },
     {
-      "start": 84.69,
-      "end": 90.965,
+      "start": 84.685,
+      "end": 90.96,
       "speaker": "akari",
       "lines": [
         "例えば、1億円を30年間、",
@@ -689,8 +688,8 @@
       ]
     },
     {
-      "start": 91.365,
-      "end": 98.1,
+      "start": 91.36,
+      "end": 98.095,
       "speaker": "akari",
       "lines": [
         "仮に借入金利が2.00％なら、",
@@ -698,16 +697,16 @@
       ]
     },
     {
-      "start": 98.35,
-      "end": 102.93,
+      "start": 98.345,
+      "end": 102.925,
       "speaker": "akari",
       "lines": [
         "これが2.25％になると、およそ459万円。"
       ]
     },
     {
-      "start": 103.33,
-      "end": 109.225,
+      "start": 103.325,
+      "end": 109.22,
       "speaker": "akari",
       "lines": [
         "0.25ポイントの上昇で、",
@@ -715,8 +714,8 @@
       ]
     },
     {
-      "start": 109.625,
-      "end": 115.74,
+      "start": 109.62,
+      "end": 115.735,
       "speaker": "akari",
       "lines": [
         "1億円だけなら15万円でも、借入額が",
@@ -724,8 +723,8 @@
       ]
     },
     {
-      "start": 116.14,
-      "end": 122.72,
+      "start": 116.135,
+      "end": 122.715,
       "speaker": "akari",
       "lines": [
         "大切なのは、金利が上がったというニュースではなく、",
@@ -733,16 +732,16 @@
       ]
     },
     {
-      "start": 123.47,
-      "end": 126.16,
+      "start": 123.465,
+      "end": 126.155,
       "speaker": "akari",
       "lines": [
         "2つ目は、返済比率です。"
       ]
     },
     {
-      "start": 126.56,
-      "end": 133.4,
+      "start": 126.555,
+      "end": 133.395,
       "speaker": "akari",
       "lines": [
         "家賃収入が同じままで返済額だけが増えれば、",
@@ -750,24 +749,24 @@
       ]
     },
     {
-      "start": 133.8,
-      "end": 137.4,
+      "start": 133.795,
+      "end": 137.395,
       "speaker": "akari",
       "lines": [
         "さらに今は、金利だけを見るわけにはいきません。"
       ]
     },
     {
-      "start": 137.65,
-      "end": 142.075,
+      "start": 137.645,
+      "end": 142.07,
       "speaker": "akari",
       "lines": [
         "修繕費、人件費、設備費なども上昇しています。"
       ]
     },
     {
-      "start": 142.475,
-      "end": 148.495,
+      "start": 142.47,
+      "end": 148.49,
       "speaker": "akari",
       "lines": [
         "金利上昇と経費上昇が同時に起きたとき、",
@@ -775,24 +774,24 @@
       ]
     },
     {
-      "start": 148.745,
-      "end": 151.475,
+      "start": 148.74,
+      "end": 151.47,
       "speaker": "akari",
       "lines": [
         "ここを確認する必要があります。"
       ]
     },
     {
-      "start": 152.225,
-      "end": 155.395,
+      "start": 152.22,
+      "end": 155.39,
       "speaker": "akari",
       "lines": [
         "そして3つ目が、DSCRです。"
       ]
     },
     {
-      "start": 155.795,
-      "end": 166.53,
+      "start": 155.79,
+      "end": 166.525,
       "speaker": "akari",
       "lines": [
         "簡単に言えば、物件が生み出す利益で、借入返済を",
@@ -800,8 +799,8 @@
       ]
     },
     {
-      "start": 166.93,
-      "end": 171.79,
+      "start": 166.925,
+      "end": 171.785,
       "speaker": "akari",
       "lines": [
         "金利上昇局面では、",
@@ -809,24 +808,24 @@
       ]
     },
     {
-      "start": 172.19,
-      "end": 175.655,
+      "start": 172.185,
+      "end": 175.65,
       "speaker": "akari",
       "lines": [
         "金利がもう少し上がった場合でも返済できるか。"
       ]
     },
     {
-      "start": 175.905,
-      "end": 182.68,
+      "start": 175.9,
+      "end": 182.675,
       "speaker": "akari",
       "lines": [
         "ストレスをかけて確認しておくことが重要になります。"
       ]
     },
     {
-      "start": 183.43,
-      "end": 188.735,
+      "start": 183.425,
+      "end": 188.73,
       "speaker": "akari",
       "lines": [
         "では、現役会社員大家Mさんは、",
@@ -834,16 +833,16 @@
       ]
     },
     {
-      "start": 189.135,
-      "end": 193.63,
+      "start": 189.13,
+      "end": 193.625,
       "speaker": "ooka_m",
       "lines": [
         "私なら、まず金利が上がったから買わないとは考えません。"
       ]
     },
     {
-      "start": 193.88,
-      "end": 198.835,
+      "start": 193.875,
+      "end": 198.83,
       "speaker": "ooka_m",
       "lines": [
         "見るのは、金利が上がってもキャッシュフローが",
@@ -851,8 +850,8 @@
       ]
     },
     {
-      "start": 199.235,
-      "end": 208.585,
+      "start": 199.23,
+      "end": 208.58,
       "speaker": "ooka_m",
       "lines": [
         "特にこれから買う物件なら、現在の金利だけではなく、さらに",
@@ -860,40 +859,40 @@
       ]
     },
     {
-      "start": 208.985,
-      "end": 211.185,
+      "start": 208.98,
+      "end": 211.18,
       "speaker": "ooka_m",
       "lines": [
         "それでも返済できるのか。"
       ]
     },
     {
-      "start": 211.435,
-      "end": 214.25,
+      "start": 211.43,
+      "end": 214.245,
       "speaker": "ooka_m",
       "lines": [
         "DSCRがどこまで下がるのか。"
       ]
     },
     {
-      "start": 214.5,
-      "end": 217.11,
+      "start": 214.495,
+      "end": 217.105,
       "speaker": "ooka_m",
       "lines": [
         "返済比率がどこまで上がるのか。"
       ]
     },
     {
-      "start": 217.36,
-      "end": 219.875,
+      "start": 217.355,
+      "end": 219.87,
       "speaker": "ooka_m",
       "lines": [
         "そこまで見てから判断します。"
       ]
     },
     {
-      "start": 220.275,
-      "end": 226.84,
+      "start": 220.27,
+      "end": 226.835,
       "speaker": "ooka_m",
       "lines": [
         "それと、同じ価格の物件でも、融資期間が",
@@ -901,8 +900,8 @@
       ]
     },
     {
-      "start": 227.09,
-      "end": 234.7,
+      "start": 227.085,
+      "end": 234.695,
       "speaker": "ooka_m",
       "lines": [
         "ですから今後は、物件選びと金融機関選びをセットで",
@@ -910,16 +909,16 @@
       ]
     },
     {
-      "start": 237.45,
-      "end": 239.51,
+      "start": 237.445,
+      "end": 239.505,
       "speaker": "ooka_m",
       "lines": [
         "今日の大家の一手です。"
       ]
     },
     {
-      "start": 239.91,
-      "end": 249.905,
+      "start": 239.905,
+      "end": 249.9,
       "speaker": "ooka_m",
       "lines": [
         "保有物件と購入候補について、現在金利、プラス0.5％、",
@@ -927,16 +926,16 @@
       ]
     },
     {
-      "start": 250.155,
-      "end": 251.855,
+      "start": 250.15,
+      "end": 251.85,
       "speaker": "ooka_m",
       "lines": [
         "まずはこれです。"
       ]
     },
     {
-      "start": 252.255,
-      "end": 257.425,
+      "start": 252.25,
+      "end": 257.42,
       "speaker": "ooka_m",
       "lines": [
         "金利を予想するより、上がっても",
@@ -944,56 +943,56 @@
       ]
     },
     {
-      "start": 258.175,
-      "end": 260.54,
+      "start": 258.17,
+      "end": 260.535,
       "speaker": "akari",
       "lines": [
         "今日のポイントを整理します。"
       ]
     },
     {
-      "start": 260.94,
-      "end": 266.31,
+      "start": 260.935,
+      "end": 266.305,
       "speaker": "akari",
       "lines": [
         "今回、日銀は政策金利を1.25％程度へ引き上げました。"
       ]
     },
     {
-      "start": 266.56,
-      "end": 269.97,
+      "start": 266.555,
+      "end": 269.965,
       "speaker": "akari",
       "lines": [
         "ただ、大家さんが見るべき数字は3つです。"
       ]
     },
     {
-      "start": 270.22,
-      "end": 272.05,
+      "start": 270.215,
+      "end": 272.045,
       "speaker": "akari",
       "lines": [
         "年間返済額。"
       ]
     },
     {
-      "start": 272.3,
-      "end": 273.77,
+      "start": 272.295,
+      "end": 273.765,
       "speaker": "akari",
       "lines": [
         "返済比率。"
       ]
     },
     {
-      "start": 274.02,
-      "end": 275.675,
+      "start": 274.015,
+      "end": 275.67,
       "speaker": "akari",
       "lines": [
         "DSCR。"
       ]
     },
     {
-      "start": 276.075,
-      "end": 284.705,
+      "start": 276.07,
+      "end": 284.7,
       "speaker": "akari",
       "lines": [
         "そして日銀は、足元の金融環境について、",
@@ -1001,8 +1000,8 @@
       ]
     },
     {
-      "start": 284.955,
-      "end": 290.5,
+      "start": 284.95,
+      "end": 290.495,
       "speaker": "akari",
       "lines": [
         "ですから、今回の利上げだけを見て、",
@@ -1010,16 +1009,16 @@
       ]
     },
     {
-      "start": 291.25,
-      "end": 295.08,
+      "start": 291.245,
+      "end": 295.075,
       "speaker": "akari",
       "lines": [
         "ニュースを知るだけで終わらず、大家としてどう考えるか。"
       ]
     },
     {
-      "start": 295.33,
-      "end": 302.835,
+      "start": 295.325,
+      "end": 302.83,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでは、これからも不動産の最新ニュースを、",
@@ -1027,24 +1026,24 @@
       ]
     },
     {
-      "start": 303.235,
-      "end": 306.125,
+      "start": 303.23,
+      "end": 306.12,
       "speaker": "akari",
       "lines": [
         "よければチャンネル登録をお願いします。"
       ]
     },
     {
-      "start": 306.375,
-      "end": 309.625,
+      "start": 306.37,
+      "end": 309.62,
       "speaker": "akari",
       "lines": [
         "それでは、また次のニュースでお会いしましょう。"
       ]
     },
     {
-      "start": 309.875,
-      "end": 311.32,
+      "start": 309.87,
+      "end": 311.315,
       "speaker": "akari",
       "lines": [
         "燈でした。"
@@ -1054,15 +1053,15 @@
   "events": [
     {
       "type": "jingle",
-      "start": 235.45033333333345,
-      "end": 237.45033333333345,
+      "start": 235.4450000000001,
+      "end": 237.4450000000001,
       "visual": "gfx:G09_ippo_card",
       "scene": "S08"
     },
     {
       "type": "outro",
-      "start": 311.72,
-      "end": 313.82,
+      "start": 311.715,
+      "end": 313.815,
       "visual": "gfx:G11_ending",
       "scene": "OUTRO"
     }
