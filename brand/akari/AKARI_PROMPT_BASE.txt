@@ -1,0 +1,14 @@
+# GENERATED from brand/akari/prompts/ by tools/akari_news/prompt_builder.py — 直接編集しない（編集は prompts/*.txt）
+# 既定の組み合わせ: AKARI_OUTFIT_01 + AKARI_FACE_01 + AKARI_CAMERA_01 + AKARI_STUDIO_01 + AKARI_LIGHTING
+
+Japanese female AI news anchor named Akari, late twenties to early thirties appearance, elegant and intelligent, warm and trustworthy, polished but approachable, natural Japanese facial features, refined beauty without looking like a fashion model or idol, calm confident presence, professional real-estate and financial news presenter, realistic human appearance, consistent identity across all images. Face: soft oval face, balanced facial proportions, gentle intelligent eyes, natural dark brown eyes, subtle double eyelids, straight natural eyebrows, small refined nose, natural soft lips, warm subtle smile, clear natural skin, realistic skin texture, no excessive retouching. Hair: dark brown semi-long hair, shoulder to upper-chest length, soft natural inward curl or very light wave, side-swept fringe, clean professional hairstyle, hair never covering the eyes. Makeup: natural professional news-anchor makeup, subtle eye makeup, soft pink-beige lip color, very light blush, understated and refined. Body: natural healthy slim-to-average build, realistic proportions, professional posture, relaxed shoulders, upright stance. Overall impression: intelligent, elegant, calm, sincere, reliable, warm, approachable, professional, premium Japanese economic-news presenter.
+
+navy tailored blazer, clean white blouse, minimal delicate earrings, refined professional business attire
+
+gentle calm smile, friendly attentive expression, relaxed professional confidence
+
+medium close-up, chest-up framing, front-facing, eye-level camera, symmetrical professional news-anchor framing
+
+premium modern Japanese real-estate news studio, sophisticated navy and white interior, subtle warm gold accents, large high-resolution display panels showing city skyline, apartment buildings, Japanese map, interest-rate charts and real-estate market graphs, elegant clean newsroom desk, cinematic but realistic studio lighting, warm accent lights, polished television-news atmosphere, minimalist luxury design, highly professional, uncluttered.
+
+soft professional broadcast lighting, natural flattering key light, subtle fill light, warm rim light, realistic skin tones, no harsh shadows, premium television studio lighting, natural photographic realism

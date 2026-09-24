@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+# 文単位のガイド音声・連結wavは再生成可能（timeline.py）。動画に音声は含まれる。
+youtube/**/voice/guide*/
+youtube/**/voice/*.wav

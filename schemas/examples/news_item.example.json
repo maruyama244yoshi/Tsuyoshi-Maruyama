@@ -1,0 +1,35 @@
+{
+  "news_id": "NY-20260918-0001",
+  "collected_at": "2026-09-18T15:05:00+09:00",
+  "published_at": "2026-09-18T12:00:00+09:00",
+  "headline": "日銀、政策金利を1.25%程度に引き上げ（9月24日から）",
+  "category": "policy_rate",
+  "dedup_group": "boj-mpm-2026-09",
+  "primary_sources": [
+    {
+      "publisher": "日本銀行",
+      "title": "金融市場調節方針の変更について",
+      "url": "https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/index.htm",
+      "date": "2026-09-18",
+      "kind": "central_bank"
+    }
+  ],
+  "key_figures": [
+    {
+      "label": "無担保コールO/N誘導目標",
+      "value": "1.25",
+      "unit": "％程度",
+      "source_ref": "primary_sources[0]"
+    }
+  ],
+  "score_breakdown": {
+    "landlord_impact": 1.0,
+    "market_impact": 0.95,
+    "urgency": 0.9,
+    "data_reliability": 1.0,
+    "search_demand": 0.8,
+    "video_fit": 0.9
+  },
+  "news_score": 94,
+  "sns_only": false
+}

@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akari_news/script_package.schema.json",
+  "title": "台本生成パッケージ（news_score>=70 のニュースから生成）",
+  "type": "object",
+  "required": [
+    "news_id",
+    "episode_id",
+    "titles",
+    "thumbnail_texts",
+    "hook_10s",
+    "akari_overview",
+    "figures",
+    "landlord_impact",
+    "ooka_m_comments",
+    "ippo",
+    "summary",
+    "cta",
+    "description",
+    "shorts",
+    "fact_check"
+  ],
+  "properties": {
+    "news_id": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "titles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "thumbnail_texts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "top": {
+            "type": "string"
+          },
+          "main": {
+            "type": "string"
+          },
+          "sub": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "hook_10s": {
+      "type": "string"
+    },
+    "akari_overview": {
+      "type": "string"
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "calc": {
+            "type": "string",
+            "description": "試算の場合は tools/akari_news の関数名と引数"
+          }
+        }
+      }
+    },
+    "landlord_impact": {
+      "type": "string"
+    },
+    "ooka_m_comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "suggested_comment",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "suggested_comment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "approved_comment": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "suggested",
+              "approved",
+              "rejected",
+              "on_hold"
+            ]
+          },
+          "approved_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "approved_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reject_reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "ippo": {
+      "type": "object",
+      "description": "大家の一手（大家Mコメントとして承認が必要）",
+      "properties": {
+        "comment_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "shorts": {
+      "type": "object",
+      "properties": {
+        "script": {
+          "type": "string"
+        },
+        "target_sec": {
+          "type": "integer"
+        }
+      }
+    },
+    "fact_check": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "source_ref",
+          "status"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "primary",
+              "secondary_only",
+              "unverified"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

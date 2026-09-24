@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "studios": [
+    {
+      "id": "AKARI_STUDIO_01",
+      "concept": "現代的で知的な不動産専門ニューススタジオ",
+      "prompt_file": "prompts/AKARI_STUDIO_01.txt",
+      "lighting_file": "prompts/AKARI_LIGHTING.txt",
+      "colors": [
+        "NAVY",
+        "WHITE",
+        "LIGHT_GRAY",
+        "BEIGE",
+        "GOLD"
+      ],
+      "mood": [
+        "高級感",
+        "清潔",
+        "落ち着き",
+        "知的",
+        "都会的",
+        "暖かみ"
+      ],
+      "note": "テレビ局と高級YouTubeスタジオの中間。SF的な未来スタジオにはしない。"
+    }
+  ],
+  "backgrounds_allowed": [
+    "都市夜景",
+    "マンション",
+    "住宅街",
+    "日本地図",
+    "金利チャート",
+    "家賃チャート",
+    "地価チャート",
+    "不動産市場データ"
+  ],
+  "backgrounds_forbidden": [
+    "派手なSF",
+    "過度な未来都市",
+    "株式トレーダー風",
+    "カジノ的演出"
+  ]
+}

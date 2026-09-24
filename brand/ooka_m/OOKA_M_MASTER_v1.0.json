@@ -1,0 +1,73 @@
+{
+  "id": "OOKA_M_MASTER",
+  "version": "1.0",
+  "adopted": "2026-09-24",
+  "status": "official_pending_owner_check",
+  "name": {
+    "ja": "現役会社員大家M",
+    "short": "大家M"
+  },
+  "role": "実戦コメント担当／大家の一手",
+  "display_mode": "ai_avatar",
+  "display_mode_fallbacks": [
+    "silhouette",
+    "back_view",
+    "voice_only"
+  ],
+  "voice": {
+    "mode": "ai_tts",
+    "alt": "light_voice_conversion",
+    "traits": [
+      "落ち着いた男性",
+      "少し現場感",
+      "穏やか",
+      "押しつけない"
+    ]
+  },
+  "anonymity": {
+    "no_real_face": true,
+    "no_real_name": true,
+    "no_employer": true,
+    "no_property_location": true,
+    "owner_non_resemblance_check_required": true
+  },
+  "comment_workflow": {
+    "states": [
+      "suggested",
+      "approved",
+      "rejected",
+      "on_hold"
+    ],
+    "script_uses": "approved_comment_only",
+    "required_fields_for_approved": [
+      "approved_comment",
+      "approved_by",
+      "approved_at"
+    ]
+  },
+  "prompt_files": {
+    "identity": "prompts/OOKA_M_IDENTITY_MASTER.txt",
+    "negative": "prompts/OOKA_M_NEGATIVE.txt"
+  },
+  "outfits": [
+    "OOKA_M_OUTFIT_01",
+    "OOKA_M_OUTFIT_02",
+    "OOKA_M_OUTFIT_03",
+    "OOKA_M_OUTFIT_04"
+  ],
+  "faces": [
+    "OOKA_M_FACE_01",
+    "OOKA_M_FACE_02",
+    "OOKA_M_FACE_03"
+  ],
+  "screen_time_ratio": [
+    0.1,
+    0.2
+  ],
+  "reference_images": [
+    {
+      "id": "OOKA_M_REFERENCE_001",
+      "path": "references/OOKA_M_REFERENCE_001_board.png"
+    }
+  ]
+}

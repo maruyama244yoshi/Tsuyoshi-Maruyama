@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "cameras": [
+    {
+      "id": "AKARI_CAMERA_01",
+      "ja": "正面胸上",
+      "prompt_file": "prompts/AKARI_CAMERA_01.txt",
+      "use": [
+        "通常ニュース"
+      ],
+      "video_cut": "AKARI_VIDEO_A"
+    },
+    {
+      "id": "AKARI_CAMERA_02",
+      "ja": "斜め15〜20度",
+      "prompt_file": "prompts/AKARI_CAMERA_02.txt",
+      "use": [
+        "対話",
+        "解説"
+      ],
+      "video_cut": "AKARI_VIDEO_D"
+    },
+    {
+      "id": "AKARI_CAMERA_03",
+      "ja": "デスク着席",
+      "prompt_file": "prompts/AKARI_CAMERA_03.txt",
+      "use": [
+        "週刊まとめ"
+      ],
+      "video_cut": "AKARI_VIDEO_B"
+    },
+    {
+      "id": "AKARI_CAMERA_04",
+      "ja": "大型モニター横",
+      "prompt_file": "prompts/AKARI_CAMERA_04.txt",
+      "use": [
+        "データ解説"
+      ],
+      "video_cut": "AKARI_VIDEO_C"
+    },
+    {
+      "id": "AKARI_CAMERA_05",
+      "ja": "顔アップ",
+      "prompt_file": "prompts/AKARI_CAMERA_05.txt",
+      "use": [
+        "サムネイル"
+      ],
+      "video_cut": null
+    }
+  ],
+  "video_cuts": {
+    "AKARI_VIDEO_A": "正面胸上",
+    "AKARI_VIDEO_B": "デスク着席",
+    "AKARI_VIDEO_C": "大型ディスプレイ横",
+    "AKARI_VIDEO_D": "少し斜めの会話用",
+    "AKARI_VIDEO_E": "Shorts用縦構図（9:16, CAMERA_01ベース）"
+  }
+}

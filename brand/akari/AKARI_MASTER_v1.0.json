@@ -1,0 +1,164 @@
+{
+  "id": "AKARI_MASTER",
+  "version": "1.0",
+  "adopted": "2026-09-24",
+  "status": "official",
+  "name": {
+    "ja": "燈",
+    "reading": "あかり",
+    "en": "AKARI"
+  },
+  "brand": {
+    "ja": "燈の不動産ニュース",
+    "en": "AKARI REAL ESTATE NEWS",
+    "logo_text": "燈の不動産NEWS"
+  },
+  "role": "不動産ニュース専門AIキャスター",
+  "position": "複雑な不動産ニュースを、やさしく照らす存在",
+  "appearance": {
+    "ethnicity": "Japanese",
+    "age_impression": "28-32",
+    "style": "photorealistic",
+    "hair": {
+      "color": "dark brown",
+      "length": "shoulder to upper-chest",
+      "shape": "semi-long, soft inward curl or light wave",
+      "fringe": "side-swept"
+    },
+    "makeup": "natural; subtle eyes; pink-beige lips; light blush",
+    "body": "natural slim-to-average; chest-up usage"
+  },
+  "priorities": [
+    "信頼",
+    "知性",
+    "品",
+    "親しみ",
+    "美しさ"
+  ],
+  "voice": {
+    "gender": "female",
+    "age": "late 20s-early 30s",
+    "traits": [
+      "透明感",
+      "落ち着き",
+      "聞き取りやすい",
+      "知的",
+      "柔らかい",
+      "温かい"
+    ],
+    "speed": "標準〜少しゆっくり"
+  },
+  "personality": [
+    "知的",
+    "誠実",
+    "穏やか",
+    "好奇心",
+    "勉強熱心",
+    "数字を大切にする",
+    "事実を重視",
+    "視聴者に寄り添う",
+    "煽らない",
+    "分からないことは分からないと言う",
+    "誤りがあれば訂正する"
+  ],
+  "fixed_phrases": {
+    "OPENING": "こんにちは、燈です。",
+    "BASIC": "今日も不動産の最新ニュースを、大家の視点で分かりやすく見ていきます。",
+    "DATA": "ここで注目したいのが、この数字です。",
+    "IMPACT": "では、大家経営にどう影響するのか見ていきましょう。",
+    "M_BRIDGE": "では、現役会社員大家Mさんは、このニュースをどう見ているのでしょうか。",
+    "SUMMARY": "今日のポイントを整理します。",
+    "CTA": "不動産経営に役立つニュースをこれからもお届けします。よければチャンネル登録をお願いします。"
+  },
+  "definitions": {
+    "outfits": "AKARI_OUTFITS.json",
+    "expressions": "AKARI_EXPRESSIONS.json",
+    "cameras": "AKARI_CAMERA.json",
+    "studio": "AKARI_STUDIO.json",
+    "palette": "AKARI_COLOR_PALETTE.json"
+  },
+  "prompt_files": {
+    "identity": "prompts/AKARI_IDENTITY_MASTER.txt",
+    "lighting": "prompts/AKARI_LIGHTING.txt",
+    "negative": "prompts/AKARI_NEGATIVE.txt",
+    "no_text_rule": "prompts/AKARI_RULE_NO_TEXT.txt"
+  },
+  "prompt_assembly_order": [
+    "identity",
+    "outfit",
+    "face",
+    "camera",
+    "studio",
+    "lighting",
+    "news_theme",
+    "negative"
+  ],
+  "reference_images": [
+    {
+      "id": "AKARI_REFERENCE_001",
+      "files": [
+        {
+          "path": "references/AKARI_REFERENCE_001_board_a.png",
+          "sha256": "08e772a5ec830ed50ec46ddcdb4bba04d2875ecb69327af669db76979625c50b"
+        },
+        {
+          "path": "references/AKARI_REFERENCE_001_board_b.png",
+          "sha256": "6a2b19d987df9cb8075907f3680ac7fe19b96c89d9238588b42da691dab9eceb"
+        }
+      ],
+      "primary_face_cut": "references/cuts/AKARI_REF001_CAM01_front.png"
+    }
+  ],
+  "screen_time_ratio": {
+    "akari": [
+      0.3,
+      0.5
+    ]
+  },
+  "acceptance": {
+    "items": [
+      "face",
+      "hair",
+      "age",
+      "brand",
+      "naturalness"
+    ],
+    "max_each": 5,
+    "adopt": 22,
+    "conditional": [
+      19,
+      21
+    ],
+    "regenerate_max": 18,
+    "face_min": 4
+  },
+  "forbidden_changes": [
+    "顔の大幅変更",
+    "髪色変更",
+    "髪型の大幅変更",
+    "年齢感変更",
+    "体型変更",
+    "キャラ性格変更",
+    "萌え化",
+    "セクシー化",
+    "アニメ化",
+    "極端なCG化"
+  ],
+  "thumbnail": {
+    "akari_side": "right",
+    "text_side": "left",
+    "text_chars": [
+      5,
+      10
+    ],
+    "banned_words": [
+      "不動産崩壊",
+      "大家終了",
+      "破産確定",
+      "今すぐ売れ",
+      "融資終了",
+      "大家崩壊",
+      "不動産終了"
+    ]
+  }
+}

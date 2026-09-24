@@ -1,0 +1,136 @@
+{
+  "episode_id": "episode_XXX",
+  "series": "燈の不動産ニュース",
+  "category": "A_daily",
+  "working_title": "",
+  "theme": "",
+  "target_duration_sec": [
+    180,
+    300
+  ],
+  "script_version": "v1",
+  "created": "YYYY-MM-DD",
+  "cast": {
+    "akari": {
+      "master": "AKARI_MASTER_v1.0",
+      "outfit": "AKARI_OUTFIT_01",
+      "default_face": "AKARI_FACE_01"
+    },
+    "ooka_m": {
+      "master": "OOKA_M_MASTER_v1.0",
+      "outfit": "OOKA_M_OUTFIT_01"
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "claim": "",
+      "source": "SRC_1",
+      "verified": "unverified"
+    }
+  ],
+  "sources": {
+    "SRC_1": {
+      "title": "",
+      "publisher": "",
+      "date": "",
+      "url_candidates": []
+    }
+  },
+  "simulation": null,
+  "scenes": [
+    {
+      "id": "S01",
+      "title": "オープニング",
+      "planned": "0:00-0:10",
+      "shots": [
+        {
+          "speaker": "akari",
+          "face": "AKARI_FACE_01",
+          "visual": "cut:akari_front",
+          "text": "こんにちは、燈です。"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "本日のニュース",
+      "planned": "",
+      "shots": []
+    },
+    {
+      "id": "S03",
+      "title": "何が起きたか",
+      "planned": "",
+      "shots": []
+    },
+    {
+      "id": "S04",
+      "title": "大家への影響",
+      "planned": "",
+      "shots": []
+    },
+    {
+      "id": "S05",
+      "title": "大家Mコメント",
+      "planned": "",
+      "shots": [
+        {
+          "speaker": "akari",
+          "visual": "cut:akari_front",
+          "text": "では、現役会社員大家Mさんは、このニュースをどう見ているのでしょうか。"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "title": "大家の一手",
+      "planned": "",
+      "jingle_before": true,
+      "shots": []
+    },
+    {
+      "id": "S07",
+      "title": "まとめ",
+      "planned": "",
+      "shots": [
+        {
+          "speaker": "akari",
+          "visual": "cut:akari_front",
+          "text": "今日のポイントを整理します。"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "title": "エンディング",
+      "planned": "",
+      "shots": [
+        {
+          "speaker": "akari",
+          "visual": "gfx:G11_ending",
+          "text": "不動産経営に役立つニュースをこれからもお届けします。よければチャンネル登録をお願いします。"
+        }
+      ]
+    }
+  ],
+  "ooka_m_comments": [
+    {
+      "id": "C1",
+      "topic": "",
+      "suggested_comment": "",
+      "approved_comment": null,
+      "status": "suggested",
+      "approved_by": null,
+      "approved_at": null
+    }
+  ],
+  "shorts": {
+    "id": "episode_XXX_shorts",
+    "target_duration_sec": [
+      30,
+      60
+    ],
+    "shots": []
+  }
+}

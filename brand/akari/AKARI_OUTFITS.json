@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "outfits": [
+    {
+      "id": "AKARI_OUTFIT_01",
+      "ja": "ネイビージャケット＋白ブラウス",
+      "prompt_file": "prompts/AKARI_OUTFIT_01.txt",
+      "default": true,
+      "use": [
+        "通常ニュース",
+        "金利",
+        "金融",
+        "融資",
+        "重要ニュース"
+      ]
+    },
+    {
+      "id": "AKARI_OUTFIT_02",
+      "ja": "ベージュジャケット＋白ブラウス",
+      "prompt_file": "prompts/AKARI_OUTFIT_02.txt",
+      "use": [
+        "家賃",
+        "地域ニュース",
+        "暮らし",
+        "不動産市場"
+      ]
+    },
+    {
+      "id": "AKARI_OUTFIT_03",
+      "ja": "ライトグレージャケット＋白ブラウス",
+      "prompt_file": "prompts/AKARI_OUTFIT_03.txt",
+      "use": [
+        "統計",
+        "データ",
+        "マーケット分析"
+      ]
+    },
+    {
+      "id": "AKARI_OUTFIT_04",
+      "ja": "白ブラウス単体",
+      "prompt_file": "prompts/AKARI_OUTFIT_04.txt",
+      "use": [
+        "Shorts",
+        "軽めのニュース",
+        "SNS",
+        "Web素材"
+      ]
+    }
+  ],
+  "accessories_allowed": [
+    "小型ピアス",
+    "小型イヤリング",
+    "細いネックレス",
+    "シンプルな腕時計"
+  ],
+  "forbidden": [
+    "露出",
+    "胸元が大きく開く",
+    "派手な柄",
+    "ブランドロゴ",
+    "原色",
+    "アイドル衣装",
+    "過度なフェミニン",
+    "過度なセクシー",
+    "大ぶりアクセサリー",
+    "派手なジュエリー"
+  ]
+}

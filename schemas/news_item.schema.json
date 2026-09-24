@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "akari_news/news_item.schema.json",
+  "title": "NEWS YAGURA → 燈の不動産ニュース 受け渡しニュース項目",
+  "type": "object",
+  "required": [
+    "news_id",
+    "collected_at",
+    "headline",
+    "category",
+    "primary_sources",
+    "score_breakdown",
+    "news_score"
+  ],
+  "properties": {
+    "news_id": {
+      "type": "string",
+      "description": "NEWS YAGURA側の一意ID"
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string",
+      "description": "YAGURA側要約（台本にそのまま使わない。事実確認の起点）"
+    },
+    "category": {
+      "enum": [
+        "policy_rate",
+        "bank_lending",
+        "property_price",
+        "yield",
+        "rent",
+        "vacancy",
+        "construction_cost",
+        "repair_cost",
+        "equipment_cost",
+        "tax",
+        "law",
+        "gx",
+        "energy_saving",
+        "redevelopment",
+        "demographics",
+        "regional",
+        "re_company",
+        "rental_market",
+        "other"
+      ]
+    },
+    "dedup_group": {
+      "type": "string",
+      "description": "重複除去済みグループID"
+    },
+    "primary_sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "publisher",
+          "title",
+          "url"
+        ],
+        "properties": {
+          "publisher": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "central_bank",
+              "ministry",
+              "statistics",
+              "local_gov",
+              "financial_institution",
+              "company_ir",
+              "other_public"
+            ]
+          }
+        }
+      }
+    },
+    "secondary_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "publisher": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "key_figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "value",
+          "source_ref"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "score_breakdown": {
+      "type": "object",
+      "required": [
+        "landlord_impact",
+        "market_impact",
+        "urgency",
+        "data_reliability",
+        "search_demand",
+        "video_fit"
+      ],
+      "properties": {
+        "landlord_impact": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "market_impact": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "urgency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "data_reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "search_demand": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "video_fit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "news_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "sns_only": {
+      "type": "boolean",
+      "description": "trueならニュース化しない（SNS投稿のみを根拠にしない）"
+    }
+  }
+}

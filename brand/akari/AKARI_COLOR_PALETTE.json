@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "colors": [
+    {
+      "id": "NAVY",
+      "hex": "#1B2A4E",
+      "role": "基調（信頼・知的）"
+    },
+    {
+      "id": "WHITE",
+      "hex": "#FFFFFF",
+      "role": "清潔感"
+    },
+    {
+      "id": "LIGHT_GRAY",
+      "hex": "#D9DCE3",
+      "role": "背景・落ち着き"
+    },
+    {
+      "id": "BEIGE",
+      "hex": "#E8D5BE",
+      "role": "親しみ"
+    },
+    {
+      "id": "GOLD",
+      "hex": "#C9A45C",
+      "role": "燈・光・重要ポイント"
+    }
+  ],
+  "functional": [
+    {
+      "id": "ALERT_RED",
+      "hex": "#C0392B",
+      "role": "警告用途のみ"
+    },
+    {
+      "id": "POSITIVE_GREEN",
+      "hex": "#2E8B57",
+      "role": "ポジティブ数値用途のみ"
+    }
+  ],
+  "rules": [
+    "赤は警告用途のみ",
+    "緑はポジティブ数値用途のみ",
+    "色の乱用禁止"
+  ],
+  "note": "HEXはAKARI_REFERENCE_001のカラーパレット表示から採色した初期値。ブランド承認後に確定（変更はv1.1で記録）。"
+}

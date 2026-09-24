@@ -1,0 +1,47 @@
+{
+  "version": "1.0",
+  "expressions": [
+    {
+      "id": "AKARI_FACE_01",
+      "alias": "AKARI_FACE_01_NORMAL",
+      "ja": "通常（穏やかな笑顔）",
+      "prompt_file": "prompts/AKARI_FACE_01.txt",
+      "use": [
+        "通常ニュース",
+        "オープニング",
+        "締め"
+      ]
+    },
+    {
+      "id": "AKARI_FACE_02",
+      "alias": "AKARI_FACE_02_SERIOUS",
+      "ja": "真剣",
+      "prompt_file": "prompts/AKARI_FACE_02.txt",
+      "use": [
+        "金利上昇",
+        "制度改正",
+        "融資引き締め",
+        "リスク解説"
+      ]
+    },
+    {
+      "id": "AKARI_FACE_03",
+      "alias": "AKARI_FACE_03_POSITIVE",
+      "ja": "明るい笑顔",
+      "prompt_file": "prompts/AKARI_FACE_03.txt",
+      "use": [
+        "家賃上昇",
+        "ポジティブニュース",
+        "成長地域",
+        "視聴者への挨拶"
+      ]
+    }
+  ],
+  "forbidden": [
+    "驚きすぎ",
+    "口を大きく開ける",
+    "煽り顔",
+    "恐怖顔",
+    "過度なリアクション"
+  ]
+}
