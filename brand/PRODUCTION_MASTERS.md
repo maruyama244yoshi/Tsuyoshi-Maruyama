@@ -2,14 +2,14 @@
 
 機械可読版：`brand/PRODUCTION_MASTERS.json`（制作シートの生成に使う）。
 
-音声生成時のみ「燈」→「あかり」。表示・字幕は「燈」のまま。音声の再生成が必要な場合も同一 voice_id・同一速度を維持する。
+音声は読み間違い防止用のひらがな原稿、字幕は通常の漢字・数字表記（完全に分離）。音声がおかしい場合も **Voice・Speed・Pitch は変更禁止**。読み上げ原稿のひらがな・句読点・分割位置で調整する。
 
 指示書 2026-09-25 §11・§28 による。**正式決定後は勝手に変更しない。変更は v2 として比較テストを行い、オーナー承認後に切り替える。**
 
 | マスター | 内容 | 状態 | 決定日 | 根拠（採点・比較） |
 |---|---|---|---|---|
-| AKARI_VOICE_MASTER_v1 | 燈の声：**Jhenny**（HeyGen voice_id `9530fac2d1f148f8b57b51b783b0df13`、速度 0.90、Japanese、元候補 AKARI_VOICE_C） | ✅ 正式採用 | 2026-09-25 | 指示書 2026-09-25（第2稿 完成実行指示書） |
-| M_VOICE_MASTER_v1 | 大家Mの声：**Satoshi**（HeyGen voice_id `662e1397965c484e8f65fa58c77effde`、速度 0.95、Japanese、元候補 M_VOICE_A） | ✅ 正式採用 | 2026-09-25 | 同上 |
+| AKARI_VOICE_MASTER_v1 | 燈の声：**Jhenny**（HeyGen voice_id `9530fac2d1f148f8b57b51b783b0df13`、**速度 1.0**（2026-09-25 に 0.90 から変更）、Japanese、元候補 AKARI_VOICE_C） | ✅ 正式採用 | 2026-09-25 | 指示書 2026-09-25（第2稿 完成実行指示書） |
+| M_VOICE_MASTER_v1 | 大家Mの声：**Satoshi**（HeyGen voice_id `662e1397965c484e8f65fa58c77effde`、**速度 1.0**（2026-09-25 に 0.95 から変更）、Japanese、元候補 M_VOICE_A） | ✅ 正式採用 | 2026-09-25 | 同上 |
 | AKARI_TALKING_BASE_16x9_v1 ／ _9x16_v1 ／ AKARI_DESK_BASE_v1 | 燈の基本画像（`brand/akari/talking_base/`） | ✅ 正式採用 | 2026-09-25 | 同上 |
 | OOKA_M_TALKING_BASE_16x9_v1 | 大家Mの基本画像（`brand/ooka_m/talking_base/`） | ✅ 正式採用 | 2026-09-25 | 同上 |
 | HeyGen アバター（燈） | 名前 **AKARI_MASTER_v1**（画像 AKARI_TALKING_BASE_16x9_v1、Photo Avatar 等） | 手動登録待ち（avatar_id 未記録） | — | 指示書 2026-09-25「HeyGen手動登録後の生成フロー」 |

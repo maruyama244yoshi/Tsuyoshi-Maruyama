@@ -10,9 +10,20 @@
       "candidate": "AKARI_VOICE_C",
       "service": "HeyGen",
       "heygen_voice_id": "9530fac2d1f148f8b57b51b783b0df13",
-      "speed": 0.9,
+      "speed": 1.0,
       "language": "Japanese",
-      "reading_rule": "音声生成時のみ「燈」→「あかり」。表示・字幕は「燈」"
+      "reading_rule": "音声生成時のみ「燈」→「あかり」。表示・字幕は「燈」",
+      "speed_history": [
+        {
+          "speed": 0.9,
+          "until": "2026-09-25"
+        },
+        {
+          "speed": 1.0,
+          "from": "2026-09-25",
+          "reason": "速度を下げると声質が老けて聞こえるため。発音は読み上げ原稿のひらがな・句読点で調整（Voice・Speed・Pitchは変更禁止）"
+        }
+      ]
     },
     "ooka_m": {
       "master": "M_VOICE_MASTER_v1",
@@ -22,8 +33,19 @@
       "candidate": "M_VOICE_A",
       "service": "HeyGen",
       "heygen_voice_id": "662e1397965c484e8f65fa58c77effde",
-      "speed": 0.95,
-      "language": "Japanese"
+      "speed": 1.0,
+      "language": "Japanese",
+      "speed_history": [
+        {
+          "speed": 0.95,
+          "until": "2026-09-25"
+        },
+        {
+          "speed": 1.0,
+          "from": "2026-09-25",
+          "reason": "速度を下げると声質が老けて聞こえるため。発音は読み上げ原稿のひらがな・句読点で調整（Voice・Speed・Pitchは変更禁止）"
+        }
+      ]
     }
   },
   "audio_format": {
@@ -81,7 +103,9 @@
       "expression": "Low",
       "head_movement": "Minimal",
       "gesture": "Minimal",
-      "eye_contact": "Camera"
+      "eye_contact": "Camera",
+      "avatar_type": "Avatar IV",
+      "resolution": "1080p"
     },
     "record_fields": [
       "avatar_method",
@@ -122,5 +146,8 @@
       "status": "手動登録待ち",
       "note": "デジタルツイン（本人登録）ではない。本人の顔・声は使わない"
     }
+  },
+  "episode_manifest": {
+    "episode_001": "AKARI_NEWS_EP01_manifest.json（正本。未受領）"
   }
 }
