@@ -1,0 +1,52 @@
+{
+  "project": "AKARI_NEWS_EP01",
+  "batch_id": "bef240326ada48ad9a2c143765797ffa",
+  "status": "24 talking videos completed; 20 voiceovers generated",
+  "settings": {
+    "engine": "Avatar IV",
+    "resolution": "1080p",
+    "voice_speed": 1.0,
+    "akari_voice": "Jhenny",
+    "akari_voice_id": "9530fac2d1f148f8b57b51b783b0df13",
+    "m_voice": "Satoshi",
+    "m_voice_id": "662e1397965c484e8f65fa58c77effde"
+  },
+  "talking_videos": [
+    {"id":"AKARI_001","heygen_video_id":"7f7851ec99d619ee7454c87798e4d13f"},
+    {"id":"AKARI_002","heygen_video_id":"9741eff7d46d60bf356f579787ac92f8"},
+    {"id":"AKARI_003","heygen_video_id":"1b01181002bc995f95143631392b9078"},
+    {"id":"AKARI_004","heygen_video_id":"c6b9f9a63b44ba4619310b6d50c4e53a"},
+    {"id":"AKARI_005","heygen_video_id":"448a329a48f4a380f0d77157b6fd5c86"},
+    {"id":"AKARI_006","heygen_video_id":"19c5c5c47234b79f24b697964ec902bf"},
+    {"id":"AKARI_007","heygen_video_id":"6065c9309ffd590801a93d6082aa730f"},
+    {"id":"AKARI_008","heygen_video_id":"75f4c79fdd7837e6dfb2c777be7bfba6"},
+    {"id":"AKARI_009","heygen_video_id":"732e62397fd1e294092576ed5a001f33"},
+    {"id":"AKARI_010","heygen_video_id":"161ad936bb9f115dad9ec06a080ecd7e"},
+    {"id":"AKARI_011","heygen_video_id":"8fe827b285f3ec245d64504bf11a6cd9"},
+    {"id":"AKARI_012","heygen_video_id":"ed55cd1d2081b2756882867369558cd8"},
+    {"id":"AKARI_013","heygen_video_id":"106d218d5867cc4e73226bf094b2843a"},
+    {"id":"AKARI_014","heygen_video_id":"14a12322a219c4c53341f740371c9b75"},
+    {"id":"AKARI_015","heygen_video_id":"9aad78b0d4f6ca958cf3e26f6eca6a65"},
+    {"id":"AKARI_016","heygen_video_id":"d8a92353e592f53e5e1b191243e1686b"},
+    {"id":"AKARI_017","heygen_video_id":"e7f3b7a59c045058497a5f3b694668b5"},
+    {"id":"AKARI_018","heygen_video_id":"20c1a4ca89c48f27a5abd090fd659036"},
+    {"id":"M_001","heygen_video_id":"8266e4f84ced17e5d9a3f0d2a06e21e9"},
+    {"id":"M_002","heygen_video_id":"3b73f1fcf43f69e5532dc6cfe5690ef2"},
+    {"id":"M_003","heygen_video_id":"d24ad233328f4e2ac7a233e051a6bc1e"},
+    {"id":"M_004","heygen_video_id":"da5b67d04f4b44f490d5826f5c783614"},
+    {"id":"M_005","heygen_video_id":"7f8f46d2f5cc05ca37c8990d914eaab7"},
+    {"id":"M_006","heygen_video_id":"1977febe0f2012b8f407a8554c7919ed"}
+  ],
+  "voiceovers": [
+    {"id":"AKARI_VO_001","format":"wav"},{"id":"AKARI_VO_002","format":"wav"},{"id":"AKARI_VO_003","format":"wav"},
+    {"id":"AKARI_VO_004","format":"wav"},{"id":"AKARI_VO_005","format":"wav"},{"id":"AKARI_VO_006","format":"wav"},
+    {"id":"AKARI_VO_007","format":"wav"},{"id":"AKARI_VO_008","format":"wav"},{"id":"AKARI_VO_009","format":"wav"},
+    {"id":"AKARI_VO_010","format":"wav"},{"id":"AKARI_VO_011","format":"wav"},{"id":"AKARI_VO_012","format":"wav"},
+    {"id":"AKARI_VO_013","format":"wav"},{"id":"AKARI_VO_014","format":"wav"},{"id":"AKARI_VO_015","format":"wav"},
+    {"id":"AKARI_VO_016","format":"wav"},{"id":"AKARI_VO_017","format":"wav"},{"id":"AKARI_VO_018","format":"wav"},
+    {"id":"M_VO_001","format":"wav"},{"id":"M_VO_002","format":"wav"}
+  ],
+  "notes": {
+    "AKARI_VO_015": "修正版『金融機関の貸出態度全般について〜』で生成済み"
+  }
+}
