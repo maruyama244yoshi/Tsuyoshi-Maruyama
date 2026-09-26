@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "shorts",
   "version": "v2",
-  "duration": 45.637,
+  "duration": 42.716,
   "audio": "voice/episode_001_short01_mix_v2.wav",
   "audio_sources": {
     "clip": 1,
@@ -27,8 +27,8 @@
       "audio_source": "clip",
       "clip": "clips/AKARI_017.mp4",
       "start": 0.6,
-      "end": 9.348,
-      "display_end": 9.648,
+      "end": 8.858,
+      "display_end": 9.158,
       "start_display": 0.0
     },
     {
@@ -44,9 +44,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 9.648,
-      "end": 14.22,
-      "display_end": 14.52
+      "start": 9.158,
+      "end": 13.729,
+      "display_end": 14.029
     },
     {
       "scene": "EP01_SHORT_01",
@@ -61,9 +61,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 14.52,
-      "end": 34.373,
-      "display_end": 34.673
+      "start": 14.029,
+      "end": 31.453,
+      "display_end": 31.753
     },
     {
       "scene": "EP01_SHORT_01",
@@ -78,72 +78,79 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 34.673,
-      "end": 43.137,
-      "display_end": 43.537
+      "start": 31.753,
+      "end": 40.216,
+      "display_end": 40.616
     }
   ],
   "cues": [
     {
-      "start": 0.6,
-      "end": 6.432,
+      "start": 0.93,
+      "end": 6.13,
       "speaker": "akari",
       "lines": [
         "日銀が政策金利を1.25％程度へ引き上げました。"
       ]
     },
     {
-      "start": 6.432,
-      "end": 9.348,
+      "start": 6.13,
+      "end": 8.77,
       "speaker": "akari",
       "lines": [
         "9月24日から適用です。"
       ]
     },
     {
-      "start": 9.648,
-      "end": 12.587,
+      "start": 9.348,
+      "end": 12.398,
       "speaker": "akari",
       "lines": [
         "では、大家さんが見るべき数字は何か。"
       ]
     },
     {
-      "start": 12.587,
-      "end": 14.22,
+      "start": 12.398,
+      "end": 13.348,
       "speaker": "akari",
       "lines": [
         "ポイントは3つです。"
       ]
     },
     {
-      "start": 14.52,
-      "end": 18.699,
+      "start": 14.219,
+      "end": 17.069,
       "speaker": "akari",
       "lines": [
         "1つ目は年間返済額です。"
       ]
     },
     {
-      "start": 18.699,
-      "end": 34.373,
+      "start": 17.069,
+      "end": 23.809,
       "speaker": "akari",
       "lines": [
-        "1億円・30年の単純試算では、",
-        "2.00％から2.25％になると年間およそ15万円増えます。"
+        "1億円・30年の単純試算では、2.00％から"
       ]
     },
     {
-      "start": 34.673,
-      "end": 39.587,
+      "start": 23.809,
+      "end": 31.453,
+      "speaker": "akari",
+      "lines": [
+        "2.25％になると年間およそ15万円増えます。"
+      ]
+    },
+    {
+      "start": 31.863,
+      "end": 36.943,
       "speaker": "akari",
       "lines": [
         "詳しい解説は本編でお届けしています。"
       ]
     },
     {
-      "start": 39.587,
-      "end": 43.137,
+      "start": 36.943,
+      "end": 40.216,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでした。"
@@ -153,8 +160,8 @@
   "events": [
     {
       "type": "outro",
-      "start": 43.537,
-      "end": 45.637,
+      "start": 40.616,
+      "end": 42.716,
       "visual": "vgfx:V06_cta",
       "scene": "OUTRO"
     }

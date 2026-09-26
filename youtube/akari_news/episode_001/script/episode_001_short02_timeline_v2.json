@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "shorts",
   "version": "v2",
-  "duration": 39.9,
+  "duration": 39.666,
   "audio": "voice/episode_001_short02_mix_v2.wav",
   "audio_sources": {
     "clip": 2,
@@ -27,8 +27,8 @@
       "audio_source": "clip",
       "clip": "clips/AKARI_018.mp4",
       "start": 0.6,
-      "end": 10.906,
-      "display_end": 11.206,
+      "end": 10.671,
+      "display_end": 10.971,
       "start_display": 0.0
     },
     {
@@ -48,9 +48,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_006.mp4",
-      "start": 11.206,
-      "end": 28.637,
-      "display_end": 28.937
+      "start": 10.971,
+      "end": 28.402,
+      "display_end": 28.702
     },
     {
       "scene": "EP01_SHORT_02",
@@ -65,40 +65,40 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 28.937,
-      "end": 37.4,
-      "display_end": 37.8
+      "start": 28.702,
+      "end": 37.166,
+      "display_end": 37.566
     }
   ],
   "cues": [
     {
-      "start": 0.6,
-      "end": 4.547,
+      "start": 0.85,
+      "end": 5.22,
       "speaker": "akari",
       "lines": [
         "2つ目は返済比率、3つ目はDSCR。"
       ]
     },
     {
-      "start": 4.547,
-      "end": 10.906,
+      "start": 5.22,
+      "end": 10.55,
       "speaker": "akari",
       "lines": [
-        "金利がさらに上がっても返済で",
-        "きるか、確認しておきましょう。"
+        "金利がさらに上がっても返済できるか、",
+        "確認しておきましょう。"
       ]
     },
     {
-      "start": 11.206,
-      "end": 13.544,
+      "start": 11.261,
+      "end": 13.171,
       "speaker": "ooka_m",
       "lines": [
         "今日の大家の一手です。"
       ]
     },
     {
-      "start": 13.544,
-      "end": 21.834,
+      "start": 13.171,
+      "end": 22.791,
       "speaker": "ooka_m",
       "lines": [
         "現在金利、プラス0.5％、",
@@ -106,8 +106,8 @@
       ]
     },
     {
-      "start": 21.834,
-      "end": 28.637,
+      "start": 22.791,
+      "end": 28.381,
       "speaker": "ooka_m",
       "lines": [
         "金利を予想するより、上がっても",
@@ -115,16 +115,16 @@
       ]
     },
     {
-      "start": 28.937,
-      "end": 33.851,
+      "start": 28.812,
+      "end": 33.892,
       "speaker": "akari",
       "lines": [
         "詳しい解説は本編でお届けしています。"
       ]
     },
     {
-      "start": 33.851,
-      "end": 37.4,
+      "start": 33.892,
+      "end": 37.166,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでした。"
@@ -134,8 +134,8 @@
   "events": [
     {
       "type": "outro",
-      "start": 37.8,
-      "end": 39.9,
+      "start": 37.566,
+      "end": 39.666,
       "visual": "vgfx:V06_cta",
       "scene": "OUTRO"
     }

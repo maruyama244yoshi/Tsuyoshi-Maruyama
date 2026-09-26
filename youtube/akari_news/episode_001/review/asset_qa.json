@@ -32,6 +32,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 3.45,
+    "mora": 10,
+    "speech_sec": 1.96,
+    "mora_per_sec": 5.1,
     "issues": [],
     "notes": []
   },
@@ -68,6 +71,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 4.5,
+    "mora": 30,
+    "speech_sec": 4.52,
+    "mora_per_sec": 6.6,
     "issues": [],
     "notes": []
   },
@@ -76,34 +82,28 @@
     "file": "AKARI_VO_001.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "日銀の政策金利が、1.25％程度へ引き上げられました。",
+    "text": "日銀の政策金利が1.25％程度へ引き上げられました。",
     "exists": true,
-    "size_mb": 0.31,
-    "duration": 9.67,
+    "size_mb": 0.25,
+    "duration": 7.86,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 9.66,
+      "decoded_sec": 7.86,
       "frames": null
     },
-    "lufs": -18.6,
+    "lufs": -20.0,
     "true_peak": -4.8,
-    "sample_peak_db": -4.777654,
-    "long_silences": [
-      [
-        1.3,
-        2.14
-      ]
-    ],
-    "chars_per_sec": 2.59,
-    "issues": [
-      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
-    "notes": [
-      "途中に0.8秒以上の無音 [(1.3, 2.14)]"
-    ]
+    "sample_peak_db": -4.762118,
+    "long_silences": [],
+    "chars_per_sec": 3.18,
+    "mora": 38,
+    "speech_sec": 6.0,
+    "mora_per_sec": 6.3,
+    "issues": [],
+    "notes": []
   },
   {
     "id": "AKARI_003",
@@ -138,6 +138,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 4.72,
+    "mora": 26,
+    "speech_sec": 4.04,
+    "mora_per_sec": 6.4,
     "issues": [],
     "notes": []
   },
@@ -174,6 +177,9 @@
     "long_silences": [],
     "av_duration_diff": 0.01,
     "chars_per_sec": 4.49,
+    "mora": 30,
+    "speech_sec": 4.82,
+    "mora_per_sec": 6.2,
     "issues": [],
     "notes": []
   },
@@ -184,21 +190,24 @@
     "speaker": "燈",
     "text": "日本銀行は9月18日の金融政策決定会合で、無担保コールレート、オーバーナイト物を1.25％程度で推移するよう促すことを決定しました。",
     "exists": true,
-    "size_mb": 0.58,
-    "duration": 17.97,
+    "size_mb": 0.57,
+    "duration": 17.89,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 17.97,
+      "decoded_sec": 17.89,
       "frames": null
     },
-    "lufs": -20.5,
+    "lufs": -20.3,
     "true_peak": -4.8,
-    "sample_peak_db": -4.792858,
+    "sample_peak_db": -4.783048,
     "long_silences": [],
-    "chars_per_sec": 3.51,
+    "chars_per_sec": 3.52,
+    "mora": 93,
+    "speech_sec": 14.3,
+    "mora_per_sec": 6.5,
     "issues": [],
     "notes": []
   },
@@ -207,25 +216,28 @@
     "file": "AKARI_VO_003.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "それまでの1.0％程度から、0.25ポイントの引き上げです。",
+    "text": "それまでの1.0％程度から0.25ポイントの引き上げです。",
     "exists": true,
-    "size_mb": 0.38,
-    "duration": 11.91,
+    "size_mb": 0.12,
+    "duration": 3.89,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 11.91,
+      "decoded_sec": 3.89,
       "frames": null
     },
-    "lufs": -19.3,
+    "lufs": -19.4,
     "true_peak": -4.7,
-    "sample_peak_db": -4.732691,
+    "sample_peak_db": -4.744173,
     "long_silences": [],
-    "chars_per_sec": 2.35,
+    "chars_per_sec": 7.2,
+    "mora": 39,
+    "speech_sec": 3.06,
+    "mora_per_sec": 12.7,
     "issues": [
-      "話速が不自然（2.4文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+      "発話が速すぎる（12.7モーラ/秒、原稿39モーラに対し発話3.06秒）→ 読み飛ばし・途中欠落の疑い"
     ],
     "notes": []
   },
@@ -234,26 +246,27 @@
     "file": "AKARI_VO_004.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "新しい金利水準は、9月24日から適用されます。",
+    "text": "新しい金利水準は9月24日から適用されます。",
     "exists": true,
-    "size_mb": 0.24,
-    "duration": 7.44,
+    "size_mb": 0.2,
+    "duration": 6.37,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 7.44,
+      "decoded_sec": 6.37,
       "frames": null
     },
-    "lufs": -20.9,
+    "lufs": -19.0,
     "true_peak": -4.7,
-    "sample_peak_db": -4.742182,
+    "sample_peak_db": -4.735102,
     "long_silences": [],
-    "chars_per_sec": 2.82,
-    "issues": [
-      "話速が不自然（2.8文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
+    "chars_per_sec": 3.3,
+    "mora": 32,
+    "speech_sec": 5.18,
+    "mora_per_sec": 6.2,
+    "issues": [],
     "notes": []
   },
   {
@@ -289,6 +302,9 @@
     "long_silences": [],
     "av_duration_diff": 0.0,
     "chars_per_sec": 4.45,
+    "mora": 15,
+    "speech_sec": 2.24,
+    "mora_per_sec": 6.7,
     "issues": [],
     "notes": []
   },
@@ -297,23 +313,26 @@
     "file": "AKARI_VO_005.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "日銀の政策金利が0.25ポイント上がったからといって、大家さんが借りている不動産融資の金利が、その日に一律0.25ポイント上がるわけではありません。",
+    "text": "日銀の政策金利が0.25ポイント上がっても、大家さんの不動産融資の金利が、その日に一律で0.25ポイント上がるわけではありません。",
     "exists": true,
-    "size_mb": 0.63,
-    "duration": 19.64,
+    "size_mb": 0.49,
+    "duration": 15.26,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 19.64,
+      "decoded_sec": 15.25,
       "frames": null
     },
-    "lufs": -19.5,
+    "lufs": -19.3,
     "true_peak": -4.8,
-    "sample_peak_db": -4.773634,
+    "sample_peak_db": -4.758025,
     "long_silences": [],
-    "chars_per_sec": 3.62,
+    "chars_per_sec": 4.06,
+    "mora": 80,
+    "speech_sec": 11.98,
+    "mora_per_sec": 6.7,
     "issues": [],
     "notes": []
   },
@@ -322,27 +341,35 @@
     "file": "AKARI_VO_006.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "金融機関、商品、固定か変動か、金利の見直し条件によって影響は違います。",
+    "text": "金融機関や商品、固定か変動か、金利の見直し条件によって影響は違います。",
     "exists": true,
-    "size_mb": 0.34,
-    "duration": 10.76,
+    "size_mb": 0.28,
+    "duration": 8.88,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 10.76,
+      "decoded_sec": 8.88,
       "frames": null
     },
-    "lufs": -19.7,
-    "true_peak": -4.8,
-    "sample_peak_db": -4.803009,
-    "long_silences": [],
-    "chars_per_sec": 2.88,
-    "issues": [
-      "話速が不自然（2.9文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    "lufs": -19.9,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.765144,
+    "long_silences": [
+      [
+        1.94,
+        2.76
+      ]
     ],
-    "notes": []
+    "chars_per_sec": 3.6,
+    "mora": 47,
+    "speech_sec": 7.12,
+    "mora_per_sec": 6.6,
+    "issues": [],
+    "notes": [
+      "途中に0.8秒以上の無音 [(1.94, 2.76)]"
+    ]
   },
   {
     "id": "AKARI_006",
@@ -377,6 +404,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 4.95,
+    "mora": 57,
+    "speech_sec": 8.94,
+    "mora_per_sec": 6.4,
     "issues": [],
     "notes": []
   },
@@ -413,6 +443,9 @@
     "long_silences": [],
     "av_duration_diff": 0.01,
     "chars_per_sec": 4.27,
+    "mora": 46,
+    "speech_sec": 6.76,
+    "mora_per_sec": 6.8,
     "issues": [],
     "notes": []
   },
@@ -421,26 +454,27 @@
     "file": "AKARI_VO_007.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "仮に借入金利が2.00％なら、年間返済額はおよそ444万円です。これが2.25％になると、およそ459万円。",
+    "text": "仮に借入金利が2.00％なら、年間返済額はおよそ444万円です。2.25％になると、およそ459万円です。",
     "exists": true,
-    "size_mb": 0.73,
-    "duration": 22.94,
+    "size_mb": 0.53,
+    "duration": 16.56,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 22.93,
+      "decoded_sec": 16.56,
       "frames": null
     },
-    "lufs": -19.2,
-    "true_peak": -4.8,
-    "sample_peak_db": -4.763027,
+    "lufs": -19.1,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.751973,
     "long_silences": [],
-    "chars_per_sec": 2.18,
-    "issues": [
-      "話速が不自然（2.2文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
+    "chars_per_sec": 2.96,
+    "mora": 88,
+    "speech_sec": 15.22,
+    "mora_per_sec": 5.8,
+    "issues": [],
     "notes": []
   },
   {
@@ -448,26 +482,27 @@
     "file": "AKARI_VO_008.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "0.25ポイントの上昇で、年間約15万円、返済負担が増えます。",
+    "text": "0.25ポイント上がると、返済負担は年間約15万円増えます。",
     "exists": true,
-    "size_mb": 0.34,
-    "duration": 10.61,
+    "size_mb": 0.22,
+    "duration": 6.97,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 10.6,
+      "decoded_sec": 6.97,
       "frames": null
     },
-    "lufs": -18.9,
-    "true_peak": -4.8,
-    "sample_peak_db": -4.789476,
+    "lufs": -19.2,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.757134,
     "long_silences": [],
-    "chars_per_sec": 2.64,
-    "issues": [
-      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
+    "chars_per_sec": 4.02,
+    "mora": 40,
+    "speech_sec": 6.0,
+    "mora_per_sec": 6.7,
+    "issues": [],
     "notes": []
   },
   {
@@ -492,7 +527,12 @@
     "sample_peak_db": -4.750621,
     "long_silences": [],
     "chars_per_sec": 6.19,
-    "issues": [],
+    "mora": 49,
+    "speech_sec": 4.66,
+    "mora_per_sec": 10.5,
+    "issues": [
+      "発話が速すぎる（10.5モーラ/秒、原稿49モーラに対し発話4.66秒）→ 読み飛ばし・途中欠落の疑い"
+    ],
     "notes": []
   },
   {
@@ -528,6 +568,9 @@
     "long_silences": [],
     "av_duration_diff": 0.0,
     "chars_per_sec": 4.85,
+    "mora": 49,
+    "speech_sec": 8.16,
+    "mora_per_sec": 6.0,
     "issues": [],
     "notes": []
   },
@@ -564,6 +607,9 @@
     "long_silences": [],
     "av_duration_diff": 0.0,
     "chars_per_sec": 3.42,
+    "mora": 14,
+    "speech_sec": 2.7,
+    "mora_per_sec": 5.2,
     "issues": [],
     "notes": []
   },
@@ -589,6 +635,9 @@
     "sample_peak_db": -4.74749,
     "long_silences": [],
     "chars_per_sec": 3.43,
+    "mora": 48,
+    "speech_sec": 7.3,
+    "mora_per_sec": 6.6,
     "issues": [],
     "notes": []
   },
@@ -614,6 +663,9 @@
     "sample_peak_db": -4.779396,
     "long_silences": [],
     "chars_per_sec": 3.36,
+    "mora": 49,
+    "speech_sec": 8.06,
+    "mora_per_sec": 6.1,
     "issues": [],
     "notes": []
   },
@@ -650,6 +702,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 4.89,
+    "mora": 64,
+    "speech_sec": 8.74,
+    "mora_per_sec": 7.3,
     "issues": [],
     "notes": []
   },
@@ -686,6 +741,9 @@
     "long_silences": [],
     "av_duration_diff": 0.01,
     "chars_per_sec": 3.25,
+    "mora": 19,
+    "speech_sec": 3.44,
+    "mora_per_sec": 5.5,
     "issues": [],
     "notes": []
   },
@@ -711,6 +769,9 @@
     "sample_peak_db": -4.757763,
     "long_silences": [],
     "chars_per_sec": 3.87,
+    "mora": 55,
+    "speech_sec": 8.52,
+    "mora_per_sec": 6.5,
     "issues": [],
     "notes": []
   },
@@ -747,6 +808,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 5.19,
+    "mora": 35,
+    "speech_sec": 4.6,
+    "mora_per_sec": 7.6,
     "issues": [],
     "notes": []
   },
@@ -772,6 +836,9 @@
     "sample_peak_db": -4.773989,
     "long_silences": [],
     "chars_per_sec": 3.74,
+    "mora": 54,
+    "speech_sec": 8.84,
+    "mora_per_sec": 6.1,
     "issues": [],
     "notes": []
   },
@@ -808,6 +875,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 4.79,
+    "mora": 36,
+    "speech_sec": 5.6,
+    "mora_per_sec": 6.4,
     "issues": [],
     "notes": []
   },
@@ -844,6 +914,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 5.41,
+    "mora": 66,
+    "speech_sec": 9.3,
+    "mora_per_sec": 7.1,
     "issues": [],
     "notes": []
   },
@@ -880,6 +953,9 @@
     "long_silences": [],
     "av_duration_diff": 0.03,
     "chars_per_sec": 5.08,
+    "mora": 69,
+    "speech_sec": 8.02,
+    "mora_per_sec": 8.6,
     "issues": [],
     "notes": []
   },
@@ -918,6 +994,9 @@
       ]
     ],
     "chars_per_sec": 4.07,
+    "mora": 64,
+    "speech_sec": 7.94,
+    "mora_per_sec": 8.1,
     "issues": [],
     "notes": [
       "途中に0.8秒以上の無音 [(5.68, 6.5), (8.89, 9.77), (10.91, 11.76)]"
@@ -956,6 +1035,9 @@
     "long_silences": [],
     "av_duration_diff": 0.03,
     "chars_per_sec": 5.72,
+    "mora": 103,
+    "speech_sec": 12.5,
+    "mora_per_sec": 8.2,
     "issues": [],
     "notes": []
   },
@@ -992,6 +1074,9 @@
     "long_silences": [],
     "av_duration_diff": 0.01,
     "chars_per_sec": 4.07,
+    "mora": 12,
+    "speech_sec": 1.48,
+    "mora_per_sec": 8.1,
     "issues": [],
     "notes": []
   },
@@ -1002,30 +1087,26 @@
     "speaker": "大家M",
     "text": "保有物件と購入候補について、現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。まずはこれです。",
     "exists": true,
-    "size_mb": 0.56,
-    "duration": 17.53,
+    "size_mb": 0.42,
+    "duration": 13.04,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 17.52,
+      "decoded_sec": 13.03,
       "frames": null
     },
-    "lufs": -21.7,
+    "lufs": -22.2,
     "true_peak": -4.3,
-    "sample_peak_db": -4.290244,
-    "long_silences": [
-      [
-        14.99,
-        15.87
-      ]
-    ],
-    "chars_per_sec": 3.19,
+    "sample_peak_db": -4.282143,
+    "long_silences": [],
+    "chars_per_sec": 4.29,
+    "mora": 84,
+    "speech_sec": 9.38,
+    "mora_per_sec": 9.0,
     "issues": [],
-    "notes": [
-      "途中に0.8秒以上の無音 [(14.99, 15.87)]"
-    ]
+    "notes": []
   },
   {
     "id": "M_005",
@@ -1034,8 +1115,8 @@
     "speaker": "大家M",
     "text": "金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
     "exists": true,
-    "size_mb": 2.94,
-    "duration": 5.93,
+    "size_mb": 2.85,
+    "duration": 5.74,
     "vcodec": "h264",
     "width": 1920,
     "height": 1080,
@@ -1045,21 +1126,24 @@
     "channels": "stereo",
     "video_decode": {
       "errors": [],
-      "decoded_sec": 5.92,
-      "frames": 148
+      "decoded_sec": 5.72,
+      "frames": 143
     },
     "expected_aspect": "16:9",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 5.93,
+      "decoded_sec": 5.74,
       "frames": null
     },
-    "lufs": -21.8,
+    "lufs": -19.8,
     "true_peak": -7.1,
-    "sample_peak_db": -7.114353,
+    "sample_peak_db": -7.133987,
     "long_silences": [],
-    "av_duration_diff": 0.01,
-    "chars_per_sec": 5.06,
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 5.23,
+    "mora": 38,
+    "speech_sec": 4.56,
+    "mora_per_sec": 8.3,
     "issues": [],
     "notes": []
   },
@@ -1096,6 +1180,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 5.04,
+    "mora": 14,
+    "speech_sec": 2.16,
+    "mora_per_sec": 6.5,
     "issues": [],
     "notes": []
   },
@@ -1104,34 +1191,28 @@
     "file": "AKARI_VO_014.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "今回、日銀は政策金利を1.25％程度へ引き上げました。ただ、大家さんが見るべき数字は3つです。年間返済額。返済比率。DSCR。",
+    "text": "今回、日銀は政策金利を1.25％程度へ引き上げました。ただ、大家さんが見るべき数字は3つです。年間返済額、返済比率、そしてDSCRです。",
     "exists": true,
-    "size_mb": 0.67,
-    "duration": 20.92,
+    "size_mb": 0.63,
+    "duration": 19.8,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 20.92,
+      "decoded_sec": 19.8,
       "frames": null
     },
-    "lufs": -20.1,
-    "true_peak": -4.8,
-    "sample_peak_db": -4.774275,
-    "long_silences": [
-      [
-        17.58,
-        18.39
-      ]
-    ],
-    "chars_per_sec": 2.68,
-    "issues": [
-      "話速が不自然（2.7文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
-    "notes": [
-      "途中に0.8秒以上の無音 [(17.58, 18.39)]"
-    ]
+    "lufs": -20.9,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.775017,
+    "long_silences": [],
+    "chars_per_sec": 3.08,
+    "mora": 92,
+    "speech_sec": 14.84,
+    "mora_per_sec": 6.2,
+    "issues": [],
+    "notes": []
   },
   {
     "id": "AKARI_VO_015",
@@ -1140,21 +1221,24 @@
     "speaker": "燈",
     "text": "そして日銀は、金融機関の貸出態度全般について、引き続き積極的との見方を示しています。ですから、今回の利上げだけを見て、融資が止まると決めつけるのも早いでしょう。",
     "exists": true,
-    "size_mb": 0.65,
-    "duration": 20.19,
+    "size_mb": 0.59,
+    "duration": 18.49,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 20.19,
+      "decoded_sec": 18.49,
       "frames": null
     },
-    "lufs": -21.0,
+    "lufs": -19.3,
     "true_peak": -4.8,
-    "sample_peak_db": -4.774572,
+    "sample_peak_db": -4.779196,
     "long_silences": [],
-    "chars_per_sec": 3.67,
+    "chars_per_sec": 4.0,
+    "mora": 93,
+    "speech_sec": 14.84,
+    "mora_per_sec": 6.3,
     "issues": [],
     "notes": []
   },
@@ -1191,6 +1275,9 @@
     "long_silences": [],
     "av_duration_diff": 0.02,
     "chars_per_sec": 5.33,
+    "mora": 85,
+    "speech_sec": 11.86,
+    "mora_per_sec": 7.2,
     "issues": [],
     "notes": []
   },
@@ -1227,6 +1314,9 @@
     "long_silences": [],
     "av_duration_diff": 0.01,
     "chars_per_sec": 5.24,
+    "mora": 46,
+    "speech_sec": 6.22,
+    "mora_per_sec": 7.4,
     "issues": [],
     "notes": []
   },
@@ -1237,8 +1327,8 @@
     "speaker": "燈",
     "text": "日銀が政策金利を1.25％程度へ引き上げました。9月24日から適用です。",
     "exists": true,
-    "size_mb": 1.52,
-    "duration": 8.75,
+    "size_mb": 4.11,
+    "duration": 8.26,
     "vcodec": "h264",
     "width": 1080,
     "height": 1920,
@@ -1248,21 +1338,24 @@
     "channels": "stereo",
     "video_decode": {
       "errors": [],
-      "decoded_sec": 8.72,
-      "frames": 218
+      "decoded_sec": 8.24,
+      "frames": 206
     },
     "expected_aspect": "9:16",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 8.74,
+      "decoded_sec": 8.25,
       "frames": null
     },
     "lufs": -16.6,
     "true_peak": -7.6,
-    "sample_peak_db": -7.615839,
+    "sample_peak_db": -7.614736,
     "long_silences": [],
-    "av_duration_diff": 0.02,
-    "chars_per_sec": 3.89,
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 4.12,
+    "mora": 53,
+    "speech_sec": 7.6,
+    "mora_per_sec": 7.0,
     "issues": [],
     "notes": []
   },
@@ -1288,6 +1381,9 @@
     "sample_peak_db": -4.762032,
     "long_silences": [],
     "chars_per_sec": 5.47,
+    "mora": 29,
+    "speech_sec": 3.7,
+    "mora_per_sec": 7.8,
     "issues": [],
     "notes": []
   },
@@ -1296,33 +1392,34 @@
     "file": "AKARI_VO_017.wav",
     "kind": "voiceover",
     "speaker": "燈",
-    "text": "1つ目は年間返済額。1億円・30年の単純試算では、2.00％から2.25％になると、年間およそ15万円増えます。",
+    "text": "1つ目は年間返済額です。1億円・30年の単純試算では、2.00％から2.25％になると年間およそ15万円増えます。",
     "exists": true,
-    "size_mb": 0.64,
-    "duration": 19.85,
+    "size_mb": 0.56,
+    "duration": 17.42,
     "acodec": "mp3",
     "sample_rate": 44100,
     "channels": "mono",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 19.85,
+      "decoded_sec": 17.42,
       "frames": null
     },
-    "lufs": -18.3,
+    "lufs": -20.3,
     "true_peak": -4.8,
-    "sample_peak_db": -4.776155,
+    "sample_peak_db": -4.816873,
     "long_silences": [
       [
-        1.13,
-        1.96
+        12.26,
+        13.08
       ]
     ],
-    "chars_per_sec": 2.57,
-    "issues": [
-      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
-    ],
+    "chars_per_sec": 3.04,
+    "mora": 86,
+    "speech_sec": 13.34,
+    "mora_per_sec": 6.4,
+    "issues": [],
     "notes": [
-      "途中に0.8秒以上の無音 [(1.13, 1.96)]"
+      "途中に0.8秒以上の無音 [(12.26, 13.08)]"
     ]
   },
   {
@@ -1332,8 +1429,8 @@
     "speaker": "燈",
     "text": "2つ目は返済比率、3つ目はDSCR。金利がさらに上がっても返済できるか、確認しておきましょう。",
     "exists": true,
-    "size_mb": 1.69,
-    "duration": 10.31,
+    "size_mb": 5.22,
+    "duration": 10.07,
     "vcodec": "h264",
     "width": 1080,
     "height": 1920,
@@ -1343,30 +1440,26 @@
     "channels": "stereo",
     "video_decode": {
       "errors": [],
-      "decoded_sec": 10.28,
-      "frames": 257
+      "decoded_sec": 10.04,
+      "frames": 251
     },
     "expected_aspect": "9:16",
     "audio_decode": {
       "errors": [],
-      "decoded_sec": 10.3,
+      "decoded_sec": 10.07,
       "frames": null
     },
-    "lufs": -17.9,
+    "lufs": -18.5,
     "true_peak": -7.6,
-    "sample_peak_db": -7.627055,
-    "long_silences": [
-      [
-        4.99,
-        5.93
-      ]
-    ],
-    "av_duration_diff": 0.02,
-    "chars_per_sec": 4.17,
+    "sample_peak_db": -7.675802,
+    "long_silences": [],
+    "av_duration_diff": 0.03,
+    "chars_per_sec": 4.27,
+    "mora": 57,
+    "speech_sec": 7.98,
+    "mora_per_sec": 7.1,
     "issues": [],
-    "notes": [
-      "途中に0.8秒以上の無音 [(4.99, 5.93)]"
-    ]
+    "notes": []
   },
   {
     "id": "M_006",
@@ -1406,6 +1499,9 @@
     ],
     "av_duration_diff": 0.01,
     "chars_per_sec": 4.36,
+    "mora": 108,
+    "speech_sec": 12.88,
+    "mora_per_sec": 8.4,
     "issues": [],
     "notes": [
       "途中に0.8秒以上の無音 [(11.39, 12.3)]"
@@ -1433,6 +1529,9 @@
     "sample_peak_db": -4.753931,
     "long_silences": [],
     "chars_per_sec": 3.43,
+    "mora": 38,
+    "speech_sec": 5.94,
+    "mora_per_sec": 6.4,
     "issues": [],
     "notes": []
   }

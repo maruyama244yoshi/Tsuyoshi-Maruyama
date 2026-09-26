@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "long",
   "version": "v2",
-  "duration": 395.855,
+  "duration": 369.123,
   "audio": "voice/episode_001_mix_v2.wav",
   "audio_sources": {
     "clip": 21,
@@ -58,8 +58,8 @@
       "audio_source": "final",
       "clip": null,
       "start": 9.054,
-      "end": 18.719,
-      "display_end": 19.019
+      "end": 16.917,
+      "display_end": 17.217
     },
     {
       "scene": "S01",
@@ -74,9 +74,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_003.mp4",
-      "start": 19.019,
-      "end": 23.885,
-      "display_end": 24.185
+      "start": 17.217,
+      "end": 22.083,
+      "display_end": 22.383
     },
     {
       "scene": "S01",
@@ -91,9 +91,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_004.mp4",
-      "start": 24.185,
-      "end": 29.52,
-      "display_end": 30.12
+      "start": 22.383,
+      "end": 27.718,
+      "display_end": 28.318
     },
     {
       "scene": "S02",
@@ -108,9 +108,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 30.12,
-      "end": 48.092,
-      "display_end": 48.392
+      "start": 28.318,
+      "end": 46.211,
+      "display_end": 46.511
     },
     {
       "scene": "S02",
@@ -125,9 +125,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 48.392,
-      "end": 60.304,
-      "display_end": 60.604
+      "start": 46.511,
+      "end": 58.423,
+      "display_end": 58.723
     },
     {
       "scene": "S02",
@@ -142,9 +142,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 60.604,
-      "end": 68.049,
-      "display_end": 68.649
+      "start": 58.723,
+      "end": 65.097,
+      "display_end": 65.697
     },
     {
       "scene": "S03",
@@ -159,9 +159,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_005.mp4",
-      "start": 68.649,
-      "end": 71.573,
-      "display_end": 71.873
+      "start": 65.697,
+      "end": 68.622,
+      "display_end": 68.922
     },
     {
       "scene": "S03",
@@ -170,15 +170,15 @@
       "speaker": "akari",
       "visual": "gfx:G04_not_same",
       "face": null,
-      "text": "日銀の政策金利が0.25ポイント上がったからといって、大家さんが借りている不動産融資の金利が、その日に一律0.25ポイント上がるわけではありません。",
+      "text": "日銀の政策金利が0.25ポイント上がっても、大家さんの不動産融資の金利が、その日に一律で0.25ポイント上がるわけではありません。",
       "asset": "AKARI_VO_005",
       "vkeywords": null,
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 71.873,
-      "end": 91.517,
-      "display_end": 91.817
+      "start": 68.922,
+      "end": 84.177,
+      "display_end": 84.477
     },
     {
       "scene": "S03",
@@ -193,9 +193,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 91.817,
-      "end": 102.58,
-      "display_end": 102.88
+      "start": 84.477,
+      "end": 93.359,
+      "display_end": 93.659
     },
     {
       "scene": "S03",
@@ -210,9 +210,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_006.mp4",
-      "start": 102.88,
-      "end": 113.186,
-      "display_end": 113.786
+      "start": 93.659,
+      "end": 103.964,
+      "display_end": 104.564
     },
     {
       "scene": "S04",
@@ -227,9 +227,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_007.mp4",
-      "start": 113.786,
-      "end": 121.041,
-      "display_end": 121.341
+      "start": 104.564,
+      "end": 111.819,
+      "display_end": 112.119
     },
     {
       "scene": "S04",
@@ -244,9 +244,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 121.341,
-      "end": 144.276,
-      "display_end": 144.576
+      "start": 112.119,
+      "end": 128.681,
+      "display_end": 128.981
     },
     {
       "scene": "S04",
@@ -261,9 +261,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 144.576,
-      "end": 155.182,
-      "display_end": 155.482
+      "start": 128.981,
+      "end": 135.956,
+      "display_end": 136.256
     },
     {
       "scene": "S04",
@@ -278,9 +278,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 155.482,
-      "end": 160.968,
-      "display_end": 161.268
+      "start": 136.256,
+      "end": 141.741,
+      "display_end": 142.041
     },
     {
       "scene": "S04",
@@ -295,9 +295,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_008.mp4",
-      "start": 161.268,
-      "end": 169.717,
-      "display_end": 170.317
+      "start": 142.041,
+      "end": 150.491,
+      "display_end": 151.091
     },
     {
       "scene": "S05",
@@ -312,9 +312,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_009.mp4",
-      "start": 170.317,
-      "end": 173.242,
-      "display_end": 173.542
+      "start": 151.091,
+      "end": 154.015,
+      "display_end": 154.315
     },
     {
       "scene": "S05",
@@ -329,9 +329,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 173.542,
-      "end": 183.755,
-      "display_end": 184.055
+      "start": 154.315,
+      "end": 164.529,
+      "display_end": 164.829
     },
     {
       "scene": "S05",
@@ -346,9 +346,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 184.055,
-      "end": 195.967,
-      "display_end": 196.267
+      "start": 164.829,
+      "end": 176.741,
+      "display_end": 177.041
     },
     {
       "scene": "S05",
@@ -363,9 +363,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_010.mp4",
-      "start": 196.267,
-      "end": 206.296,
-      "display_end": 206.896
+      "start": 177.041,
+      "end": 187.07,
+      "display_end": 187.67
     },
     {
       "scene": "S06",
@@ -380,9 +380,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_011.mp4",
-      "start": 206.896,
-      "end": 210.887,
-      "display_end": 211.187
+      "start": 187.67,
+      "end": 191.661,
+      "display_end": 191.961
     },
     {
       "scene": "S06",
@@ -397,9 +397,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 211.187,
-      "end": 222.289,
-      "display_end": 222.589
+      "start": 191.961,
+      "end": 203.063,
+      "display_end": 203.363
     },
     {
       "scene": "S06",
@@ -414,9 +414,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_012.mp4",
-      "start": 222.589,
-      "end": 227.774,
-      "display_end": 228.074
+      "start": 203.363,
+      "end": 208.548,
+      "display_end": 208.848
     },
     {
       "scene": "S06",
@@ -431,9 +431,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 228.074,
-      "end": 240.091,
-      "display_end": 240.691
+      "start": 208.848,
+      "end": 220.865,
+      "display_end": 221.465
     },
     {
       "scene": "S07",
@@ -448,9 +448,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_013.mp4",
-      "start": 240.691,
-      "end": 247.156,
-      "display_end": 247.456
+      "start": 221.465,
+      "end": 227.93,
+      "display_end": 228.23
     },
     {
       "scene": "S07",
@@ -465,9 +465,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_001.mp4",
-      "start": 247.456,
-      "end": 258.359,
-      "display_end": 258.659
+      "start": 228.23,
+      "end": 239.133,
+      "display_end": 239.433
     },
     {
       "scene": "S07",
@@ -482,9 +482,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_002.mp4",
-      "start": 258.659,
-      "end": 268.496,
-      "display_end": 268.796
+      "start": 239.433,
+      "end": 249.27,
+      "display_end": 249.57
     },
     {
       "scene": "S07",
@@ -499,9 +499,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 268.796,
-      "end": 281.57,
-      "display_end": 281.87
+      "start": 249.57,
+      "end": 262.344,
+      "display_end": 262.644
     },
     {
       "scene": "S07",
@@ -516,9 +516,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_003.mp4",
-      "start": 281.87,
-      "end": 296.741,
-      "display_end": 299.341
+      "start": 262.644,
+      "end": 277.515,
+      "display_end": 280.115
     },
     {
       "scene": "S08",
@@ -533,9 +533,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_004.mp4",
-      "start": 299.341,
-      "end": 301.796,
-      "display_end": 302.096
+      "start": 280.115,
+      "end": 282.57,
+      "display_end": 282.87
     },
     {
       "scene": "S08",
@@ -550,9 +550,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 302.096,
-      "end": 319.624,
-      "display_end": 319.924
+      "start": 282.87,
+      "end": 295.905,
+      "display_end": 296.205
     },
     {
       "scene": "S08",
@@ -567,9 +567,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_005.mp4",
-      "start": 319.924,
-      "end": 325.856,
-      "display_end": 326.456
+      "start": 296.205,
+      "end": 301.945,
+      "display_end": 302.545
     },
     {
       "scene": "S09",
@@ -584,9 +584,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_014.mp4",
-      "start": 326.456,
-      "end": 329.039,
-      "display_end": 329.339
+      "start": 302.545,
+      "end": 305.128,
+      "display_end": 305.428
     },
     {
       "scene": "S09",
@@ -601,9 +601,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 329.339,
-      "end": 350.263,
-      "display_end": 350.563
+      "start": 305.428,
+      "end": 325.229,
+      "display_end": 325.529
     },
     {
       "scene": "S09",
@@ -618,9 +618,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 350.563,
-      "end": 370.756,
-      "display_end": 371.356
+      "start": 325.529,
+      "end": 344.024,
+      "display_end": 344.624
     },
     {
       "scene": "S10",
@@ -635,9 +635,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_015.mp4",
-      "start": 371.356,
-      "end": 384.862,
-      "display_end": 385.162
+      "start": 344.624,
+      "end": 358.129,
+      "display_end": 358.429
     },
     {
       "scene": "S10",
@@ -652,55 +652,55 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/AKARI_016.mp4",
-      "start": 385.162,
-      "end": 393.355,
-      "display_end": 393.755
+      "start": 358.429,
+      "end": 366.623,
+      "display_end": 367.023
     }
   ],
   "cues": [
     {
-      "start": 0.6,
-      "end": 2.906,
+      "start": 0.63,
+      "end": 2.89,
       "speaker": "akari",
       "lines": [
         "こんにちは、燈です。"
       ]
     },
     {
-      "start": 3.206,
-      "end": 8.754,
+      "start": 3.556,
+      "end": 8.376,
       "speaker": "akari",
       "lines": [
         "今日、大家さんにとってかなり重要な変化が始まりました。"
       ]
     },
     {
-      "start": 9.054,
-      "end": 18.719,
+      "start": 9.244,
+      "end": 16.917,
       "speaker": "akari",
       "lines": [
         "日銀の政策金利が1.25％程度へ引き上げられました。"
       ]
     },
     {
-      "start": 19.019,
-      "end": 23.885,
+      "start": 17.527,
+      "end": 21.867,
       "speaker": "akari",
       "lines": [
         "では、不動産投資はこれから厳しくなるのでしょうか。"
       ]
     },
     {
-      "start": 24.185,
-      "end": 29.52,
+      "start": 22.613,
+      "end": 27.713,
       "speaker": "akari",
       "lines": [
         "今日は、大家が見るべき3つの数字に絞って解説します。"
       ]
     },
     {
-      "start": 30.12,
-      "end": 38.562,
+      "start": 28.488,
+      "end": 38.188,
       "speaker": "akari",
       "lines": [
         "日本銀行は9月18日の金融政策決定会合で、",
@@ -708,8 +708,8 @@
       ]
     },
     {
-      "start": 38.562,
-      "end": 48.092,
+      "start": 38.188,
+      "end": 46.211,
       "speaker": "akari",
       "lines": [
         "オーバーナイト物を1.25％程度で",
@@ -717,51 +717,50 @@
       ]
     },
     {
-      "start": 48.392,
-      "end": 60.304,
+      "start": 46.721,
+      "end": 58.423,
       "speaker": "akari",
       "lines": [
-        "それまで",
-        "の1.0％程度から0.25ポイントの引き上げです。"
+        "それまでの1.0％程度から",
+        "0.25ポイントの引き上げです。"
       ]
     },
     {
-      "start": 60.604,
-      "end": 68.049,
+      "start": 58.873,
+      "end": 65.097,
       "speaker": "akari",
       "lines": [
         "新しい金利水準は9月24日から適用されます。"
       ]
     },
     {
-      "start": 68.649,
-      "end": 71.573,
+      "start": 65.987,
+      "end": 68.527,
       "speaker": "akari",
       "lines": [
         "ただし、ここはとても大切です。"
       ]
     },
     {
-      "start": 71.873,
-      "end": 80.368,
+      "start": 69.112,
+      "end": 78.532,
       "speaker": "akari",
       "lines": [
-        "日銀の政策金利が",
-        "0.25ポイント上がったからといって、大家さんが"
+        "日銀の政策金利が0.25ポイント上がっても、",
+        "大家さんの不動産融資の金利が、"
       ]
     },
     {
-      "start": 80.368,
-      "end": 91.517,
+      "start": 78.532,
+      "end": 84.177,
       "speaker": "akari",
       "lines": [
-        "借りている不動産融資の金利が、その日に",
-        "一律0.25ポイント上がるわけではありません。"
+        "その日に一律で0.25ポイント上がるわけではありません。"
       ]
     },
     {
-      "start": 91.817,
-      "end": 102.58,
+      "start": 84.607,
+      "end": 93.359,
       "speaker": "akari",
       "lines": [
         "金融機関や商品、固定か変動か、",
@@ -769,8 +768,8 @@
       ]
     },
     {
-      "start": 102.88,
-      "end": 109.137,
+      "start": 93.989,
+      "end": 99.589,
       "speaker": "akari",
       "lines": [
         "ですから大家が見るべきなのは、",
@@ -778,24 +777,24 @@
       ]
     },
     {
-      "start": 109.137,
-      "end": 112.265,
+      "start": 99.589,
+      "end": 102.749,
       "speaker": "akari",
       "lines": [
         "自分の借入に、いくら影響するのか。"
       ]
     },
     {
-      "start": 112.265,
-      "end": 113.186,
+      "start": 102.749,
+      "end": 103.949,
       "speaker": "akari",
       "lines": [
         "ここです。"
       ]
     },
     {
-      "start": 113.786,
-      "end": 121.041,
+      "start": 104.854,
+      "end": 111.819,
       "speaker": "akari",
       "lines": [
         "例えば、1億円を30年間、",
@@ -803,8 +802,8 @@
       ]
     },
     {
-      "start": 121.341,
-      "end": 135.188,
+      "start": 112.269,
+      "end": 122.719,
       "speaker": "akari",
       "lines": [
         "仮に借入金利が2.00％なら、",
@@ -812,16 +811,16 @@
       ]
     },
     {
-      "start": 135.188,
-      "end": 144.276,
+      "start": 122.719,
+      "end": 128.681,
       "speaker": "akari",
       "lines": [
         "2.25％になると、およそ459万円です。"
       ]
     },
     {
-      "start": 144.576,
-      "end": 155.182,
+      "start": 129.171,
+      "end": 135.956,
       "speaker": "akari",
       "lines": [
         "0.25ポイント上がると、",
@@ -829,8 +828,8 @@
       ]
     },
     {
-      "start": 155.482,
-      "end": 160.968,
+      "start": 136.446,
+      "end": 141.386,
       "speaker": "akari",
       "lines": [
         "1億円だけなら15万円でも、借入額が",
@@ -838,25 +837,32 @@
       ]
     },
     {
-      "start": 161.268,
-      "end": 169.717,
+      "start": 142.091,
+      "end": 146.401,
       "speaker": "akari",
       "lines": [
-        "大切なのは、金利が上がったというニュースではなく、",
+        "大切なのは、金利が上がったというニュースではなく、"
+      ]
+    },
+    {
+      "start": 146.401,
+      "end": 150.491,
+      "speaker": "akari",
+      "lines": [
         "自分の年間返済額がいくら増えるかです。"
       ]
     },
     {
-      "start": 170.317,
-      "end": 173.242,
+      "start": 151.161,
+      "end": 154.015,
       "speaker": "akari",
       "lines": [
         "2つ目は、返済比率です。"
       ]
     },
     {
-      "start": 173.542,
-      "end": 183.755,
+      "start": 154.525,
+      "end": 164.505,
       "speaker": "akari",
       "lines": [
         "家賃収入が同じままで返済額だけが増えれば、",
@@ -864,24 +870,24 @@
       ]
     },
     {
-      "start": 184.055,
-      "end": 190.144,
+      "start": 165.019,
+      "end": 170.379,
       "speaker": "akari",
       "lines": [
         "さらに今は、金利だけを見るわけにはいきません。"
       ]
     },
     {
-      "start": 190.144,
-      "end": 195.967,
+      "start": 170.379,
+      "end": 176.659,
       "speaker": "akari",
       "lines": [
         "修繕費、人件費、設備費なども上昇しています。"
       ]
     },
     {
-      "start": 196.267,
-      "end": 203.403,
+      "start": 177.591,
+      "end": 184.551,
       "speaker": "akari",
       "lines": [
         "金利上昇と経費上昇が同時に起きたとき、",
@@ -889,33 +895,40 @@
       ]
     },
     {
-      "start": 203.403,
-      "end": 206.296,
+      "start": 184.551,
+      "end": 187.051,
       "speaker": "akari",
       "lines": [
         "ここを確認する必要があります。"
       ]
     },
     {
-      "start": 206.896,
-      "end": 210.887,
+      "start": 187.9,
+      "end": 191.64,
       "speaker": "akari",
       "lines": [
         "そして3つ目が、DSCRです。"
       ]
     },
     {
-      "start": 211.187,
-      "end": 222.289,
+      "start": 192.091,
+      "end": 198.121,
       "speaker": "akari",
       "lines": [
-        "簡単に言えば、物件が生み出す利益で、借入返済を",
+        "簡単に言えば、物件が生み出す利益で、借入返済を"
+      ]
+    },
+    {
+      "start": 198.121,
+      "end": 203.063,
+      "speaker": "akari",
+      "lines": [
         "どれだけ余裕を持って支払えるかを見る数字です。"
       ]
     },
     {
-      "start": 222.589,
-      "end": 227.774,
+      "start": 203.653,
+      "end": 208.548,
       "speaker": "akari",
       "lines": [
         "金利上昇局面では、",
@@ -923,24 +936,24 @@
       ]
     },
     {
-      "start": 228.074,
-      "end": 233.699,
+      "start": 208.998,
+      "end": 214.918,
       "speaker": "akari",
       "lines": [
         "金利がもう少し上がった場合でも返済できるか。"
       ]
     },
     {
-      "start": 233.699,
-      "end": 240.091,
+      "start": 214.918,
+      "end": 220.865,
       "speaker": "akari",
       "lines": [
         "ストレスをかけて確認しておくことが重要になります。"
       ]
     },
     {
-      "start": 240.691,
-      "end": 247.156,
+      "start": 221.735,
+      "end": 227.615,
       "speaker": "akari",
       "lines": [
         "では、現役会社員大家Mさんは、",
@@ -948,16 +961,16 @@
       ]
     },
     {
-      "start": 247.456,
-      "end": 252.129,
+      "start": 228.28,
+      "end": 233.62,
       "speaker": "ooka_m",
       "lines": [
         "私なら、まず金利が上がったから買わないとは考えません。"
       ]
     },
     {
-      "start": 252.129,
-      "end": 258.359,
+      "start": 233.62,
+      "end": 239.06,
       "speaker": "ooka_m",
       "lines": [
         "見るのは、金利が上がってもキャッシュフローが",
@@ -965,92 +978,120 @@
       ]
     },
     {
-      "start": 258.659,
-      "end": 268.496,
+      "start": 239.663,
+      "end": 243.943,
       "speaker": "ooka_m",
       "lines": [
-        "特にこれから買う物件なら、現在の金利だけではなく、さらに",
+        "特にこれから買う物件なら、現在の金利だけではなく、さらに"
+      ]
+    },
+    {
+      "start": 243.943,
+      "end": 249.223,
+      "speaker": "ooka_m",
+      "lines": [
         "0.5％、1％上がったケースも計算しておきたいです。"
       ]
     },
     {
-      "start": 268.796,
-      "end": 271.533,
+      "start": 249.76,
+      "end": 252.19,
       "speaker": "ooka_m",
       "lines": [
         "それでも返済できるのか。"
       ]
     },
     {
-      "start": 271.533,
-      "end": 274.955,
+      "start": 252.19,
+      "end": 255.65,
       "speaker": "ooka_m",
       "lines": [
         "DSCRがどこまで下がるのか。"
       ]
     },
     {
-      "start": 274.955,
-      "end": 278.376,
+      "start": 255.65,
+      "end": 258.9,
       "speaker": "ooka_m",
       "lines": [
         "返済比率がどこまで上がるのか。"
       ]
     },
     {
-      "start": 278.376,
-      "end": 281.57,
+      "start": 258.9,
+      "end": 262.344,
       "speaker": "ooka_m",
       "lines": [
         "そこまで見てから判断します。"
       ]
     },
     {
-      "start": 281.87,
-      "end": 289.223,
+      "start": 262.934,
+      "end": 266.064,
       "speaker": "ooka_m",
       "lines": [
-        "それと、同じ価格の物件でも、融資期間が",
+        "それと、同じ価格の物件でも、融資期間が"
+      ]
+    },
+    {
+      "start": 266.064,
+      "end": 269.284,
+      "speaker": "ooka_m",
+      "lines": [
         "取れるかどうかでキャッシュフローはかなり変わります。"
       ]
     },
     {
-      "start": 289.223,
-      "end": 296.741,
+      "start": 269.284,
+      "end": 273.884,
       "speaker": "ooka_m",
       "lines": [
-        "ですから今後は、物件選びと金融機関選びをセットで",
+        "ですから今後は、物件選びと金融機関選びをセットで"
+      ]
+    },
+    {
+      "start": 273.884,
+      "end": 277.394,
+      "speaker": "ooka_m",
+      "lines": [
         "考えることが、以前より重要になると思います。"
       ]
     },
     {
-      "start": 299.341,
-      "end": 301.796,
+      "start": 280.325,
+      "end": 282.465,
       "speaker": "ooka_m",
       "lines": [
         "今日の大家の一手です。"
       ]
     },
     {
-      "start": 302.096,
-      "end": 317.325,
+      "start": 283.06,
+      "end": 289.06,
       "speaker": "ooka_m",
       "lines": [
-        "保有物件と購入候補について、現在金利、プラス0.5％、",
+        "保有物件と購入候補について、現在金利、プラス0.5％、"
+      ]
+    },
+    {
+      "start": 289.06,
+      "end": 294.57,
+      "speaker": "ooka_m",
+      "lines": [
         "プラス1.0％の3パターンで年間返済額を出してみる。"
       ]
     },
     {
-      "start": 317.325,
-      "end": 319.624,
+      "start": 294.57,
+      "end": 295.905,
       "speaker": "ooka_m",
       "lines": [
         "まずはこれです。"
       ]
     },
     {
-      "start": 319.924,
-      "end": 325.856,
+      "start": 296.655,
+      "end": 301.875,
       "speaker": "ooka_m",
       "lines": [
         "金利を予想するより、上がっても",
@@ -1058,49 +1099,56 @@
       ]
     },
     {
-      "start": 326.456,
-      "end": 329.039,
+      "start": 302.595,
+      "end": 305.035,
       "speaker": "akari",
       "lines": [
         "今日のポイントを整理します。"
       ]
     },
     {
-      "start": 329.339,
-      "end": 337.647,
+      "start": 305.578,
+      "end": 313.428,
       "speaker": "akari",
       "lines": [
         "今回、日銀は政策金利を1.25％程度へ引き上げました。"
       ]
     },
     {
-      "start": 337.647,
-      "end": 343.802,
+      "start": 313.428,
+      "end": 319.168,
       "speaker": "akari",
       "lines": [
         "ただ、大家さんが見るべき数字は3つです。"
       ]
     },
     {
-      "start": 343.802,
-      "end": 350.263,
+      "start": 319.168,
+      "end": 325.229,
       "speaker": "akari",
       "lines": [
         "年間返済額、返済比率、そしてDSCRです。"
       ]
     },
     {
-      "start": 350.563,
-      "end": 361.164,
+      "start": 325.679,
+      "end": 331.769,
       "speaker": "akari",
       "lines": [
-        "そして日銀は、金融機関の貸出態度全般について、",
+        "そして日銀は、金融機関の貸出態度全般について、"
+      ]
+    },
+    {
+      "start": 331.769,
+      "end": 336.179,
+      "speaker": "akari",
+      "lines": [
         "引き続き積極的との見方を示しています。"
       ]
     },
     {
-      "start": 361.164,
-      "end": 370.756,
+      "start": 336.179,
+      "end": 344.024,
       "speaker": "akari",
       "lines": [
         "ですから、今回の利上げだけを見て、",
@@ -1108,41 +1156,49 @@
       ]
     },
     {
-      "start": 371.356,
-      "end": 376.092,
+      "start": 344.934,
+      "end": 348.744,
       "speaker": "akari",
       "lines": [
         "ニュースを知るだけで終わらず、大家としてどう考えるか。"
       ]
     },
     {
-      "start": 376.092,
-      "end": 384.862,
+      "start": 348.744,
+      "end": 354.224,
       "speaker": "akari",
       "lines": [
-        "燈の不動産ニュースでは、これからも不動産の最新ニュースを、",
+        "燈の不動産ニュースでは、",
+        "これからも不動産の最新ニュースを、"
+      ]
+    },
+    {
+      "start": 354.224,
+      "end": 357.934,
+      "speaker": "akari",
+      "lines": [
         "大家の経営目線で分かりやすくお届けします。"
       ]
     },
     {
-      "start": 385.162,
-      "end": 388.474,
+      "start": 358.719,
+      "end": 362.009,
       "speaker": "akari",
       "lines": [
         "よければチャンネル登録をお願いします。"
       ]
     },
     {
-      "start": 388.474,
-      "end": 392.484,
+      "start": 362.009,
+      "end": 365.299,
       "speaker": "akari",
       "lines": [
         "それでは、また次のニュースでお会いしましょう。"
       ]
     },
     {
-      "start": 392.484,
-      "end": 393.355,
+      "start": 365.299,
+      "end": 366.519,
       "speaker": "akari",
       "lines": [
         "燈でした。"
@@ -1152,15 +1208,15 @@
   "events": [
     {
       "type": "jingle",
-      "start": 297.3407083333334,
-      "end": 299.3407083333334,
+      "start": 278.11454166666675,
+      "end": 280.11454166666675,
       "visual": "gfx:G09_ippo_card",
       "scene": "S08"
     },
     {
       "type": "outro",
-      "start": 393.755,
-      "end": 395.855,
+      "start": 367.023,
+      "end": 369.123,
       "visual": "gfx:G11_ending",
       "scene": "OUTRO"
     }

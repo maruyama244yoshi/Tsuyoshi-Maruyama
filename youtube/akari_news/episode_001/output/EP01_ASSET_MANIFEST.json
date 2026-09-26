@@ -1,5 +1,6 @@
 {
   "episode": "EP01",
+  "version": "v3",
   "generated": "2026-09-26",
   "voice": {
     "akari": {
@@ -15,27 +16,27 @@
   },
   "source_manifest": "inbox/AKARI_NEWS_EP01_manifest.json",
   "outputs": {
-    "EP01_MASTER_v2.mp4": {
-      "duration_sec": 400.005,
-      "screen_ratio": {
-        "akari": 0.271,
-        "ooka_m": 0.117,
-        "graphics": 0.612
-      }
+    "EP01_MASTER_v3.mp4": {
+      "duration_sec": 369.123
     },
-    "EP01_SHORT_01.mp4": {
-      "duration_sec": 45.937
+    "EP01_SHORT_01_v3.mp4": {
+      "duration_sec": 42.716
     },
-    "EP01_SHORT_02.mp4": {
-      "duration_sec": 40.1
+    "EP01_SHORT_02_v3.mp4": {
+      "duration_sec": 39.666
     }
+  },
+  "master_screen_ratio_pct": {
+    "akari": 28.9,
+    "ooka_m": 12.4,
+    "graphics": 58.7
   },
   "talking_videos": [
     {
       "id": "AKARI_001",
       "file": "inbox/AKARI_001.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -48,7 +49,7 @@
       "id": "AKARI_002",
       "file": "inbox/AKARI_002.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -61,7 +62,7 @@
       "id": "AKARI_003",
       "file": "inbox/AKARI_003.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -74,7 +75,7 @@
       "id": "AKARI_004",
       "file": "inbox/AKARI_004.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -87,7 +88,7 @@
       "id": "AKARI_005",
       "file": "inbox/AKARI_005.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -100,7 +101,7 @@
       "id": "AKARI_006",
       "file": "inbox/AKARI_006.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -113,7 +114,7 @@
       "id": "AKARI_007",
       "file": "inbox/AKARI_007.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -126,7 +127,7 @@
       "id": "AKARI_008",
       "file": "inbox/AKARI_008.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -139,7 +140,7 @@
       "id": "AKARI_009",
       "file": "inbox/AKARI_009.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -152,7 +153,7 @@
       "id": "AKARI_010",
       "file": "inbox/AKARI_010.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -165,7 +166,7 @@
       "id": "AKARI_011",
       "file": "inbox/AKARI_011.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -178,7 +179,7 @@
       "id": "AKARI_012",
       "file": "inbox/AKARI_012.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -191,7 +192,7 @@
       "id": "AKARI_013",
       "file": "inbox/AKARI_013.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -204,7 +205,7 @@
       "id": "M_001",
       "file": "inbox/M_001.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -217,7 +218,7 @@
       "id": "M_002",
       "file": "inbox/M_002.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -230,7 +231,7 @@
       "id": "M_003",
       "file": "inbox/M_003.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -243,7 +244,7 @@
       "id": "M_004",
       "file": "inbox/M_004.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -256,14 +257,14 @@
       "id": "M_005",
       "file": "inbox/M_005.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "両手を大きく広げる手振りがある（禁止事項「手振りが大きい」に該当の可能性）。第2稿ではそのまま使用"
+        "第3稿差し替え版（HeyGen 316d7b03f044c97bef1cfeea34e4d8f2）を目視：両手を大きく広げる動作はなくなり、手は胸の前で小さく動く程度。改善を確認"
       ],
-      "duration_sec": 5.93,
-      "heygen_video_id": "7f8f46d2f5cc05ca37c8990d914eaab7",
+      "duration_sec": 5.74,
+      "heygen_video_id": "316d7b03f044c97bef1cfeea34e4d8f2",
       "resolution": "1920x1080",
       "fps": 25.0
     },
@@ -271,7 +272,7 @@
       "id": "AKARI_014",
       "file": "inbox/AKARI_014.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -284,7 +285,7 @@
       "id": "AKARI_015",
       "file": "inbox/AKARI_015.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -297,7 +298,7 @@
       "id": "AKARI_016",
       "file": "inbox/AKARI_016.mp4",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "OK",
       "notes": [],
@@ -310,14 +311,14 @@
       "id": "AKARI_017",
       "file": "inbox/AKARI_017.mp4",
       "used_in": [
-        "short01"
+        "EP01_SHORT_01_v3"
       ],
-      "judgement": "要再生成",
+      "judgement": "OK",
       "notes": [
-        "縦型キャンバス（1080x1920）の中央に横長映像（1080x608）が入っているだけで、縦型構図になっていない。第2稿では映像部分を切り出して上部パネルに配置して使用。AKARI_TALKING_BASE_9x16_v1 で縦型として再生成を推奨"
+        "第3稿差し替え版（HeyGen ab6bfccaff53e11f52c789d35af131b3）：1080x1920 縦型ネイティブ、上下左右の余白なし（映像が画面いっぱい）"
       ],
-      "duration_sec": 8.75,
-      "heygen_video_id": "e7f3b7a59c045058497a5f3b694668b5",
+      "duration_sec": 8.26,
+      "heygen_video_id": "ab6bfccaff53e11f52c789d35af131b3",
       "resolution": "1080x1920",
       "fps": 25.0
     },
@@ -325,15 +326,14 @@
       "id": "AKARI_018",
       "file": "inbox/AKARI_018.mp4",
       "used_in": [
-        "short02"
+        "EP01_SHORT_02_v3"
       ],
-      "judgement": "要再生成",
+      "judgement": "OK",
       "notes": [
-        "途中に0.8秒以上の無音 [[4.99, 5.93]]",
-        "縦型キャンバス（1080x1920）の中央に横長映像（1080x608）が入っているだけで、縦型構図になっていない。第2稿では映像部分を切り出して上部パネルに配置して使用。AKARI_TALKING_BASE_9x16_v1 で縦型として再生成を推奨"
+        "第3稿差し替え版（HeyGen b12852399f38dbe7c423119e187ba55e）：1080x1920 縦型ネイティブ、上下左右の余白なし（映像が画面いっぱい）"
       ],
-      "duration_sec": 10.31,
-      "heygen_video_id": "20c1a4ca89c48f27a5abd090fd659036",
+      "duration_sec": 10.07,
+      "heygen_video_id": "b12852399f38dbe7c423119e187ba55e",
       "resolution": "1080x1920",
       "fps": 25.0
     },
@@ -341,7 +341,7 @@
       "id": "M_006",
       "file": "inbox/M_006.mp4",
       "used_in": [
-        "short02"
+        "EP01_SHORT_02_v3"
       ],
       "judgement": "OK",
       "notes": [
@@ -358,373 +358,369 @@
       "id": "AKARI_VO_001",
       "file": "inbox/AKARI_VO_001.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.59文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
-        "途中に0.8秒以上の無音 [[1.3, 2.14]]"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 9.67,
+      "duration_sec": 7.86,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_001.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_001.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_002",
       "file": "inbox/AKARI_VO_002.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 17.97,
+      "duration_sec": 17.89,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_002.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_002.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_003",
       "file": "inbox/AKARI_VO_003.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "要再生成",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.35文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）",
+        "発話が速すぎる（12.7モーラ/秒、原稿39モーラに対し発話3.06秒）→ 読み飛ばし・途中欠落の疑い",
+        "第3稿の差し替え版（inbox/AKARI_VO_003.wav、3.9秒）は原稿39モーラに対し発話3.1秒（12.7モーラ/秒。他の燈の音声は6〜7モーラ/秒）",
+        "同じ声の別音声から切り出した「れいてんにーご」「引き上げ」と照合（DTW）しても一致せず、後半「0.25ポイントの引き上げです」が欠けている疑いが強い（人の耳で要確認）",
+        "第3稿の組み上げでは、全文が入っている第2稿の原本（production/fallback_v2/AKARI_VO_003.wav、11.9秒、話速は遅め）で代替。差し替え版は inbox に保存したまま"
       ],
-      "duration_sec": 11.91,
+      "duration_sec": 3.89,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_003.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_003.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_004",
       "file": "inbox/AKARI_VO_004.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.82文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 7.44,
+      "duration_sec": 6.37,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_004.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_004.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_005",
       "file": "inbox/AKARI_VO_005.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 19.64,
+      "duration_sec": 15.26,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_005.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_005.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_006",
       "file": "inbox/AKARI_VO_006.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.88文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）",
+        "途中に0.8秒以上の無音 [[1.94, 2.76]]"
       ],
-      "duration_sec": 10.76,
+      "duration_sec": 8.88,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_006.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_006.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_007",
       "file": "inbox/AKARI_VO_007.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.18文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 22.94,
+      "duration_sec": 16.56,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_007.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_007.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_008",
       "file": "inbox/AKARI_VO_008.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.64文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 10.61,
+      "duration_sec": 6.97,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_008.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_008.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_009",
       "file": "inbox/AKARI_VO_009.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
       "judgement": "要確認",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）",
+        "発話が速すぎる（10.5モーラ/秒、原稿49モーラに対し発話4.66秒）→ 読み飛ばし・途中欠落の疑い",
+        "第2稿からの素材（今回の差し替え対象外）。原稿49モーラに対し発話区間4.7秒（10.5モーラ/秒）で、他の燈の音声（6〜7）より明らかに速い。一部の語句が欠けている可能性があるため人の耳で確認"
       ],
       "duration_sec": 5.49,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_009.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_009.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_010",
       "file": "inbox/AKARI_VO_010.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 10.21,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_010.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_010.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_011",
       "file": "inbox/AKARI_VO_011.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 11.91,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_011.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_011.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_012",
       "file": "inbox/AKARI_VO_012.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 11.1,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_012.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_012.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_013",
       "file": "inbox/AKARI_VO_013.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 12.02,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_013.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_013.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "M_VO_001",
       "file": "inbox/M_VO_001.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）",
         "途中に0.8秒以上の無音 [[5.68, 6.5], [8.89, 9.77], [10.91, 11.76]]"
       ],
       "duration_sec": 12.77,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/M_VO_001.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/M_VO_001.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "M_VO_002",
       "file": "inbox/M_VO_002.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "途中に0.8秒以上の無音 [[14.99, 15.87]]"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 17.53,
+      "duration_sec": 13.04,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/M_VO_002.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/M_VO_002.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_014",
       "file": "inbox/AKARI_VO_014.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.68文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
-        "途中に0.8秒以上の無音 [[17.58, 18.39]]"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 20.92,
+      "duration_sec": 19.8,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_014.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_014.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_015",
       "file": "inbox/AKARI_VO_015.wav",
       "used_in": [
-        "master"
+        "EP01_MASTER_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
-      "duration_sec": 20.19,
+      "duration_sec": 18.49,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_015.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_015.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_016",
       "file": "inbox/AKARI_VO_016.wav",
       "used_in": [
-        "short01"
+        "EP01_SHORT_01_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 4.57,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_016.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_016.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_017",
       "file": "inbox/AKARI_VO_017.wav",
       "used_in": [
-        "short01"
+        "EP01_SHORT_01_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
-        "話速が遅い（2.57文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
-        "途中に0.8秒以上の無音 [[1.13, 1.96]]"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）",
+        "途中に0.8秒以上の無音 [[12.26, 13.08]]"
       ],
-      "duration_sec": 19.85,
+      "duration_sec": 17.42,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_017.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_017.wav（48kHz/24bit PCM、原本から再生成可能）"
     },
     {
       "id": "AKARI_VO_018",
       "file": "inbox/AKARI_VO_018.wav",
       "used_in": [
-        "short01",
-        "short02"
+        "EP01_SHORT_01_v3",
+        "EP01_SHORT_02_v3"
       ],
-      "judgement": "要確認",
+      "judgement": "OK",
       "notes": [
-        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+        "原本 mp3 44100Hz mono（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）"
       ],
       "duration_sec": 8.46,
       "source_codec": "mp3",
       "source_rate": 44100,
-      "edit_file": "voice/final/AKARI_VO_018.wav（48kHz/24bit、再生成可能）"
+      "edit_file": "voice/final/AKARI_VO_018.wav（48kHz/24bit PCM、原本から再生成可能）"
     }
   ],
   "graphics": {
     "G02_rate_change": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G03_effective_date": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G04_not_same": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G06_annual_payment": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G06b_scale": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G07_repayment_ratio": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G07b_cost_pressure": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G08_dscr": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G08b_dscr_stress": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G09b_ippo_table": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G10_summary": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G10b_lending": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G09_ippo_card": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "G11_ending": [
-      "master"
+      "EP01_MASTER_v3"
     ],
     "V02_three": [
-      "short01"
+      "EP01_SHORT_01_v3"
     ],
     "V03_payment": [
-      "short01"
+      "EP01_SHORT_01_v3"
     ],
     "V06_cta": [
-      "short01",
-      "short02"
+      "EP01_SHORT_01_v3",
+      "EP01_SHORT_02_v3"
     ]
   },
   "broll": [],
+  "broll_note": "実写B-rollは今回必須としない（図表主体）",
   "bgm": "自作BGM（tools/akari_news/bgm.py、権利フリー）",
-  "unused_assets": [],
-  "broll_note": "実写B-roll素材は未支給のため不使用。図表15点＋追加図表で代替"
+  "unused_assets": []
 }
