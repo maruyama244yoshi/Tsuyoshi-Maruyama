@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "shorts",
   "version": "v2",
-  "duration": 38.568,
+  "duration": 34.148,
   "audio": "voice/episode_001_short01_mix_v2.wav",
   "audio_sources": {
     "clip": 1,
@@ -45,8 +45,8 @@
       "audio_source": "final",
       "clip": null,
       "start": 9.008,
-      "end": 12.868,
-      "display_end": 13.018
+      "end": 13.688,
+      "display_end": 13.838
     },
     {
       "scene": "EP01_SHORT_01",
@@ -61,9 +61,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 13.018,
-      "end": 28.638,
-      "display_end": 28.788
+      "start": 13.838,
+      "end": 26.558,
+      "display_end": 26.708
     },
     {
       "scene": "EP01_SHORT_01",
@@ -78,9 +78,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 28.788,
-      "end": 36.068,
-      "display_end": 36.468
+      "start": 26.708,
+      "end": 31.648,
+      "display_end": 32.048
     }
   ],
   "cues": [
@@ -102,55 +102,55 @@
     },
     {
       "start": 9.038,
-      "end": 12.088,
+      "end": 12.078,
       "speaker": "akari",
       "lines": [
         "では、大家さんが見るべき数字は何か。"
       ]
     },
     {
-      "start": 12.088,
-      "end": 12.868,
+      "start": 12.078,
+      "end": 13.688,
       "speaker": "akari",
       "lines": [
         "ポイントは3つです。"
       ]
     },
     {
-      "start": 13.048,
-      "end": 15.868,
+      "start": 13.868,
+      "end": 16.468,
       "speaker": "akari",
       "lines": [
         "1つ目は年間返済額です。"
       ]
     },
     {
-      "start": 15.868,
-      "end": 22.268,
+      "start": 16.468,
+      "end": 21.938,
       "speaker": "akari",
       "lines": [
         "1億円・30年の単純試算では、2.00％から"
       ]
     },
     {
-      "start": 22.268,
-      "end": 28.638,
+      "start": 21.938,
+      "end": 26.558,
       "speaker": "akari",
       "lines": [
         "2.25％になると年間およそ15万円増えます。"
       ]
     },
     {
-      "start": 28.818,
-      "end": 33.198,
+      "start": 26.738,
+      "end": 29.708,
       "speaker": "akari",
       "lines": [
         "詳しい解説は本編でお届けしています。"
       ]
     },
     {
-      "start": 33.198,
-      "end": 36.068,
+      "start": 29.708,
+      "end": 31.648,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでした。"
@@ -160,8 +160,8 @@
   "events": [
     {
       "type": "outro",
-      "start": 36.468,
-      "end": 38.568,
+      "start": 32.048,
+      "end": 34.148,
       "visual": "vgfx:V06_cta",
       "scene": "OUTRO"
     }

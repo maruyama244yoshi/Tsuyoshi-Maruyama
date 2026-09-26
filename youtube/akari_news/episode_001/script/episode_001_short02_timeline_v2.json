@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "shorts",
   "version": "v2",
-  "duration": 38.182,
+  "duration": 35.842,
   "audio": "voice/episode_001_short02_mix_v2.wav",
   "audio_sources": {
     "clip": 2,
@@ -66,8 +66,8 @@
       "audio_source": "final",
       "clip": null,
       "start": 28.402,
-      "end": 35.682,
-      "display_end": 36.082
+      "end": 33.342,
+      "display_end": 33.742
     }
   ],
   "cues": [
@@ -116,15 +116,15 @@
     },
     {
       "start": 28.432,
-      "end": 32.812,
+      "end": 31.402,
       "speaker": "akari",
       "lines": [
         "詳しい解説は本編でお届けしています。"
       ]
     },
     {
-      "start": 32.812,
-      "end": 35.682,
+      "start": 31.402,
+      "end": 33.342,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでした。"
@@ -134,8 +134,8 @@
   "events": [
     {
       "type": "outro",
-      "start": 36.082,
-      "end": 38.182,
+      "start": 33.742,
+      "end": 35.842,
       "visual": "vgfx:V06_cta",
       "scene": "OUTRO"
     }
