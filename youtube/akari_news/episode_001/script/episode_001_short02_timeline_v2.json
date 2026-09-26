@@ -2,7 +2,7 @@
   "episode": "episode_001",
   "kind": "shorts",
   "version": "v2",
-  "duration": 40.1,
+  "duration": 39.9,
   "audio": "voice/episode_001_short02_mix_v2.wav",
   "audio_sources": {
     "clip": 2,
@@ -28,7 +28,7 @@
       "clip": "clips/AKARI_018.mp4",
       "start": 0.6,
       "end": 10.906,
-      "display_end": 11.306,
+      "display_end": 11.206,
       "start_display": 0.0
     },
     {
@@ -48,9 +48,9 @@
       "cutaway": null,
       "audio_source": "clip",
       "clip": "clips/M_006.mp4",
-      "start": 11.306,
-      "end": 28.737,
-      "display_end": 29.137
+      "start": 11.206,
+      "end": 28.637,
+      "display_end": 28.937
     },
     {
       "scene": "EP01_SHORT_02",
@@ -65,9 +65,9 @@
       "cutaway": null,
       "audio_source": "final",
       "clip": null,
-      "start": 29.137,
-      "end": 37.6,
-      "display_end": 38.0
+      "start": 28.937,
+      "end": 37.4,
+      "display_end": 37.8
     }
   ],
   "cues": [
@@ -89,16 +89,16 @@
       ]
     },
     {
-      "start": 11.306,
-      "end": 13.644,
+      "start": 11.206,
+      "end": 13.544,
       "speaker": "ooka_m",
       "lines": [
         "今日の大家の一手です。"
       ]
     },
     {
-      "start": 13.644,
-      "end": 21.934,
+      "start": 13.544,
+      "end": 21.834,
       "speaker": "ooka_m",
       "lines": [
         "現在金利、プラス0.5％、",
@@ -106,8 +106,8 @@
       ]
     },
     {
-      "start": 21.934,
-      "end": 28.737,
+      "start": 21.834,
+      "end": 28.637,
       "speaker": "ooka_m",
       "lines": [
         "金利を予想するより、上がっても",
@@ -115,16 +115,16 @@
       ]
     },
     {
-      "start": 29.137,
-      "end": 34.051,
+      "start": 28.937,
+      "end": 33.851,
       "speaker": "akari",
       "lines": [
         "詳しい解説は本編でお届けしています。"
       ]
     },
     {
-      "start": 34.051,
-      "end": 37.6,
+      "start": 33.851,
+      "end": 37.4,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでした。"
@@ -134,8 +134,8 @@
   "events": [
     {
       "type": "outro",
-      "start": 38.0,
-      "end": 40.1,
+      "start": 37.8,
+      "end": 39.9,
       "visual": "vgfx:V06_cta",
       "scene": "OUTRO"
     }

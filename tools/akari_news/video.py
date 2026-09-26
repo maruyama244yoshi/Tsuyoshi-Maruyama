@@ -215,7 +215,13 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
             missing.add(visual[5:])
         plate = NAMEPLATE[shot["speaker"]] if (is_talk and shot) else None
         ov = tmp / f"ov{n:04}.png"
-        overlay_layer((W, H), cue, shorts, draft_label, plate if (clip and not shorts) else None,
+        box = boxes.setdefault(clip, content_box(clip)) if (clip and shorts) else None
+        native_vertical = False  # 縦型ネイティブ素材（余白なしの縦長）は全画面で使う
+        if clip and shorts and box is None:
+            from .compare_video import video_info
+            vi = video_info(clip)
+            native_vertical = (vi["height"] or 0) > (vi["width"] or 0)
+        overlay_layer((W, H), cue, shorts, draft_label, plate if (clip and (not shorts or native_vertical)) else None,
                       visual[5:] if (is_talk and not clip) else None).save(ov)
         out = tmp / f"p{n:04}.mp4"
         # 部品ごとに時間の刻み（timescale）とフレームレートを揃えないと concat で尺が崩れる
@@ -228,9 +234,8 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
             # 音声トラックの方がわずかに長い素材があるため、映像の最終フレームより手前で止める
             off = min(max(0.0, a - shot["start"]), max(0.0, cdur - 0.3))
             # 画面いっぱいに拡大して中央を切り出す（縦型にも対応）。動きは元動画のまま
-            if shorts:
+            if shorts and not native_vertical:
                 # 縦型：人物映像（余白を除いた横長部分）を上部パネルに、下にキーワードと字幕
-                box = boxes.setdefault(clip, content_box(clip))
                 crop = f"crop={box[2]}:{box[3]}:{box[0]}:{box[1]}," if box else ""
                 bgp = tmp / f"bg{n:04}.png"
                 bgim = vertical_talk_bg(sh_title, shot.get("vkeywords"), NAMEPLATE[shot["speaker"]][0])

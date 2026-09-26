@@ -121,7 +121,10 @@ def build(ep_id, shorts=False, use_existing=False, short_no=None):
         sh = ep.get("shorts", {})
         tag = f"{ep_id}_shorts" if shorts else ep_id
         scenes = [{"id": "SHORTS", "title": "Shorts", "shots": sh["shots"]}] if shorts else ep["scenes"]
-    names = names_for(d, ep.get("script_version", "v1"))
+    names = names_for(d, "v2")
+    # 発話間の「間」は編集側で調整できる（音声そのものは加工しない）
+    gap_shot = ep.get("edit", {}).get("gap_shot", GAP_SHOT)
+    gap_scene = ep.get("edit", {}).get("gap_scene", GAP_SCENE)
     vdir = d / "voice" / ("guide_shorts" if shorts else "guide")
     vdir.mkdir(parents=True, exist_ok=True)
 
@@ -130,14 +133,14 @@ def build(ep_id, shorts=False, use_existing=False, short_no=None):
     shots_out, cues_out, events, sources = [], [], [], {}
     for si, sc in enumerate(scenes):
         if si > 0:
-            audio.append(np.zeros(int(SR * GAP_SCENE), np.float32)); t += GAP_SCENE
+            audio.append(np.zeros(int(SR * gap_scene), np.float32)); t += gap_scene
         if sc.get("jingle_before"):
             events.append({"type": "jingle", "start": t, "end": t + JINGLE_SEC,
                            "visual": sc.get("jingle_visual", "gfx:G09_ippo_card"), "scene": sc["id"]})
             audio.append(jingle()); t += JINGLE_SEC
         for hi, shot in enumerate(sc["shots"]):
             if hi > 0:
-                audio.append(np.zeros(int(SR * GAP_SHOT), np.float32)); t += GAP_SHOT
+                audio.append(np.zeros(int(SR * gap_shot), np.float32)); t += gap_shot
             shot_start = t
             cue_texts = cues_for_shot(shot["text"])
             sentences = split_sentences(shot["text"])
