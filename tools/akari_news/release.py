@@ -42,10 +42,15 @@ def ingest(d):
     (d / "clips").mkdir(exist_ok=True)
     (d / "voice" / "final").mkdir(parents=True, exist_ok=True)
     for f in sorted(inbox.glob("*.mp4")):
+        if "_VO_" in f.stem:
+            continue
         shutil.copy2(d / manual[f.stem]["edit_source"] if manual.get(f.stem, {}).get("edit_source") else f,
                      d / "clips" / f.name)
+    # 声だけの音声：アバター動画方式の mp4 があればその音声トラックを正本とし、旧TTSの .wav は使わない
+    vo_src = {f.stem: f for f in sorted(inbox.glob("*_VO_*.wav"))}
+    vo_src.update({f.stem: f for f in sorted(inbox.glob("*_VO_*.mp4"))})
     reps = []
-    for f in sorted(inbox.glob("*_VO_*.wav")):
+    for f in vo_src.values():
         alt = manual.get(f.stem, {}).get("edit_source")
         reps.append(convert(d / alt if alt else f, d / "voice" / "final"))
         if alt:
@@ -59,7 +64,12 @@ def judge(d, qa, boxes):
     for aid, r in qa.items():
         j, notes = "OK", []
         if r["kind"] == "voiceover":
-            notes.append(f"原本 {r.get('acodec')} {r.get('sample_rate')}Hz {r.get('channels')}（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）")
+            if r.get("source_type") == "avatar_video":
+                notes.append(f"正本：アバター動画方式の {r['file']}（音声 {r.get('acodec')} {r.get('sample_rate')}Hz）。音声トラックだけを48kHz/24bit PCMへ1回だけ変換して使用。旧TTSの .wav は不採用")
+            else:
+                notes.append(f"原本 {r.get('acodec')} {r.get('sample_rate')}Hz {r.get('channels')}（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）")
+            if r.get("f0_median_hz"):
+                notes.append(f"声の高さ F0 中央値 {r['f0_median_hz']}Hz")
         if r.get("long_silences"):
             inner = [s for s in r["long_silences"] if s[0] > 0.3 and (r["duration"] or 0) - s[1] > 0.3]
             if inner:

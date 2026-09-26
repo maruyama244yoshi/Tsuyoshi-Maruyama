@@ -16,6 +16,8 @@ from pathlib import Path
 from .video import ffmpeg
 
 LOSSLESS = {".wav", ".flac"}
+# HeyGen のアバター動画（mp4）の音声トラックは原本そのもの（2026-09-26 形式ルール）。音声だけを1回デコードして使う
+AVATAR_VIDEO = {".mp4"}
 
 
 def probe(path):
@@ -46,14 +48,14 @@ def silence_edges(path, thresh_db=-45):
 
 
 def convert(src: Path, out_dir: Path):
-    if src.suffix.lower() not in LOSSLESS:
+    if src.suffix.lower() not in LOSSLESS | AVATAR_VIDEO:
         raise SystemExit(f"拒否：{src.name} は非可逆形式です。ElevenLabs から WAV（PCM）で書き出し直してください。")
     before = probe(src)
     out_dir.mkdir(parents=True, exist_ok=True)
     dst = out_dir / (src.stem + ".wav")
     if dst.resolve() == src.resolve():
         dst = out_dir / (src.stem + "_48k.wav")
-    subprocess.run([ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", "-i", str(src),
+    subprocess.run([ffmpeg(), "-y", "-hide_banner", "-loglevel", "error", "-i", str(src), "-map", "0:a:0", "-vn",
                     "-af", "aresample=resampler=soxr:precision=28:dither_method=triangular", "-ar", "48000",
                     "-c:a", "pcm_s24le", str(dst)], check=True)
     rep = {"file": dst.name, "source": src.name, "source_sample_rate": before["sample_rate"],

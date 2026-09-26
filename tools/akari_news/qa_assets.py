@@ -80,6 +80,21 @@ def mora_count(reading):
     return sum(1 for x in ph if x in ("a", "i", "u", "e", "o", "A", "I", "U", "E", "O", "N", "cl"))
 
 
+def f0_median(p, speaker):
+    """声の高さ（基本周波数 F0）の中央値 Hz。librosa の pyin を使う（未導入なら None）。"""
+    try:
+        import librosa
+        import numpy as np
+    except ImportError:
+        return None
+    from .timeline import read_wav
+    y = read_wav(p)[::3]  # 48kHz → 16kHz
+    lo, hi = (120, 450) if speaker == "燈" else (70, 300)
+    f, v, _ = librosa.pyin(y, fmin=lo, fmax=hi, sr=16000, frame_length=1024)
+    f = f[v]
+    return round(float(np.median(f)), 1) if len(f) else None
+
+
 def speech_sec(p, floor_db=-45, min_gap=0.35):
     """発話区間の合計秒（先頭・末尾の無音と min_gap 以上の間を除く）。"""
     import numpy as np
@@ -110,7 +125,10 @@ def main(argv=None):
     results = []
     for rid, r in rows.items():
         is_vo = "_VO_" in rid
-        p = inbox / (f"{rid}.wav" if is_vo else f"{rid}.mp4")
+        # 声だけの音声は、アバター動画方式の mp4（第3.2稿以降の正本）があればそちらを使う。旧TTSの .wav は使わない
+        p = inbox / f"{rid}.mp4"
+        if is_vo and not p.exists():
+            p = inbox / f"{rid}.wav"
         res = {"id": rid, "file": p.name, "kind": "voiceover" if is_vo else "talking", "speaker": r["speaker"],
                "text": r["text"], "exists": p.exists()}
         if not p.exists():
@@ -120,11 +138,13 @@ def main(argv=None):
         res["size_mb"] = round(p.stat().st_size / 1e6, 2)
         res.update(probe(p))
         issues, notes = [], []
-        if not is_vo:
+        res["source_type"] = "avatar_video" if p.suffix == ".mp4" else "tts_audio"
+        if p.suffix == ".mp4":
             vd = decode_check(p, "v")
             res["video_decode"] = vd
             if vd["errors"]:
                 issues.append("映像デコードエラー")
+        if not is_vo:
             aspect = clips.get(rid, {}).get("aspect", "16:9")
             res["expected_aspect"] = aspect
             w, h = res.get("width", 0), res.get("height", 0)
@@ -149,7 +169,7 @@ def main(argv=None):
                 inner = [s for s in st["long_silences"] if s[0] > 0.3 and (res["duration"] or 0) - s[1] > 0.3]
                 if inner:
                     notes.append(f"途中に0.8秒以上の無音 {inner}")
-            if not is_vo and res.get("video_decode", {}).get("decoded_sec") and ad["decoded_sec"]:
+            if res.get("video_decode", {}).get("decoded_sec") and ad["decoded_sec"]:
                 diff = abs(res["video_decode"]["decoded_sec"] - ad["decoded_sec"])
                 res["av_duration_diff"] = round(diff, 3)
                 if diff > 0.2:
@@ -169,6 +189,8 @@ def main(argv=None):
                     issues.append(f"発話が速すぎる（{res['mora_per_sec']}モーラ/秒、原稿{mora}モーラに対し発話{sp}秒）→ 読み飛ばし・途中欠落の疑い")
                 elif res["mora_per_sec"] < MORA_RANGE[0]:
                     issues.append(f"発話が遅すぎる（{res['mora_per_sec']}モーラ/秒）→ 余計な間・原稿違いの疑い")
+        if res.get("sample_rate"):
+            res["f0_median_hz"] = f0_median(p, r["speaker"])
         res["issues"], res["notes"] = issues, notes
         results.append(res)
     out = d / "review" / "asset_qa.json"
