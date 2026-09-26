@@ -140,11 +140,14 @@ def wrap2(text, max_line=28):
     return [text[:i], text[i:]]
 
 
+MAX_CUE = 40  # 1キューの最大文字数（これを超える文は読点・助詞で分けて、長時間同じ字幕が出続けないようにする）
+
+
 def cues_split(sent, max_line=28):
-    """2行に収まらない長文を、読点→助詞の順で区切って複数キューにする。"""
-    if len(sent) <= max_line * 2:
+    """長文を、読点→助詞の順で区切って複数キューにする（1キュー最大 MAX_CUE 字・2行）。"""
+    if len(sent) <= min(MAX_CUE, max_line * 2):
         return [sent]
-    i = best_break(sent, max_line * 2)
+    i = best_break(sent, max_line)
     return cues_split(sent[:i], max_line) + cues_split(sent[i:], max_line)
 
 
