@@ -1,4 +1,4 @@
-# EP01 QA_REPORT（v3）
+# EP01 QA_REPORT（v3.1）
 
 作成：2026-09-26　検査：`tools/akari_news/qa_assets.py`（全フレーム・全音声をデコード）＋代表フレームの目視（`review/asset_contact_sheet.png`）
 
@@ -64,6 +64,6 @@
 
 | 成果物 | 尺 | 備考 |
 |---|---|---|
-| EP01_MASTER_v3.mp4 | 6分9秒 | 燈 28.9％／大家M 12.4％／図表 58.7％ |
-| EP01_SHORT_01_v3.mp4 | 42.7秒 | AKARI_017＋AKARI_VO_016＋AKARI_VO_017＋AKARI_VO_018 |
-| EP01_SHORT_02_v3.mp4 | 39.7秒 | AKARI_018＋M_006＋AKARI_VO_018 |
+| EP01_MASTER_v3.1.mp4 | 5分39秒 | 燈 30.7％／大家M 13.3％／図表 56.0％ |
+| EP01_SHORT_01_v3.1.mp4 | 38.6秒 | AKARI_017＋AKARI_VO_016＋AKARI_VO_017＋AKARI_VO_018 |
+| EP01_SHORT_02_v3.1.mp4 | 38.2秒 | AKARI_018＋M_006＋AKARI_VO_018 |

@@ -112,6 +112,38 @@ def jingle(sec=JINGLE_SEC):
     return 0.18 * out / np.abs(out).max()
 
 
+def tighten_pauses(x, max_pause, edge=0.08, hop=0.02, fade=0.01):
+    """声だけの音声の「間」を詰める：max_pause 秒を超える無音を max_pause 秒に、先頭・末尾の無音を edge 秒にする。
+    声の部分は一切伸縮・加工しない（無音の真ん中を切り、切り口を 10ms でつなぐ）。"""
+    on = speech_frames(x, hop)
+    f = int(SR * hop)
+    idx = np.where(on)[0]
+    if not len(idx):
+        return x
+    first, last = idx[0], idx[-1]
+    keep = [(max(0, first * f - int(SR * edge)), None)]
+    run_start = None
+    for i in range(first, last + 1):
+        if not on[i]:
+            run_start = i if run_start is None else run_start
+            continue
+        if run_start is not None and (i - run_start) * hop > max_pause:
+            half = int(SR * max_pause / 2)
+            keep[-1] = (keep[-1][0], run_start * f + half)
+            keep.append((i * f - half, None))
+        run_start = None
+    keep[-1] = (keep[-1][0], min(len(x), (last + 1) * f + int(SR * edge)))
+    nf = int(SR * fade)
+    out = []
+    for a, b in keep:
+        seg = x[a:b].copy()
+        if len(seg) > 2 * nf:
+            seg[:nf] *= np.linspace(0, 1, nf, dtype=np.float32)
+            seg[-nf:] *= np.linspace(1, 0, nf, dtype=np.float32)
+        out.append(seg)
+    return np.concatenate(out)
+
+
 def normalize_rms(x, target_db=-20.0):
     rms = np.sqrt(np.mean(x ** 2)) + 1e-9
     return x * (10 ** (target_db / 20) / rms)
@@ -203,6 +235,8 @@ def build(ep_id, shorts=False, use_existing=False, short_no=None):
             elif final is not None:
                 src = "final"
                 x = normalize_rms(read_wav(final))
+                if ep.get("edit", {}).get("vo_max_pause"):
+                    x = tighten_pauses(x, ep["edit"]["vo_max_pause"], ep["edit"].get("vo_edge", 0.08))
             else:
                 src = "guide"
                 x = None

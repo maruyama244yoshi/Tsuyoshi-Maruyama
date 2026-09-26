@@ -229,6 +229,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
         # 部品ごとに時間の刻み（timescale）とフレームレートを揃えないと concat で尺が崩れる
         enc = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS),
                "-fps_mode", "cfr", "-video_track_timescale", "15360", "-an"]
+        nfr = ["-frames:v", str(max(1, round(dur * FPS)))]  # フレーム数を固定（端数の切り上げで尺が伸びるのを防ぐ）
         if clip:
             used_clips.add(str(clip))
             # 発話後の「間」はクリップの最後のフレームで埋める（クリップ終端を越えて読まない）
@@ -251,12 +252,12 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
                 vf = (f"[0:v]{crop}scale={W}:-2,setsar=1,fps={FPS},tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[p];"
                       f"[1:v][p]overlay=0:154[b];[b][2:v]overlay=0:0")
                 run(["-ss", f"{off:.3f}", "-i", str(clip), "-loop", "1", "-i", str(bgp), "-i", str(ov),
-                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
+                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, *nfr, str(out)])
             else:
                 vf = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
                       f"tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[v];[v][1:v]overlay=0:0")
                 run(["-ss", f"{off:.3f}", "-i", str(clip), "-i", str(ov),
-                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
+                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, *nfr, str(out)])
         else:
             key = visual.split(":", 1)[1]
             ovl = Image.open(ov)
@@ -266,20 +267,21 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
                     and not shorts)
             shown_before.setdefault(shot["scene"] if shot else "_", {})[key] = True
             if anim:
-                na = int(min(ANIM_SEC, dur) * FPS)
+                na = max(1, int(round(min(ANIM_SEC, dur) * FPS)))
                 fdir = tmp / f"anim{n:04}"
                 fdir.mkdir()
                 for i in range(na):
                     fr_im = render_graphic(ep["simulation"], key, (i + 1) / na)
                     Image.alpha_composite(fr_im.convert("RGBA"), ovl).convert("RGB").save(fdir / f"{i:04}.png")
-                run(["-framerate", str(FPS), "-i", str(fdir / "%04d.png"), "-frames:v", str(na), *enc, str(out)])
+                run(["-framerate", str(FPS), "-i", str(fdir / "%04d.png"), *enc, "-frames:v", str(na), str(out)])
                 rest = dur - na / FPS
                 if rest > 1 / FPS / 2:
                     out2 = tmp / f"p{n:04}b.mp4"
                     img = Image.alpha_composite(render_graphic(ep["simulation"], key, 1.0).convert("RGBA"), ovl).convert("RGB")
                     fr = tmp / f"f{n:04}.png"
                     img.save(fr)
-                    run(["-loop", "1", "-framerate", str(FPS), "-t", f"{rest:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out2)])
+                    run(["-loop", "1", "-framerate", str(FPS), "-t", f"{rest:.3f}", "-i", str(fr), "-tune", "stillimage", *enc,
+                         "-frames:v", str(max(1, round(dur * FPS)) - na), str(out2)])
                     for pp, dd in ((out, na / FPS), (out2, rest)):
                         if abs(media_duration(pp) - dd) > 0.1:
                             raise RuntimeError(f"部品の尺が不正: {pp.name}")
@@ -292,7 +294,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
                 img = Image.alpha_composite(img.convert("RGBA"), ovl).convert("RGB")
                 fr = tmp / f"f{n:04}.png"
                 img.save(fr)
-                run(["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, str(out)])
+                run(["-loop", "1", "-framerate", str(FPS), "-t", f"{dur:.3f}", "-i", str(fr), "-tune", "stillimage", *enc, *nfr, str(out)])
         pd = media_duration(out)
         if abs(pd - dur) > 0.1:
             raise RuntimeError(f"部品の尺が不正: {out.name} 期待{dur:.2f}s 実際{pd:.2f}s ({visual})")

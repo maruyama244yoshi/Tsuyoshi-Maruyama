@@ -1,6 +1,6 @@
 {
   "episode": "EP01",
-  "version": "v3",
+  "version": "v3.1",
   "generated": "2026-09-26",
   "voice": {
     "akari": {
@@ -16,27 +16,27 @@
   },
   "source_manifest": "inbox/AKARI_NEWS_EP01_manifest.json",
   "outputs": {
-    "EP01_MASTER_v3.mp4": {
-      "duration_sec": 369.123
+    "EP01_MASTER_v3.1.mp4": {
+      "duration_sec": 338.823
     },
-    "EP01_SHORT_01_v3.mp4": {
-      "duration_sec": 42.716
+    "EP01_SHORT_01_v3.1.mp4": {
+      "duration_sec": 38.568
     },
-    "EP01_SHORT_02_v3.mp4": {
-      "duration_sec": 39.666
+    "EP01_SHORT_02_v3.1.mp4": {
+      "duration_sec": 38.182
     }
   },
   "master_screen_ratio_pct": {
-    "akari": 28.9,
-    "ooka_m": 12.4,
-    "graphics": 58.7
+    "akari": 30.7,
+    "ooka_m": 13.3,
+    "graphics": 56.0
   },
   "talking_videos": [
     {
       "id": "AKARI_001",
       "file": "inbox/AKARI_001.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -49,7 +49,7 @@
       "id": "AKARI_002",
       "file": "inbox/AKARI_002.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -62,7 +62,7 @@
       "id": "AKARI_003",
       "file": "inbox/AKARI_003.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -75,7 +75,7 @@
       "id": "AKARI_004",
       "file": "inbox/AKARI_004.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -88,7 +88,7 @@
       "id": "AKARI_005",
       "file": "inbox/AKARI_005.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -101,7 +101,7 @@
       "id": "AKARI_006",
       "file": "inbox/AKARI_006.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -114,7 +114,7 @@
       "id": "AKARI_007",
       "file": "inbox/AKARI_007.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -127,7 +127,7 @@
       "id": "AKARI_008",
       "file": "inbox/AKARI_008.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -140,7 +140,7 @@
       "id": "AKARI_009",
       "file": "inbox/AKARI_009.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -153,7 +153,7 @@
       "id": "AKARI_010",
       "file": "inbox/AKARI_010.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -166,7 +166,7 @@
       "id": "AKARI_011",
       "file": "inbox/AKARI_011.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -179,7 +179,7 @@
       "id": "AKARI_012",
       "file": "inbox/AKARI_012.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -192,7 +192,7 @@
       "id": "AKARI_013",
       "file": "inbox/AKARI_013.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -205,7 +205,7 @@
       "id": "M_001",
       "file": "inbox/M_001.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -218,7 +218,7 @@
       "id": "M_002",
       "file": "inbox/M_002.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -231,7 +231,7 @@
       "id": "M_003",
       "file": "inbox/M_003.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -244,7 +244,7 @@
       "id": "M_004",
       "file": "inbox/M_004.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -257,7 +257,7 @@
       "id": "M_005",
       "file": "inbox/M_005.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -272,7 +272,7 @@
       "id": "AKARI_014",
       "file": "inbox/AKARI_014.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -285,7 +285,7 @@
       "id": "AKARI_015",
       "file": "inbox/AKARI_015.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -298,7 +298,7 @@
       "id": "AKARI_016",
       "file": "inbox/AKARI_016.mp4",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [],
@@ -311,7 +311,7 @@
       "id": "AKARI_017",
       "file": "inbox/AKARI_017.mp4",
       "used_in": [
-        "EP01_SHORT_01_v3"
+        "EP01_SHORT_01_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -326,7 +326,7 @@
       "id": "AKARI_018",
       "file": "inbox/AKARI_018.mp4",
       "used_in": [
-        "EP01_SHORT_02_v3"
+        "EP01_SHORT_02_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -341,7 +341,7 @@
       "id": "M_006",
       "file": "inbox/M_006.mp4",
       "used_in": [
-        "EP01_SHORT_02_v3"
+        "EP01_SHORT_02_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -358,7 +358,7 @@
       "id": "AKARI_VO_001",
       "file": "inbox/AKARI_VO_001.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -373,7 +373,7 @@
       "id": "AKARI_VO_002",
       "file": "inbox/AKARI_VO_002.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -388,7 +388,7 @@
       "id": "AKARI_VO_003",
       "file": "inbox/AKARI_VO_003.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "要再生成",
       "notes": [
@@ -407,7 +407,7 @@
       "id": "AKARI_VO_004",
       "file": "inbox/AKARI_VO_004.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -422,7 +422,7 @@
       "id": "AKARI_VO_005",
       "file": "inbox/AKARI_VO_005.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -437,7 +437,7 @@
       "id": "AKARI_VO_006",
       "file": "inbox/AKARI_VO_006.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -453,7 +453,7 @@
       "id": "AKARI_VO_007",
       "file": "inbox/AKARI_VO_007.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -468,7 +468,7 @@
       "id": "AKARI_VO_008",
       "file": "inbox/AKARI_VO_008.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -483,7 +483,7 @@
       "id": "AKARI_VO_009",
       "file": "inbox/AKARI_VO_009.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "要確認",
       "notes": [
@@ -500,7 +500,7 @@
       "id": "AKARI_VO_010",
       "file": "inbox/AKARI_VO_010.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -515,7 +515,7 @@
       "id": "AKARI_VO_011",
       "file": "inbox/AKARI_VO_011.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -530,7 +530,7 @@
       "id": "AKARI_VO_012",
       "file": "inbox/AKARI_VO_012.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -545,7 +545,7 @@
       "id": "AKARI_VO_013",
       "file": "inbox/AKARI_VO_013.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -560,7 +560,7 @@
       "id": "M_VO_001",
       "file": "inbox/M_VO_001.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -576,7 +576,7 @@
       "id": "M_VO_002",
       "file": "inbox/M_VO_002.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -591,7 +591,7 @@
       "id": "AKARI_VO_014",
       "file": "inbox/AKARI_VO_014.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -606,7 +606,7 @@
       "id": "AKARI_VO_015",
       "file": "inbox/AKARI_VO_015.wav",
       "used_in": [
-        "EP01_MASTER_v3"
+        "EP01_MASTER_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -621,7 +621,7 @@
       "id": "AKARI_VO_016",
       "file": "inbox/AKARI_VO_016.wav",
       "used_in": [
-        "EP01_SHORT_01_v3"
+        "EP01_SHORT_01_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -636,7 +636,7 @@
       "id": "AKARI_VO_017",
       "file": "inbox/AKARI_VO_017.wav",
       "used_in": [
-        "EP01_SHORT_01_v3"
+        "EP01_SHORT_01_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -652,8 +652,8 @@
       "id": "AKARI_VO_018",
       "file": "inbox/AKARI_VO_018.wav",
       "used_in": [
-        "EP01_SHORT_01_v3",
-        "EP01_SHORT_02_v3"
+        "EP01_SHORT_01_v3.1",
+        "EP01_SHORT_02_v3.1"
       ],
       "judgement": "OK",
       "notes": [
@@ -667,56 +667,56 @@
   ],
   "graphics": {
     "G02_rate_change": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G03_effective_date": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G04_not_same": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G06_annual_payment": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G06b_scale": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G07_repayment_ratio": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G07b_cost_pressure": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G08_dscr": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G08b_dscr_stress": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G09b_ippo_table": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G10_summary": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G10b_lending": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G09_ippo_card": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "G11_ending": [
-      "EP01_MASTER_v3"
+      "EP01_MASTER_v3.1"
     ],
     "V02_three": [
-      "EP01_SHORT_01_v3"
+      "EP01_SHORT_01_v3.1"
     ],
     "V03_payment": [
-      "EP01_SHORT_01_v3"
+      "EP01_SHORT_01_v3.1"
     ],
     "V06_cta": [
-      "EP01_SHORT_01_v3",
-      "EP01_SHORT_02_v3"
+      "EP01_SHORT_01_v3.1",
+      "EP01_SHORT_02_v3.1"
     ]
   },
   "broll": [],
