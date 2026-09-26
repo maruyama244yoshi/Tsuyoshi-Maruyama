@@ -1,6 +1,8 @@
 """サムネイル（1280x720）テンプレート。燈は右、文字は左（AKARI_MASTER §9）。
 
-  python3 -m tools.akari_news.thumbnail episode_001
+  python3 -m tools.akari_news.thumbnail episode_001 [--set v3_2]
+
+--set を付けると、エピソード定義の "thumbnail_sets" の文言で書き出す（ファイル名に set 名が付く）。
 
 文字は画像生成AIに書かせず、ここで後乗せする。煽り禁止ワードを含む場合は停止する。
 """
@@ -92,16 +94,22 @@ def compose(variant, top, main, sub, face_key="akari_talking"):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("episode")
+    ap.add_argument("--set", dest="set_name")
     a = ap.parse_args(argv)
     d = episode_dir(a.episode) / "thumbnail"
     d.mkdir(exist_ok=True)
     spec = [("A", "日銀 利上げ", "1.25％へ", "大家はどうする？"),
             ("B", "日銀 利上げ", "1.25％へ", "大家が見る3つの数字"),
             ("C", "日銀 利上げ", "1.25％へ", "大家はどうする？")]
+    tag = ""
+    if a.set_name:
+        ep = load_json(episode_dir(a.episode) / "script" / f"{a.episode}.json")
+        spec = [(x["variant"], x["top"], x["main"], x["sub"]) for x in ep["thumbnail_sets"][a.set_name]]
+        tag = f"_{a.set_name}"
     tiles = []
-    for v, top, main_, sub in spec:
+    for i, (v, top, main_, sub) in enumerate(spec):
         im = compose(v, top, main_, sub)
-        p = d / f"{a.episode}_thumbnail_{v.lower()}.png"
+        p = d / f"{a.episode}_thumbnail{tag}_{v.lower() if not tag else 'abc'[i]}.png"
         im.save(p)
         tiles.append(im)
         print("wrote", p)
@@ -109,7 +117,7 @@ def main(argv=None):
     sheet = Image.new("RGB", (3 * 330 + 10, 200), "white")
     for i, im in enumerate(tiles):
         sheet.paste(im.resize((320, 180)), (10 + i * 330, 10))
-    sheet.save(d / f"{a.episode}_thumbnail_preview_small.png")
+    sheet.save(d / f"{a.episode}_thumbnail{tag}_preview_small.png")
 
 
 if __name__ == "__main__":
