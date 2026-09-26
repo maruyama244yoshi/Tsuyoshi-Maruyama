@@ -120,8 +120,11 @@ def best_break(text, max_line):
         ch, nx = text[i - 1], text[i]
         if ch in "、。，？":
             pen = 0
-        elif (ch in BREAK_AFTER and nx not in "、。ょゃゅっー" and not text[i - 2].isascii()
-              and text[i:i + 2] not in ("いっ", "いう", "なく", "して", "する", "なる")):
+        elif text[i - 2:i] == "から":
+            pen = 2
+        elif (ch in BREAK_AFTER and nx not in "、。ょゃゅっーの" and not text[i - 2].isascii()
+              and text[i:i + 2] not in ("いっ", "いう", "なく", "して", "する", "なる")
+              and text[i - 1:i + 1] not in ("でき", "とう")):
             pen = 3
         else:
             continue
