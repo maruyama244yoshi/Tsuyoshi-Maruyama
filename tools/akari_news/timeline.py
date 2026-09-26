@@ -109,11 +109,18 @@ def ts(sec, sep=","):
     return f"{h:02}:{m:02}:{s:02}{sep}{ms:03}"
 
 
-def build(ep_id, shorts=False, use_existing=False):
+def build(ep_id, shorts=False, use_existing=False, short_no=None):
     d = episode_dir(ep_id)
     ep = load_json(d / "script" / f"{ep_id}.json")
-    tag = f"{ep_id}_shorts" if shorts else ep_id
-    scenes = [{"id": "SHORTS", "title": "Shorts", "shots": ep["shorts"]["shots"]}] if shorts else ep["scenes"]
+    if short_no:
+        sh = ep["shorts_list"][short_no - 1]
+        shorts = True
+        tag = f"{ep_id}_short{short_no:02}"
+        scenes = [{"id": sh["id"], "title": sh["title"], "shots": sh["shots"]}]
+    else:
+        sh = ep.get("shorts", {})
+        tag = f"{ep_id}_shorts" if shorts else ep_id
+        scenes = [{"id": "SHORTS", "title": "Shorts", "shots": sh["shots"]}] if shorts else ep["scenes"]
     names = names_for(d, ep.get("script_version", "v1"))
     vdir = d / "voice" / ("guide_shorts" if shorts else "guide")
     vdir.mkdir(parents=True, exist_ok=True)
@@ -135,8 +142,13 @@ def build(ep_id, shorts=False, use_existing=False):
             cue_texts = cues_for_shot(shot["text"])
             sentences = split_sentences(shot["text"])
             sent_timing = []
-            clip = clip_path(d, sc["id"], hi, shot["speaker"], names)
-            final = final_voice(d, sc["id"], hi, shot["speaker"], names)
+            if shot.get("asset"):  # 素材IDで直接指定（正式ファイル名）
+                clip = d / "clips" / f"{shot['asset']}.mp4"
+                final = next((p for p in (d / "voice" / "final" / f"{shot['asset']}{e}" for e in (".wav", ".mp4"))
+                              if p.exists()), None)
+            else:
+                clip = clip_path(d, sc["id"], hi, shot["speaker"], names)
+                final = final_voice(d, sc["id"], hi, shot["speaker"], names)
             if shot["visual"].startswith("talk:") and clip.exists():
                 src = "clip"
                 x = normalize_rms(read_wav(audio_from_clip(clip, vdir / f"_clip_{sc['id']}_{hi:02}.wav")))
@@ -183,6 +195,9 @@ def build(ep_id, shorts=False, use_existing=False):
                     ci += 1
             shots_out.append({"scene": sc["id"], "scene_title": sc["title"], "index": hi, "speaker": shot["speaker"],
                               "visual": shot["visual"], "face": shot.get("face"), "text": shot["text"],
+                              "asset": shot.get("asset"), "vkeywords": shot.get("vkeywords"),
+                              "cutaway": ({"at": round(shot_start + shot["cutaway"]["after"], 3),
+                                           "visual": shot["cutaway"]["visual"]} if shot.get("cutaway") else None),
                               "audio_source": src, "clip": str(clip.relative_to(d)) if src == "clip" else None,
                               "start": round(shot_start, 3), "end": round(t, 3)})
     audio.append(np.zeros(int(SR * TAIL), np.float32)); t += TAIL
@@ -196,7 +211,7 @@ def build(ep_id, shorts=False, use_existing=False):
     # ショットの表示区間は次のショット開始まで延長（間で画面が途切れないように）
     for a, b in zip(shots_out, shots_out[1:]):
         a["display_end"] = b["start"]
-    outro = (ep["shorts"] if shorts else ep).get("outro_visual")
+    outro = (sh if shorts else ep).get("outro_visual")
     last_end = shots_out[-1]["end"]
     shots_out[-1]["display_end"] = round(last_end + 0.4, 3) if outro else round(t, 3)
     if outro:
@@ -243,6 +258,9 @@ def visual_at(tl, t):
     for s in tl["shots"]:
         if s["start"] <= t + 1e-6:
             cur = s
+    cw = cur.get("cutaway")
+    if cw and t >= cw["at"]:  # 長い発言の途中から図表へ（声は続く）
+        return cw["visual"], cur["scene"], dict(cur, visual=cw["visual"], clip=None, start=cw["at"])
     return cur["visual"], cur["scene"], cur
 
 
@@ -259,9 +277,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("episode")
     ap.add_argument("--shorts", action="store_true")
+    ap.add_argument("--short", type=int, help="shorts_list の番号（1始まり）")
     ap.add_argument("--use-existing", action="store_true", help="既存の文単位wavを使う（本番音声差し替え時）")
     a = ap.parse_args(argv)
-    build(a.episode, a.shorts, a.use_existing)
+    build(a.episode, a.shorts, a.use_existing, a.short)
 
 
 if __name__ == "__main__":

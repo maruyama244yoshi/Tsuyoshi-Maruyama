@@ -1,0 +1,730 @@
+{
+  "episode": "EP01",
+  "generated": "2026-09-26",
+  "voice": {
+    "akari": {
+      "name": "Jhenny",
+      "voice_id": "9530fac2d1f148f8b57b51b783b0df13",
+      "speed": 1.0
+    },
+    "ooka_m": {
+      "name": "Satoshi",
+      "voice_id": "662e1397965c484e8f65fa58c77effde",
+      "speed": 1.0
+    }
+  },
+  "source_manifest": "inbox/AKARI_NEWS_EP01_manifest.json",
+  "outputs": {
+    "EP01_MASTER_v2.mp4": {
+      "duration_sec": 400.005,
+      "screen_ratio": {
+        "akari": 0.271,
+        "ooka_m": 0.117,
+        "graphics": 0.612
+      }
+    },
+    "EP01_SHORT_01.mp4": {
+      "duration_sec": 45.937
+    },
+    "EP01_SHORT_02.mp4": {
+      "duration_sec": 40.1
+    }
+  },
+  "talking_videos": [
+    {
+      "id": "AKARI_001",
+      "file": "inbox/AKARI_001.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 2.32,
+      "heygen_video_id": "7f7851ec99d619ee7454c87798e4d13f",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_002",
+      "file": "inbox/AKARI_002.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 5.56,
+      "heygen_video_id": "9741eff7d46d60bf356f579787ac92f8",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_003",
+      "file": "inbox/AKARI_003.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 4.87,
+      "heygen_video_id": "1b01181002bc995f95143631392b9078",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_004",
+      "file": "inbox/AKARI_004.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 5.34,
+      "heygen_video_id": "c6b9f9a63b44ba4619310b6d50c4e53a",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_005",
+      "file": "inbox/AKARI_005.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 2.92,
+      "heygen_video_id": "448a329a48f4a380f0d77157b6fd5c86",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_006",
+      "file": "inbox/AKARI_006.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 10.31,
+      "heygen_video_id": "19c5c5c47234b79f24b697964ec902bf",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_007",
+      "file": "inbox/AKARI_007.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 7.26,
+      "heygen_video_id": "6065c9309ffd590801a93d6082aa730f",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_008",
+      "file": "inbox/AKARI_008.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 8.45,
+      "heygen_video_id": "75f4c79fdd7837e6dfb2c777be7bfba6",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_009",
+      "file": "inbox/AKARI_009.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 2.92,
+      "heygen_video_id": "732e62397fd1e294092576ed5a001f33",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_010",
+      "file": "inbox/AKARI_010.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 10.03,
+      "heygen_video_id": "161ad936bb9f115dad9ec06a080ecd7e",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_011",
+      "file": "inbox/AKARI_011.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 4.0,
+      "heygen_video_id": "8fe827b285f3ec245d64504bf11a6cd9",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_012",
+      "file": "inbox/AKARI_012.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 5.2,
+      "heygen_video_id": "ed55cd1d2081b2756882867369558cd8",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_013",
+      "file": "inbox/AKARI_013.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 6.47,
+      "heygen_video_id": "106d218d5867cc4e73226bf094b2843a",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "M_001",
+      "file": "inbox/M_001.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 10.9,
+      "heygen_video_id": "8266e4f84ced17e5d9a3f0d2a06e21e9",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "M_002",
+      "file": "inbox/M_002.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 9.84,
+      "heygen_video_id": "3b73f1fcf43f69e5532dc6cfe5690ef2",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "M_003",
+      "file": "inbox/M_003.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 14.87,
+      "heygen_video_id": "d24ad233328f4e2ac7a233e051a6bc1e",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "M_004",
+      "file": "inbox/M_004.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 2.46,
+      "heygen_video_id": "da5b67d04f4b44f490d5826f5c783614",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "M_005",
+      "file": "inbox/M_005.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "両手を大きく広げる手振りがある（禁止事項「手振りが大きい」に該当の可能性）。第2稿ではそのまま使用"
+      ],
+      "duration_sec": 5.93,
+      "heygen_video_id": "7f8f46d2f5cc05ca37c8990d914eaab7",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_014",
+      "file": "inbox/AKARI_014.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 2.58,
+      "heygen_video_id": "14a12322a219c4c53341f740371c9b75",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_015",
+      "file": "inbox/AKARI_015.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 13.51,
+      "heygen_video_id": "9aad78b0d4f6ca958cf3e26f6eca6a65",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_016",
+      "file": "inbox/AKARI_016.mp4",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "OK",
+      "notes": [],
+      "duration_sec": 8.2,
+      "heygen_video_id": "d8a92353e592f53e5e1b191243e1686b",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_017",
+      "file": "inbox/AKARI_017.mp4",
+      "used_in": [
+        "short01"
+      ],
+      "judgement": "要再生成",
+      "notes": [
+        "縦型キャンバス（1080x1920）の中央に横長映像（1080x608）が入っているだけで、縦型構図になっていない。第2稿では映像部分を切り出して上部パネルに配置して使用。AKARI_TALKING_BASE_9x16_v1 で縦型として再生成を推奨"
+      ],
+      "duration_sec": 8.75,
+      "heygen_video_id": "e7f3b7a59c045058497a5f3b694668b5",
+      "resolution": "1080x1920",
+      "fps": 25.0
+    },
+    {
+      "id": "AKARI_018",
+      "file": "inbox/AKARI_018.mp4",
+      "used_in": [
+        "short02"
+      ],
+      "judgement": "要再生成",
+      "notes": [
+        "途中に0.8秒以上の無音 [[4.99, 5.93]]",
+        "縦型キャンバス（1080x1920）の中央に横長映像（1080x608）が入っているだけで、縦型構図になっていない。第2稿では映像部分を切り出して上部パネルに配置して使用。AKARI_TALKING_BASE_9x16_v1 で縦型として再生成を推奨"
+      ],
+      "duration_sec": 10.31,
+      "heygen_video_id": "20c1a4ca89c48f27a5abd090fd659036",
+      "resolution": "1080x1920",
+      "fps": 25.0
+    },
+    {
+      "id": "M_006",
+      "file": "inbox/M_006.mp4",
+      "used_in": [
+        "short02"
+      ],
+      "judgement": "OK",
+      "notes": [
+        "途中に0.8秒以上の無音 [[11.39, 12.3]]"
+      ],
+      "duration_sec": 17.44,
+      "heygen_video_id": "1977febe0f2012b8f407a8554c7919ed",
+      "resolution": "1920x1080",
+      "fps": 25.0
+    }
+  ],
+  "voiceovers": [
+    {
+      "id": "AKARI_VO_001",
+      "file": "inbox/AKARI_VO_001.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.59文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
+        "途中に0.8秒以上の無音 [[1.3, 2.14]]"
+      ],
+      "duration_sec": 9.67,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_001.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_002",
+      "file": "inbox/AKARI_VO_002.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 17.97,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_002.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_003",
+      "file": "inbox/AKARI_VO_003.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.35文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+      ],
+      "duration_sec": 11.91,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_003.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_004",
+      "file": "inbox/AKARI_VO_004.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.82文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+      ],
+      "duration_sec": 7.44,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_004.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_005",
+      "file": "inbox/AKARI_VO_005.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 19.64,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_005.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_006",
+      "file": "inbox/AKARI_VO_006.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.88文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+      ],
+      "duration_sec": 10.76,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_006.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_007",
+      "file": "inbox/AKARI_VO_007.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.18文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+      ],
+      "duration_sec": 22.94,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_007.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_008",
+      "file": "inbox/AKARI_VO_008.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.64文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成"
+      ],
+      "duration_sec": 10.61,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_008.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_009",
+      "file": "inbox/AKARI_VO_009.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 5.49,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_009.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_010",
+      "file": "inbox/AKARI_VO_010.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 10.21,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_010.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_011",
+      "file": "inbox/AKARI_VO_011.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 11.91,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_011.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_012",
+      "file": "inbox/AKARI_VO_012.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 11.1,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_012.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_013",
+      "file": "inbox/AKARI_VO_013.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 12.02,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_013.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "M_VO_001",
+      "file": "inbox/M_VO_001.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "途中に0.8秒以上の無音 [[5.68, 6.5], [8.89, 9.77], [10.91, 11.76]]"
+      ],
+      "duration_sec": 12.77,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/M_VO_001.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "M_VO_002",
+      "file": "inbox/M_VO_002.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "途中に0.8秒以上の無音 [[14.99, 15.87]]"
+      ],
+      "duration_sec": 17.53,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/M_VO_002.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_014",
+      "file": "inbox/AKARI_VO_014.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.68文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
+        "途中に0.8秒以上の無音 [[17.58, 18.39]]"
+      ],
+      "duration_sec": 20.92,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_014.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_015",
+      "file": "inbox/AKARI_VO_015.wav",
+      "used_in": [
+        "master"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 20.19,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_015.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_016",
+      "file": "inbox/AKARI_VO_016.wav",
+      "used_in": [
+        "short01"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 4.57,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_016.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_017",
+      "file": "inbox/AKARI_VO_017.wav",
+      "used_in": [
+        "short01"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）",
+        "話速が遅い（2.57文字/秒）。読点ごとの間が多く、途切れて聞こえる可能性。聴いて不自然なら原稿の読点を減らして要再生成",
+        "途中に0.8秒以上の無音 [[1.13, 1.96]]"
+      ],
+      "duration_sec": 19.85,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_017.wav（48kHz/24bit、再生成可能）"
+    },
+    {
+      "id": "AKARI_VO_018",
+      "file": "inbox/AKARI_VO_018.wav",
+      "used_in": [
+        "short01",
+        "short02"
+      ],
+      "judgement": "要確認",
+      "notes": [
+        "中身がMP3（44.1kHz・モノラル）で拡張子だけ.wav。WAV正本ルールに不一致。編集用に48kHz/24bit WAVへ1回だけ変換して使用（元ファイルは inbox に保存）"
+      ],
+      "duration_sec": 8.46,
+      "source_codec": "mp3",
+      "source_rate": 44100,
+      "edit_file": "voice/final/AKARI_VO_018.wav（48kHz/24bit、再生成可能）"
+    }
+  ],
+  "graphics": {
+    "G02_rate_change": [
+      "master"
+    ],
+    "G03_effective_date": [
+      "master"
+    ],
+    "G04_not_same": [
+      "master"
+    ],
+    "G06_annual_payment": [
+      "master"
+    ],
+    "G06b_scale": [
+      "master"
+    ],
+    "G07_repayment_ratio": [
+      "master"
+    ],
+    "G07b_cost_pressure": [
+      "master"
+    ],
+    "G08_dscr": [
+      "master"
+    ],
+    "G08b_dscr_stress": [
+      "master"
+    ],
+    "G09b_ippo_table": [
+      "master"
+    ],
+    "G10_summary": [
+      "master"
+    ],
+    "G10b_lending": [
+      "master"
+    ],
+    "G09_ippo_card": [
+      "master"
+    ],
+    "G11_ending": [
+      "master"
+    ],
+    "V02_three": [
+      "short01"
+    ],
+    "V03_payment": [
+      "short01"
+    ],
+    "V06_cta": [
+      "short01",
+      "short02"
+    ]
+  },
+  "broll": [],
+  "bgm": "自作BGM（tools/akari_news/bgm.py、権利フリー）",
+  "unused_assets": [],
+  "broll_note": "実写B-roll素材は未支給のため不使用。図表15点＋追加図表で代替"
+}

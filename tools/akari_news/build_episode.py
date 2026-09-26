@@ -66,6 +66,8 @@ def validate(ep):
     comments = {c["id"]: c for c in ep.get("ooka_m_comments", [])}
     shots = [(sc["id"], s) for sc in ep["scenes"] for s in sc["shots"]]
     shots += [("SHORTS", s) for s in ep.get("shorts", {}).get("shots", [])]
+    for sh in ep.get("shorts_list", []):
+        shots += [(sh["id"], s) for s in sh["shots"]]
     for sid, s in shots:
         if s["speaker"] == "ooka_m":
             ref = s.get("comment_ref")

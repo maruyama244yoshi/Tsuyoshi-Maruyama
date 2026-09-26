@@ -29,7 +29,7 @@ from .graphics import ANIMATED, C, fit_size, font, hexrgb, render_graphic, text,
 SPEAKER = {"akari": ("燈", "GOLD"), "ooka_m": ("大家M", "BEIGE")}
 NAMEPLATE = {"akari": ("燈", "不動産ニュース専門AIキャスター"), "ooka_m": ("現役会社員大家M", "会社員・不動産投資家")}
 FPS = 30
-BGM_DB = -22  # BGM（-16 LUFSに揃えたもの）をさらに下げる量。声がある間はサイドチェインでもっと下がる
+BGM_DB = -24  # BGM（-16 LUFSに揃えたもの）をさらに下げる量。声がある間はサイドチェインでもっと下がる
 ANIM_SEC = 1.0  # 図表が出てから動く時間（そのあとは静止）
 # 字幕で金色に強調する重要語（指示書 2026-09-25 §15）
 KEYWORDS = ["1.25％", "444万円", "459万円", "15万円", "返済比率", "DSCR", "0.5％", "1.0％", "年間返済額"]
@@ -132,11 +132,52 @@ def still_for(ep_id, ep, scene, visual):
     return visual_path(ep_id, scene, visual.replace("vgfx:", "gfx:"))
 
 
-def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
+def content_box(clip):
+    """縦長キャンバスの中に横長映像が入っている素材から、映像部分（余白を除く）の範囲を得る。"""
+    import numpy as np
+    fr = Path(tempfile.mkdtemp()) / "f.png"
+    run(["-ss", "1", "-i", str(clip), "-frames:v", "1", str(fr)])
+    x = np.asarray(Image.open(fr).convert("RGB")).astype(int)
+    bg = x[3, 3]
+    ys, xs = np.where(np.abs(x - bg).sum(axis=2) > 30)
+    if len(xs) == 0:
+        return None
+    x0, y0, x1, y1 = xs.min(), ys.min(), xs.max() + 1, ys.max() + 1
+    if (x1 - x0) * (y1 - y0) > 0.9 * x.shape[0] * x.shape[1]:
+        return None  # 余白なし
+    return int(x0) // 2 * 2, int(y0) // 2 * 2, int(x1 - x0) // 2 * 2, int(y1 - y0) // 2 * 2
+
+
+def vertical_talk_bg(title, keywords, speaker_name):
+    """Shorts の話しているカット用の背景（上：人物パネル枠、中：キーワード）。"""
+    from .graphics import VW, VH, base, header, panel
+    im = base(VW, VH)
+    header(im, title)
+    d = ImageDraw.Draw(im, "RGBA")
+    d.rounded_rectangle([0, 150, VW, 150 + 608 + 8], 0, fill=hexrgb(C["GOLD"]))
+    y = 900
+    for i, kw in enumerate(keywords or []):
+        size = fit_size(d, kw, 84 if i == 0 else 60, VW - 120, "sans_black")
+        if i == 0:
+            text(d, (VW / 2, y), kw, size, "GOLD", "sans_black", "mm")
+        else:
+            panel(d, (90, y - 55, VW - 90, y + 55), "NAVY_DEEP", 235, "GOLD")
+            text(d, (VW / 2, y), kw, size, "WHITE", "sans_black", "mm")
+        y += 150
+    return im
+
+
+def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, short_no=None, out_path=None):
     d = episode_dir(ep_id)
     ep = load_json(d / "script" / f"{ep_id}.json")
     ver = ep.get("script_version", "v1")
+    global NAMEPLATE
+    NAMEPLATE = {k: tuple(v) for k, v in ep.get("nameplates", {}).items()} or NAMEPLATE
     tag = f"{ep_id}_shorts" if shorts else ep_id
+    sh_title = "Shorts"
+    if short_no:
+        shorts, tag = True, f"{ep_id}_short{short_no:02}"
+        sh_title = ep["shorts_list"][short_no - 1]["title"]
     tl = load_json(d / "script" / f"{tag}_timeline_{ver}.json")
     from .timeline import visual_at
     W, H = (1080, 1920) if shorts else (1920, 1080)
@@ -145,6 +186,8 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
     pts = {0.0, T}
     for s in shots:
         pts |= {s["start"], s["display_end"]}
+        if s.get("cutaway"):
+            pts.add(s["cutaway"]["at"])
     for c in cues:
         pts |= {c["start"], c["end"]}
     for e in events:
@@ -158,7 +201,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
         return None
 
     tmp = Path(tempfile.mkdtemp(prefix=f"{tag}_parts_"))
-    parts, missing, used_clips, clip_dur, shown_before = [], set(), set(), {}, {}
+    parts, missing, used_clips, clip_dur, shown_before, boxes = [], set(), set(), {}, {}, {}
     for n, (a, b) in enumerate(zip(pts, pts[1:])):
         dur = b - a
         if dur < 1 / FPS / 2:
@@ -172,7 +215,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
             missing.add(visual[5:])
         plate = NAMEPLATE[shot["speaker"]] if (is_talk and shot) else None
         ov = tmp / f"ov{n:04}.png"
-        overlay_layer((W, H), cue, shorts, draft_label, plate if clip else None,
+        overlay_layer((W, H), cue, shorts, draft_label, plate if (clip and not shorts) else None,
                       visual[5:] if (is_talk and not clip) else None).save(ov)
         out = tmp / f"p{n:04}.mp4"
         # 部品ごとに時間の刻み（timescale）とフレームレートを揃えないと concat で尺が崩れる
@@ -182,12 +225,31 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
             used_clips.add(str(clip))
             # 発話後の「間」はクリップの最後のフレームで埋める（クリップ終端を越えて読まない）
             cdur = clip_dur.setdefault(clip, media_duration(clip))
-            off = min(max(0.0, a - shot["start"]), max(0.0, cdur - 2 / FPS))
+            # 音声トラックの方がわずかに長い素材があるため、映像の最終フレームより手前で止める
+            off = min(max(0.0, a - shot["start"]), max(0.0, cdur - 0.3))
             # 画面いっぱいに拡大して中央を切り出す（縦型にも対応）。動きは元動画のまま
-            vf = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
-                  f"tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[v];[v][1:v]overlay=0:0")
-            run(["-ss", f"{off:.3f}", "-i", str(clip), "-i", str(ov),
-                 "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
+            if shorts:
+                # 縦型：人物映像（余白を除いた横長部分）を上部パネルに、下にキーワードと字幕
+                box = boxes.setdefault(clip, content_box(clip))
+                crop = f"crop={box[2]}:{box[3]}:{box[0]}:{box[1]}," if box else ""
+                bgp = tmp / f"bg{n:04}.png"
+                bgim = vertical_talk_bg(sh_title, shot.get("vkeywords"), NAMEPLATE[shot["speaker"]][0])
+                pl = ImageDraw.Draw(bgim, "RGBA")
+                name = NAMEPLATE[shot["speaker"]][0]
+                pl.rounded_rectangle([40, 150 + 608 + 24, 40 + tw(pl, name, 40) + 60, 150 + 608 + 94], 10,
+                                     fill=hexrgb(C["NAVY_DEEP"], 235))
+                pl.rectangle([40, 150 + 608 + 24, 47, 150 + 608 + 94], fill=hexrgb(C["GOLD"]))
+                text(pl, (70, 150 + 608 + 59), name, 40, "WHITE", "sans_bold", "lm")
+                bgim.save(bgp)
+                vf = (f"[0:v]{crop}scale={W}:-2,setsar=1,fps={FPS},tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[p];"
+                      f"[1:v][p]overlay=0:154[b];[b][2:v]overlay=0:0")
+                run(["-ss", f"{off:.3f}", "-i", str(clip), "-loop", "1", "-i", str(bgp), "-i", str(ov),
+                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
+            else:
+                vf = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
+                      f"tpad=stop_mode=clone:stop_duration={dur + 1:.3f}[v];[v][1:v]overlay=0:0")
+                run(["-ss", f"{off:.3f}", "-i", str(clip), "-i", str(ov),
+                     "-filter_complex", vf, "-t", f"{dur:.3f}", *enc, str(out)])
         else:
             key = visual.split(":", 1)[1]
             ovl = Image.open(ov)
@@ -239,16 +301,20 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None):
     out_dir = d / ("shorts" if shorts else "video")
     out_dir.mkdir(exist_ok=True)
     out = out_dir / (f"{ep_id}_shorts_{ver}.mp4" if shorts else f"{ep_id}_long_{ver}.mp4")
+    if out_path:
+        out = Path(out_path)
+        out.parent.mkdir(parents=True, exist_ok=True)
     voice = d / tl["audio"]
     if bgm:
         # BGMはループさせ、声がある間は自動で下げる（サイドチェイン）
         fc = (f"[2:a]aloop=loop=-1:size=2e9,atrim=0:{T:.3f},volume={BGM_DB}dB[bg];"
               f"[1:a]asplit=2[vo][sc];[bg][sc]sidechaincompress=threshold=0.02:ratio=6:attack=20:release=400[duck];"
-              f"[vo][duck]amix=inputs=2:duration=first:normalize=0[a]")
+              f"[vo][duck]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000:resampler=soxr,aformat=channel_layouts=stereo[a]")
         run(["-i", str(silent), "-i", str(voice), "-i", str(bgm), "-filter_complex", fc, "-map", "0:v", "-map", "[a]",
              "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)])
     else:
-        run(["-i", str(silent), "-i", str(voice), "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac",
+        run(["-i", str(silent), "-i", str(voice), "-map", "0:v", "-map", "1:a", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000:resampler=soxr,aformat=channel_layouts=stereo",
+             "-c:v", "copy", "-c:a", "aac",
              "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)])
     shutil.rmtree(tmp, ignore_errors=True)
     print(f"wrote {out}  parts={len(parts)} duration={T:.1f}s clips_used={len(used_clips)}"
@@ -262,6 +328,8 @@ def main(argv=None):
     ap.add_argument("--shorts", action="store_true")
     ap.add_argument("--bgm", help="BGM音源ファイル（wav 等）。auto なら自作BGM（tools/akari_news/bgm.py）を使う")
     ap.add_argument("--final", action="store_true", help="下書き表示を外す（本番音声・本番クリップ差し替え後のみ）")
+    ap.add_argument("--short", type=int, help="shorts_list の番号（1始まり）")
+    ap.add_argument("--out", help="書き出し先のファイルパス")
     a = ap.parse_args(argv)
     bgm = a.bgm
     if bgm == "auto":
@@ -269,7 +337,7 @@ def main(argv=None):
         bgm = str(episode_dir(a.episode) / "voice" / "bgm_auto.wav")
         if not Path(bgm).exists():
             bgm_main([bgm, "--sec", "64"])
-    build(a.episode, a.shorts, None if a.final else "第2稿・仮音声", bgm)
+    build(a.episode, a.shorts, None if a.final else "第2稿・仮音声", bgm, a.short, a.out)
 
 
 if __name__ == "__main__":

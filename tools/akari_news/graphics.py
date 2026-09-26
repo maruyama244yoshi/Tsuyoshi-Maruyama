@@ -437,6 +437,22 @@ def g_ippo_table(sim):
     return im
 
 
+def g_loan_term():
+    """大家Mコメント：融資期間と金融機関選び（数値は出さない）。"""
+    im = base(); header(im, "大家Mコメント", "物件選びと金融機関選び")
+    d = ImageDraw.Draw(im, "RGBA")
+    text(d, (W / 2, 230), "同じ価格の物件でも", 50, "BEIGE", "sans_bold", "mm")
+    panel(d, (360, 300, 1560, 460), "NAVY_DEEP", 235, "GOLD")
+    text(d, (W / 2, 380), "融資期間でキャッシュフローは大きく変わる", 56, "WHITE", "sans_black", "mm")
+    for i, t in enumerate(("物件選び", "金融機関選び")):
+        x0 = 420 + i * 620
+        d.rounded_rectangle([x0, 560, x0 + 460, 680], 60, fill=hexrgb(C["GOLD"] if i else C["BEIGE"]))
+        text(d, (x0 + 230, 620), t, 56, "NAVY_DEEP", "sans_black", "mm")
+    text(d, (W / 2, 620), "×", 80, "GOLD", "sans_black", "mm")
+    text(d, (W / 2, 760), "をセットで考える", 52, "WHITE", "sans_black", "mm")
+    return im
+
+
 def g_summary():
     im = base(); header(im, "今日のポイント")
     d = ImageDraw.Draw(im, "RGBA")
@@ -534,15 +550,16 @@ def render_brand_assets():
 VW, VH = 1080, 1920
 
 
-def vbase(title, cut_key, speaker_name):
+def vbase(title, cut_key=None, speaker_name=None):
+    """縦型図表の土台。上部は人物ではなく番組パネル（口の動かない人物静止画は使わない）。"""
     im = base(VW, VH)
     header(im, title)
-    paste_cut(im, cut_key, (90, 150, 990, 820))
     d = ImageDraw.Draw(im, "RGBA")
-    d.rounded_rectangle([110, 740, 110 + tw(d, speaker_name, 40) + 60, 805], 10, fill=hexrgb(C["NAVY_DEEP"], 235))
-    d.rectangle([110, 740, 117, 805], fill=hexrgb(C["GOLD"]))
-    text(d, (140, 773), speaker_name, 40, "WHITE", "sans_bold", "lm")
-    provisional_mark(im)
+    panel(d, (60, 170, VW - 60, 760), "NAVY_DEEP", 235, "GOLD", 24)
+    draw_logo_mark(d, VW / 2 - 90, 230, 180)
+    text(d, (VW / 2, 500), "燈の不動産NEWS", 64, "WHITE", "serif_bold", "mm")
+    text(d, (VW / 2, 580), "A K A R I   R E A L   E S T A T E   N E W S", 26, "BEIGE", "sans_medium", "mm")
+    text(d, (VW / 2, 670), "【日銀1.25%へ】大家が見るべき3つの数字", 36, "GOLD", "sans_bold", "mm")
     return im, d
 
 
@@ -615,7 +632,7 @@ def graphic_funcs(sim):
         "G06b_scale": lambda: g_scale(sim), "G07_repayment_ratio": lambda: g_repayment_ratio(sim),
         "G07b_cost_pressure": g_cost_pressure, "G08_dscr": g_dscr, "G08b_dscr_stress": lambda: g_dscr_stress(sim),
         "G09_ippo_card": g_ippo_card, "G09b_ippo_table": lambda: g_ippo_table(sim), "G10_summary": g_summary,
-        "G10b_lending": g_lending, "G11_ending": g_ending,
+        "G10b_lending": g_lending, "G11_ending": g_ending, "G12_loan_term": g_loan_term,
     }
 
 

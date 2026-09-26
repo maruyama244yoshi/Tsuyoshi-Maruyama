@@ -1,0 +1,1439 @@
+[
+  {
+    "id": "AKARI_001",
+    "file": "AKARI_001.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "こんにちは、燈です。",
+    "exists": true,
+    "size_mb": 1.17,
+    "duration": 2.32,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 2.32,
+      "frames": 58
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 2.3,
+      "frames": null
+    },
+    "lufs": -16.2,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.585453,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 3.45,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_002",
+    "file": "AKARI_002.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "今日、大家さんにとってかなり重要な変化が始まりました。",
+    "exists": true,
+    "size_mb": 2.61,
+    "duration": 5.56,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 5.56,
+      "frames": 139
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 5.54,
+      "frames": null
+    },
+    "lufs": -16.6,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.485439,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.5,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_001",
+    "file": "AKARI_VO_001.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "日銀の政策金利が、1.25％程度へ引き上げられました。",
+    "exists": true,
+    "size_mb": 0.31,
+    "duration": 9.67,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 9.66,
+      "frames": null
+    },
+    "lufs": -18.6,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.777654,
+    "long_silences": [
+      [
+        1.3,
+        2.14
+      ]
+    ],
+    "chars_per_sec": 2.59,
+    "issues": [
+      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": [
+      "途中に0.8秒以上の無音 [(1.3, 2.14)]"
+    ]
+  },
+  {
+    "id": "AKARI_003",
+    "file": "AKARI_003.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "では、不動産投資はこれから厳しくなるのでしょうか。",
+    "exists": true,
+    "size_mb": 2.27,
+    "duration": 4.87,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 4.84,
+      "frames": 121
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 4.86,
+      "frames": null
+    },
+    "lufs": -17.9,
+    "true_peak": -7.7,
+    "sample_peak_db": -7.736761,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.72,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_004",
+    "file": "AKARI_004.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "今日は、大家が見るべき3つの数字に絞って解説します。",
+    "exists": true,
+    "size_mb": 2.52,
+    "duration": 5.34,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 5.32,
+      "frames": 133
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 5.33,
+      "frames": null
+    },
+    "lufs": -18.1,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.615529,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 4.49,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_002",
+    "file": "AKARI_VO_002.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "日本銀行は9月18日の金融政策決定会合で、無担保コールレート、オーバーナイト物を1.25％程度で推移するよう促すことを決定しました。",
+    "exists": true,
+    "size_mb": 0.58,
+    "duration": 17.97,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 17.97,
+      "frames": null
+    },
+    "lufs": -20.5,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.792858,
+    "long_silences": [],
+    "chars_per_sec": 3.51,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_003",
+    "file": "AKARI_VO_003.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "それまでの1.0％程度から、0.25ポイントの引き上げです。",
+    "exists": true,
+    "size_mb": 0.38,
+    "duration": 11.91,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 11.91,
+      "frames": null
+    },
+    "lufs": -19.3,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.732691,
+    "long_silences": [],
+    "chars_per_sec": 2.35,
+    "issues": [
+      "話速が不自然（2.4文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_004",
+    "file": "AKARI_VO_004.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "新しい金利水準は、9月24日から適用されます。",
+    "exists": true,
+    "size_mb": 0.24,
+    "duration": 7.44,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 7.44,
+      "frames": null
+    },
+    "lufs": -20.9,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.742182,
+    "long_silences": [],
+    "chars_per_sec": 2.82,
+    "issues": [
+      "話速が不自然（2.8文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": []
+  },
+  {
+    "id": "AKARI_005",
+    "file": "AKARI_005.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "ただし、ここはとても大切です。",
+    "exists": true,
+    "size_mb": 1.32,
+    "duration": 2.92,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 2.92,
+      "frames": 73
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 2.92,
+      "frames": null
+    },
+    "lufs": -16.7,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.585558,
+    "long_silences": [],
+    "av_duration_diff": 0.0,
+    "chars_per_sec": 4.45,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_005",
+    "file": "AKARI_VO_005.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "日銀の政策金利が0.25ポイント上がったからといって、大家さんが借りている不動産融資の金利が、その日に一律0.25ポイント上がるわけではありません。",
+    "exists": true,
+    "size_mb": 0.63,
+    "duration": 19.64,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 19.64,
+      "frames": null
+    },
+    "lufs": -19.5,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.773634,
+    "long_silences": [],
+    "chars_per_sec": 3.62,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_006",
+    "file": "AKARI_VO_006.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "金融機関、商品、固定か変動か、金利の見直し条件によって影響は違います。",
+    "exists": true,
+    "size_mb": 0.34,
+    "duration": 10.76,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.76,
+      "frames": null
+    },
+    "lufs": -19.7,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.803009,
+    "long_silences": [],
+    "chars_per_sec": 2.88,
+    "issues": [
+      "話速が不自然（2.9文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": []
+  },
+  {
+    "id": "AKARI_006",
+    "file": "AKARI_006.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "ですから大家が見るべきなのは、ニュースの金利そのものではありません。自分の借入に、いくら影響するのか。ここです。",
+    "exists": true,
+    "size_mb": 5.18,
+    "duration": 10.31,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 10.28,
+      "frames": 257
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.3,
+      "frames": null
+    },
+    "lufs": -16.7,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.61375,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.95,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_007",
+    "file": "AKARI_007.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "例えば、1億円を30年間、元利均等返済で借りたケースを考えてみます。",
+    "exists": true,
+    "size_mb": 3.26,
+    "duration": 7.26,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 7.24,
+      "frames": 181
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 7.25,
+      "frames": null
+    },
+    "lufs": -17.2,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.549315,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 4.27,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_007",
+    "file": "AKARI_VO_007.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "仮に借入金利が2.00％なら、年間返済額はおよそ444万円です。これが2.25％になると、およそ459万円。",
+    "exists": true,
+    "size_mb": 0.73,
+    "duration": 22.94,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 22.93,
+      "frames": null
+    },
+    "lufs": -19.2,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.763027,
+    "long_silences": [],
+    "chars_per_sec": 2.18,
+    "issues": [
+      "話速が不自然（2.2文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_008",
+    "file": "AKARI_VO_008.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "0.25ポイントの上昇で、年間約15万円、返済負担が増えます。",
+    "exists": true,
+    "size_mb": 0.34,
+    "duration": 10.61,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.6,
+      "frames": null
+    },
+    "lufs": -18.9,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.789476,
+    "long_silences": [],
+    "chars_per_sec": 2.64,
+    "issues": [
+      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_009",
+    "file": "AKARI_VO_009.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "1億円だけなら15万円でも、借入額が数億円になれば影響も大きくなります。",
+    "exists": true,
+    "size_mb": 0.18,
+    "duration": 5.49,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 5.48,
+      "frames": null
+    },
+    "lufs": -18.1,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.750621,
+    "long_silences": [],
+    "chars_per_sec": 6.19,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_008",
+    "file": "AKARI_008.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "大切なのは、金利が上がったというニュースではなく、自分の年間返済額がいくら増えるかです。",
+    "exists": true,
+    "size_mb": 4.02,
+    "duration": 8.45,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 8.44,
+      "frames": 211
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 8.44,
+      "frames": null
+    },
+    "lufs": -15.6,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.573293,
+    "long_silences": [],
+    "av_duration_diff": 0.0,
+    "chars_per_sec": 4.85,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_009",
+    "file": "AKARI_009.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "2つ目は、返済比率です。",
+    "exists": true,
+    "size_mb": 1.35,
+    "duration": 2.92,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 2.92,
+      "frames": 73
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 2.92,
+      "frames": null
+    },
+    "lufs": -16.7,
+    "true_peak": -7.7,
+    "sample_peak_db": -7.676017,
+    "long_silences": [],
+    "av_duration_diff": 0.0,
+    "chars_per_sec": 3.42,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_010",
+    "file": "AKARI_VO_010.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "家賃収入が同じままで返済額だけが増えれば、当然、経営の余力は小さくなります。",
+    "exists": true,
+    "size_mb": 0.33,
+    "duration": 10.21,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.21,
+      "frames": null
+    },
+    "lufs": -18.5,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.74749,
+    "long_silences": [],
+    "chars_per_sec": 3.43,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_011",
+    "file": "AKARI_VO_011.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "さらに今は、金利だけを見るわけにはいきません。修繕費、人件費、設備費なども上昇しています。",
+    "exists": true,
+    "size_mb": 0.38,
+    "duration": 11.91,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 11.91,
+      "frames": null
+    },
+    "lufs": -19.0,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.779396,
+    "long_silences": [],
+    "chars_per_sec": 3.36,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_010",
+    "file": "AKARI_010.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "金利上昇と経費上昇が同時に起きたとき、物件にどれだけ余力が残っているのか。ここを確認する必要があります。",
+    "exists": true,
+    "size_mb": 4.78,
+    "duration": 10.03,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 10.0,
+      "frames": 250
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.02,
+      "frames": null
+    },
+    "lufs": -17.0,
+    "true_peak": -7.7,
+    "sample_peak_db": -7.667511,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.89,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_011",
+    "file": "AKARI_011.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "そして3つ目が、DSCRです。",
+    "exists": true,
+    "size_mb": 1.93,
+    "duration": 4.0,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 4.0,
+      "frames": 100
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 3.99,
+      "frames": null
+    },
+    "lufs": -18.9,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.661785,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 3.25,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_012",
+    "file": "AKARI_VO_012.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "簡単に言えば、物件が生み出す利益で、借入返済をどれだけ余裕を持って支払えるかを見る数字です。",
+    "exists": true,
+    "size_mb": 0.36,
+    "duration": 11.1,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 11.1,
+      "frames": null
+    },
+    "lufs": -21.1,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.757763,
+    "long_silences": [],
+    "chars_per_sec": 3.87,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_012",
+    "file": "AKARI_012.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "金利上昇局面では、表面利回りだけを見ていても分かりません。",
+    "exists": true,
+    "size_mb": 2.5,
+    "duration": 5.2,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 5.2,
+      "frames": 130
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 5.18,
+      "frames": null
+    },
+    "lufs": -16.3,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.573033,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 5.19,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_013",
+    "file": "AKARI_VO_013.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "金利がもう少し上がった場合でも返済できるか。ストレスをかけて確認しておくことが重要になります。",
+    "exists": true,
+    "size_mb": 0.38,
+    "duration": 12.02,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 12.01,
+      "frames": null
+    },
+    "lufs": -18.4,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.773989,
+    "long_silences": [],
+    "chars_per_sec": 3.74,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_013",
+    "file": "AKARI_013.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "では、現役会社員大家Mさんは、この利上げをどう見ているのでしょうか。",
+    "exists": true,
+    "size_mb": 3.04,
+    "duration": 6.47,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 6.44,
+      "frames": 161
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 6.46,
+      "frames": null
+    },
+    "lufs": -15.9,
+    "true_peak": -7.5,
+    "sample_peak_db": -7.53637,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.79,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "M_001",
+    "file": "M_001.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "私なら、まず金利が上がったから買わないとは考えません。見るのは、金利が上がってもキャッシュフローが残る物件なのかどうかですね。",
+    "exists": true,
+    "size_mb": 5.61,
+    "duration": 10.9,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 10.88,
+      "frames": 272
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.9,
+      "frames": null
+    },
+    "lufs": -20.4,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.108406,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 5.41,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "M_002",
+    "file": "M_002.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "特にこれから買う物件なら、現在の金利だけではなく、さらに0.5％、1％上がったケースも計算しておきたいです。",
+    "exists": true,
+    "size_mb": 4.99,
+    "duration": 9.84,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 9.8,
+      "frames": 245
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 9.83,
+      "frames": null
+    },
+    "lufs": -20.4,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.150205,
+    "long_silences": [],
+    "av_duration_diff": 0.03,
+    "chars_per_sec": 5.08,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "M_VO_001",
+    "file": "M_VO_001.wav",
+    "kind": "voiceover",
+    "speaker": "大家M",
+    "text": "それでも返済できるのか。DSCRがどこまで下がるのか。返済比率がどこまで上がるのか。そこまで見てから判断します。",
+    "exists": true,
+    "size_mb": 0.41,
+    "duration": 12.77,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 12.77,
+      "frames": null
+    },
+    "lufs": -21.5,
+    "true_peak": -4.3,
+    "sample_peak_db": -4.267505,
+    "long_silences": [
+      [
+        5.68,
+        6.5
+      ],
+      [
+        8.89,
+        9.77
+      ],
+      [
+        10.91,
+        11.76
+      ]
+    ],
+    "chars_per_sec": 4.07,
+    "issues": [],
+    "notes": [
+      "途中に0.8秒以上の無音 [(5.68, 6.5), (8.89, 9.77), (10.91, 11.76)]"
+    ]
+  },
+  {
+    "id": "M_003",
+    "file": "M_003.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "それと、同じ価格の物件でも、融資期間が取れるかどうかでキャッシュフローはかなり変わります。ですから今後は、物件選びと金融機関選びをセットで考えることが、以前より重要になると思います。",
+    "exists": true,
+    "size_mb": 7.56,
+    "duration": 14.87,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 14.84,
+      "frames": 371
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 14.87,
+      "frames": null
+    },
+    "lufs": -20.5,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.13308,
+    "long_silences": [],
+    "av_duration_diff": 0.03,
+    "chars_per_sec": 5.72,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "M_004",
+    "file": "M_004.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "今日の大家の一手です。",
+    "exists": true,
+    "size_mb": 1.23,
+    "duration": 2.46,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 2.44,
+      "frames": 61
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 2.45,
+      "frames": null
+    },
+    "lufs": -20.6,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.103612,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 4.07,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "M_VO_002",
+    "file": "M_VO_002.wav",
+    "kind": "voiceover",
+    "speaker": "大家M",
+    "text": "保有物件と購入候補について、現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。まずはこれです。",
+    "exists": true,
+    "size_mb": 0.56,
+    "duration": 17.53,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 17.52,
+      "frames": null
+    },
+    "lufs": -21.7,
+    "true_peak": -4.3,
+    "sample_peak_db": -4.290244,
+    "long_silences": [
+      [
+        14.99,
+        15.87
+      ]
+    ],
+    "chars_per_sec": 3.19,
+    "issues": [],
+    "notes": [
+      "途中に0.8秒以上の無音 [(14.99, 15.87)]"
+    ]
+  },
+  {
+    "id": "M_005",
+    "file": "M_005.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
+    "exists": true,
+    "size_mb": 2.94,
+    "duration": 5.93,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 5.92,
+      "frames": 148
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 5.93,
+      "frames": null
+    },
+    "lufs": -21.8,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.114353,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 5.06,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_014",
+    "file": "AKARI_014.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "今日のポイントを整理します。",
+    "exists": true,
+    "size_mb": 1.25,
+    "duration": 2.58,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 2.56,
+      "frames": 64
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 2.58,
+      "frames": null
+    },
+    "lufs": -15.9,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.600011,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 5.04,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_014",
+    "file": "AKARI_VO_014.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "今回、日銀は政策金利を1.25％程度へ引き上げました。ただ、大家さんが見るべき数字は3つです。年間返済額。返済比率。DSCR。",
+    "exists": true,
+    "size_mb": 0.67,
+    "duration": 20.92,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 20.92,
+      "frames": null
+    },
+    "lufs": -20.1,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.774275,
+    "long_silences": [
+      [
+        17.58,
+        18.39
+      ]
+    ],
+    "chars_per_sec": 2.68,
+    "issues": [
+      "話速が不自然（2.7文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": [
+      "途中に0.8秒以上の無音 [(17.58, 18.39)]"
+    ]
+  },
+  {
+    "id": "AKARI_VO_015",
+    "file": "AKARI_VO_015.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "そして日銀は、金融機関の貸出態度全般について、引き続き積極的との見方を示しています。ですから、今回の利上げだけを見て、融資が止まると決めつけるのも早いでしょう。",
+    "exists": true,
+    "size_mb": 0.65,
+    "duration": 20.19,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 20.19,
+      "frames": null
+    },
+    "lufs": -21.0,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.774572,
+    "long_silences": [],
+    "chars_per_sec": 3.67,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_015",
+    "file": "AKARI_015.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "ニュースを知るだけで終わらず、大家としてどう考えるか。燈の不動産ニュースでは、これからも不動産の最新ニュースを、大家の経営目線で分かりやすくお届けします。",
+    "exists": true,
+    "size_mb": 6.61,
+    "duration": 13.51,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 13.48,
+      "frames": 337
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 13.5,
+      "frames": null
+    },
+    "lufs": -17.6,
+    "true_peak": -7.7,
+    "sample_peak_db": -7.828279,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 5.33,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_016",
+    "file": "AKARI_016.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "よければチャンネル登録をお願いします。それでは、また次のニュースでお会いしましょう。燈でした。",
+    "exists": true,
+    "size_mb": 3.84,
+    "duration": 8.2,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 8.2,
+      "frames": 205
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 8.19,
+      "frames": null
+    },
+    "lufs": -17.9,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.629375,
+    "long_silences": [],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 5.24,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_017",
+    "file": "AKARI_017.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "日銀が政策金利を1.25％程度へ引き上げました。9月24日から適用です。",
+    "exists": true,
+    "size_mb": 1.52,
+    "duration": 8.75,
+    "vcodec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 8.72,
+      "frames": 218
+    },
+    "expected_aspect": "9:16",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 8.74,
+      "frames": null
+    },
+    "lufs": -16.6,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.615839,
+    "long_silences": [],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 3.89,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_016",
+    "file": "AKARI_VO_016.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "では、大家さんが見るべき数字は何か。ポイントは3つです。",
+    "exists": true,
+    "size_mb": 0.15,
+    "duration": 4.57,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 4.57,
+      "frames": null
+    },
+    "lufs": -19.3,
+    "true_peak": -4.7,
+    "sample_peak_db": -4.762032,
+    "long_silences": [],
+    "chars_per_sec": 5.47,
+    "issues": [],
+    "notes": []
+  },
+  {
+    "id": "AKARI_VO_017",
+    "file": "AKARI_VO_017.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "1つ目は年間返済額。1億円・30年の単純試算では、2.00％から2.25％になると、年間およそ15万円増えます。",
+    "exists": true,
+    "size_mb": 0.64,
+    "duration": 19.85,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 19.85,
+      "frames": null
+    },
+    "lufs": -18.3,
+    "true_peak": -4.8,
+    "sample_peak_db": -4.776155,
+    "long_silences": [
+      [
+        1.13,
+        1.96
+      ]
+    ],
+    "chars_per_sec": 2.57,
+    "issues": [
+      "話速が不自然（2.6文字/秒）→ 原稿違い・途切れ・余計な無音の可能性"
+    ],
+    "notes": [
+      "途中に0.8秒以上の無音 [(1.13, 1.96)]"
+    ]
+  },
+  {
+    "id": "AKARI_018",
+    "file": "AKARI_018.mp4",
+    "kind": "talking",
+    "speaker": "燈",
+    "text": "2つ目は返済比率、3つ目はDSCR。金利がさらに上がっても返済できるか、確認しておきましょう。",
+    "exists": true,
+    "size_mb": 1.69,
+    "duration": 10.31,
+    "vcodec": "h264",
+    "width": 1080,
+    "height": 1920,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 10.28,
+      "frames": 257
+    },
+    "expected_aspect": "9:16",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 10.3,
+      "frames": null
+    },
+    "lufs": -17.9,
+    "true_peak": -7.6,
+    "sample_peak_db": -7.627055,
+    "long_silences": [
+      [
+        4.99,
+        5.93
+      ]
+    ],
+    "av_duration_diff": 0.02,
+    "chars_per_sec": 4.17,
+    "issues": [],
+    "notes": [
+      "途中に0.8秒以上の無音 [(4.99, 5.93)]"
+    ]
+  },
+  {
+    "id": "M_006",
+    "file": "M_006.mp4",
+    "kind": "talking",
+    "speaker": "大家M",
+    "text": "今日の大家の一手です。現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
+    "exists": true,
+    "size_mb": 8.88,
+    "duration": 17.44,
+    "vcodec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 25.0,
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "stereo",
+    "video_decode": {
+      "errors": [],
+      "decoded_sec": 17.44,
+      "frames": 436
+    },
+    "expected_aspect": "16:9",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 17.43,
+      "frames": null
+    },
+    "lufs": -20.9,
+    "true_peak": -7.1,
+    "sample_peak_db": -7.096395,
+    "long_silences": [
+      [
+        11.39,
+        12.3
+      ]
+    ],
+    "av_duration_diff": 0.01,
+    "chars_per_sec": 4.36,
+    "issues": [],
+    "notes": [
+      "途中に0.8秒以上の無音 [(11.39, 12.3)]"
+    ]
+  },
+  {
+    "id": "AKARI_VO_018",
+    "file": "AKARI_VO_018.wav",
+    "kind": "voiceover",
+    "speaker": "燈",
+    "text": "詳しい解説は本編でお届けしています。燈の不動産ニュースでした。",
+    "exists": true,
+    "size_mb": 0.27,
+    "duration": 8.46,
+    "acodec": "mp3",
+    "sample_rate": 44100,
+    "channels": "mono",
+    "audio_decode": {
+      "errors": [],
+      "decoded_sec": 8.46,
+      "frames": null
+    },
+    "lufs": -19.0,
+    "true_peak": -4.4,
+    "sample_peak_db": -4.753931,
+    "long_silences": [],
+    "chars_per_sec": 3.43,
+    "issues": [],
+    "notes": []
+  }
+]

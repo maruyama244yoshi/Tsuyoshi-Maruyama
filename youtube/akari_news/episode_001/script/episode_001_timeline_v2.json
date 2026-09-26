@@ -2,10 +2,11 @@
   "episode": "episode_001",
   "kind": "long",
   "version": "v2",
-  "duration": 313.815,
+  "duration": 400.005,
   "audio": "voice/episode_001_mix_v2.wav",
   "audio_sources": {
-    "guide": 38
+    "clip": 21,
+    "final": 17
   },
   "shots": [
     {
@@ -16,11 +17,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_01",
       "text": "こんにちは、燈です。",
-      "audio_source": "guide",
-      "clip": null,
+      "asset": "AKARI_001",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_001.mp4",
       "start": 0.6,
-      "end": 2.985,
-      "display_end": 3.385,
+      "end": 2.906,
+      "display_end": 3.306,
       "start_display": 0.0
     },
     {
@@ -31,11 +35,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "今日、大家さんにとってかなり重要な変化が始まりました。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 3.385,
-      "end": 7.625,
-      "display_end": 8.025
+      "asset": "AKARI_002",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_002.mp4",
+      "start": 3.306,
+      "end": 8.854,
+      "display_end": 9.254
     },
     {
       "scene": "S01",
@@ -45,11 +52,14 @@
       "visual": "gfx:G02_rate_change",
       "face": "AKARI_FACE_02",
       "text": "日銀の政策金利が、1.25％程度へ引き上げられました。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_001",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 8.025,
-      "end": 13.045,
-      "display_end": 13.445
+      "start": 9.254,
+      "end": 18.919,
+      "display_end": 19.319
     },
     {
       "scene": "S01",
@@ -59,11 +69,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "では、不動産投資はこれから厳しくなるのでしょうか。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 13.445,
-      "end": 17.385,
-      "display_end": 17.785
+      "asset": "AKARI_003",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_003.mp4",
+      "start": 19.319,
+      "end": 24.185,
+      "display_end": 24.585
     },
     {
       "scene": "S01",
@@ -73,11 +86,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_01",
       "text": "今日は、大家が見るべき3つの数字に絞って解説します。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 17.785,
-      "end": 22.195,
-      "display_end": 22.945
+      "asset": "AKARI_004",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_004.mp4",
+      "start": 24.585,
+      "end": 29.92,
+      "display_end": 30.67
     },
     {
       "scene": "S02",
@@ -87,11 +103,14 @@
       "visual": "gfx:G02_rate_change",
       "face": null,
       "text": "日本銀行は9月18日の金融政策決定会合で、無担保コールレート、オーバーナイト物を1.25％程度で推移するよう促すことを決定しました。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_002",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 22.945,
-      "end": 41.555,
-      "display_end": 41.955
+      "start": 30.67,
+      "end": 48.642,
+      "display_end": 49.042
     },
     {
       "scene": "S02",
@@ -101,11 +120,14 @@
       "visual": "gfx:G02_rate_change",
       "face": null,
       "text": "それまでの1.0％程度から、0.25ポイントの引き上げです。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_003",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 41.955,
-      "end": 47.0,
-      "display_end": 47.4
+      "start": 49.042,
+      "end": 60.954,
+      "display_end": 61.354
     },
     {
       "scene": "S02",
@@ -115,11 +137,14 @@
       "visual": "gfx:G03_effective_date",
       "face": null,
       "text": "新しい金利水準は、9月24日から適用されます。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_004",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 47.4,
-      "end": 52.105,
-      "display_end": 52.855
+      "start": 61.354,
+      "end": 68.799,
+      "display_end": 69.549
     },
     {
       "scene": "S03",
@@ -129,11 +154,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "ただし、ここはとても大切です。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 52.855,
-      "end": 55.82,
-      "display_end": 56.22
+      "asset": "AKARI_005",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_005.mp4",
+      "start": 69.549,
+      "end": 72.473,
+      "display_end": 72.873
     },
     {
       "scene": "S03",
@@ -143,11 +171,14 @@
       "visual": "gfx:G04_not_same",
       "face": null,
       "text": "日銀の政策金利が0.25ポイント上がったからといって、大家さんが借りている不動産融資の金利が、その日に一律0.25ポイント上がるわけではありません。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_005",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 56.22,
-      "end": 66.735,
-      "display_end": 67.135
+      "start": 72.873,
+      "end": 92.517,
+      "display_end": 92.917
     },
     {
       "scene": "S03",
@@ -157,11 +188,14 @@
       "visual": "gfx:G04_not_same",
       "face": null,
       "text": "金融機関、商品、固定か変動か、金利の見直し条件によって影響は違います。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_006",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 67.135,
-      "end": 73.875,
-      "display_end": 74.275
+      "start": 92.917,
+      "end": 103.68,
+      "display_end": 104.08
     },
     {
       "scene": "S03",
@@ -171,11 +205,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "ですから大家が見るべきなのは、ニュースの金利そのものではありません。自分の借入に、いくら影響するのか。ここです。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 74.275,
-      "end": 83.935,
-      "display_end": 84.685
+      "asset": "AKARI_006",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_006.mp4",
+      "start": 104.08,
+      "end": 114.386,
+      "display_end": 115.136
     },
     {
       "scene": "S04",
@@ -185,11 +222,14 @@
       "visual": "talk:akari_C",
       "face": null,
       "text": "例えば、1億円を30年間、元利均等返済で借りたケースを考えてみます。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 84.685,
-      "end": 90.96,
-      "display_end": 91.36
+      "asset": "AKARI_007",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_007.mp4",
+      "start": 115.136,
+      "end": 122.391,
+      "display_end": 122.791
     },
     {
       "scene": "S04",
@@ -199,11 +239,14 @@
       "visual": "gfx:G06_annual_payment",
       "face": null,
       "text": "仮に借入金利が2.00％なら、年間返済額はおよそ444万円です。これが2.25％になると、およそ459万円。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_007",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 91.36,
-      "end": 102.925,
-      "display_end": 103.325
+      "start": 122.791,
+      "end": 145.726,
+      "display_end": 146.126
     },
     {
       "scene": "S04",
@@ -213,11 +256,14 @@
       "visual": "gfx:G06_annual_payment",
       "face": null,
       "text": "0.25ポイントの上昇で、年間約15万円、返済負担が増えます。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_008",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 103.325,
-      "end": 109.22,
-      "display_end": 109.62
+      "start": 146.126,
+      "end": 156.732,
+      "display_end": 157.132
     },
     {
       "scene": "S04",
@@ -227,11 +273,14 @@
       "visual": "gfx:G06b_scale",
       "face": null,
       "text": "1億円だけなら15万円でも、借入額が数億円になれば影響も大きくなります。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_009",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 109.62,
-      "end": 115.735,
-      "display_end": 116.135
+      "start": 157.132,
+      "end": 162.618,
+      "display_end": 163.018
     },
     {
       "scene": "S04",
@@ -241,11 +290,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_01",
       "text": "大切なのは、金利が上がったというニュースではなく、自分の年間返済額がいくら増えるかです。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 116.135,
-      "end": 122.715,
-      "display_end": 123.465
+      "asset": "AKARI_008",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_008.mp4",
+      "start": 163.018,
+      "end": 171.467,
+      "display_end": 172.217
     },
     {
       "scene": "S05",
@@ -255,11 +307,14 @@
       "visual": "talk:akari_D",
       "face": null,
       "text": "2つ目は、返済比率です。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 123.465,
-      "end": 126.155,
-      "display_end": 126.555
+      "asset": "AKARI_009",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_009.mp4",
+      "start": 172.217,
+      "end": 175.142,
+      "display_end": 175.542
     },
     {
       "scene": "S05",
@@ -269,11 +324,14 @@
       "visual": "gfx:G07_repayment_ratio",
       "face": null,
       "text": "家賃収入が同じままで返済額だけが増えれば、当然、経営の余力は小さくなります。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_010",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 126.555,
-      "end": 133.395,
-      "display_end": 133.795
+      "start": 175.542,
+      "end": 185.755,
+      "display_end": 186.155
     },
     {
       "scene": "S05",
@@ -283,11 +341,14 @@
       "visual": "gfx:G07b_cost_pressure",
       "face": null,
       "text": "さらに今は、金利だけを見るわけにはいきません。修繕費、人件費、設備費なども上昇しています。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_011",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 133.795,
-      "end": 142.07,
-      "display_end": 142.47
+      "start": 186.155,
+      "end": 198.067,
+      "display_end": 198.467
     },
     {
       "scene": "S05",
@@ -297,11 +358,14 @@
       "visual": "talk:akari_A",
       "face": "AKARI_FACE_02",
       "text": "金利上昇と経費上昇が同時に起きたとき、物件にどれだけ余力が残っているのか。ここを確認する必要があります。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 142.47,
-      "end": 151.47,
-      "display_end": 152.22
+      "asset": "AKARI_010",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_010.mp4",
+      "start": 198.467,
+      "end": 208.496,
+      "display_end": 209.246
     },
     {
       "scene": "S06",
@@ -311,11 +375,14 @@
       "visual": "talk:akari_D",
       "face": null,
       "text": "そして3つ目が、DSCRです。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 152.22,
-      "end": 155.39,
-      "display_end": 155.79
+      "asset": "AKARI_011",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_011.mp4",
+      "start": 209.246,
+      "end": 213.237,
+      "display_end": 213.637
     },
     {
       "scene": "S06",
@@ -325,11 +392,14 @@
       "visual": "gfx:G08_dscr",
       "face": null,
       "text": "簡単に言えば、物件が生み出す利益で、借入返済をどれだけ余裕を持って支払えるかを見る数字です。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_012",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 155.79,
-      "end": 166.525,
-      "display_end": 166.925
+      "start": 213.637,
+      "end": 224.739,
+      "display_end": 225.139
     },
     {
       "scene": "S06",
@@ -339,11 +409,14 @@
       "visual": "talk:akari_A",
       "face": null,
       "text": "金利上昇局面では、表面利回りだけを見ていても分かりません。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 166.925,
-      "end": 171.785,
-      "display_end": 172.185
+      "asset": "AKARI_012",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_012.mp4",
+      "start": 225.139,
+      "end": 230.324,
+      "display_end": 230.724
     },
     {
       "scene": "S06",
@@ -353,11 +426,14 @@
       "visual": "gfx:G08b_dscr_stress",
       "face": null,
       "text": "金利がもう少し上がった場合でも返済できるか。ストレスをかけて確認しておくことが重要になります。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_013",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 172.185,
-      "end": 182.675,
-      "display_end": 183.425
+      "start": 230.724,
+      "end": 242.741,
+      "display_end": 243.491
     },
     {
       "scene": "S07",
@@ -367,11 +443,14 @@
       "visual": "talk:akari_D",
       "face": "AKARI_FACE_01",
       "text": "では、現役会社員大家Mさんは、この利上げをどう見ているのでしょうか。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 183.425,
-      "end": 188.73,
-      "display_end": 189.13
+      "asset": "AKARI_013",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_013.mp4",
+      "start": 243.491,
+      "end": 249.956,
+      "display_end": 250.356
     },
     {
       "scene": "S07",
@@ -381,11 +460,14 @@
       "visual": "talk:ooka_m",
       "face": null,
       "text": "私なら、まず金利が上がったから買わないとは考えません。見るのは、金利が上がってもキャッシュフローが残る物件なのかどうかですね。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 189.13,
-      "end": 198.83,
-      "display_end": 199.23
+      "asset": "M_001",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/M_001.mp4",
+      "start": 250.356,
+      "end": 261.259,
+      "display_end": 261.659
     },
     {
       "scene": "S07",
@@ -395,11 +477,14 @@
       "visual": "talk:ooka_m",
       "face": null,
       "text": "特にこれから買う物件なら、現在の金利だけではなく、さらに0.5％、1％上がったケースも計算しておきたいです。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 199.23,
-      "end": 208.58,
-      "display_end": 208.98
+      "asset": "M_002",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/M_002.mp4",
+      "start": 261.659,
+      "end": 271.496,
+      "display_end": 271.896
     },
     {
       "scene": "S07",
@@ -409,11 +494,14 @@
       "visual": "gfx:G08b_dscr_stress",
       "face": null,
       "text": "それでも返済できるのか。DSCRがどこまで下がるのか。返済比率がどこまで上がるのか。そこまで見てから判断します。",
-      "audio_source": "guide",
+      "asset": "M_VO_001",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 208.98,
-      "end": 219.87,
-      "display_end": 220.27
+      "start": 271.896,
+      "end": 284.67,
+      "display_end": 285.07
     },
     {
       "scene": "S07",
@@ -423,11 +511,14 @@
       "visual": "talk:ooka_m",
       "face": null,
       "text": "それと、同じ価格の物件でも、融資期間が取れるかどうかでキャッシュフローはかなり変わります。ですから今後は、物件選びと金融機関選びをセットで考えることが、以前より重要になると思います。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 220.27,
-      "end": 234.695,
-      "display_end": 237.445
+      "asset": "M_003",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/M_003.mp4",
+      "start": 285.07,
+      "end": 299.941,
+      "display_end": 302.691
     },
     {
       "scene": "S08",
@@ -437,11 +528,14 @@
       "visual": "talk:ooka_m",
       "face": null,
       "text": "今日の大家の一手です。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 237.445,
-      "end": 239.505,
-      "display_end": 239.905
+      "asset": "M_004",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/M_004.mp4",
+      "start": 302.691,
+      "end": 305.146,
+      "display_end": 305.546
     },
     {
       "scene": "S08",
@@ -451,11 +545,14 @@
       "visual": "gfx:G09b_ippo_table",
       "face": null,
       "text": "保有物件と購入候補について、現在金利、プラス0.5％、プラス1.0％の3パターンで年間返済額を出してみる。まずはこれです。",
-      "audio_source": "guide",
+      "asset": "M_VO_002",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 239.905,
-      "end": 251.85,
-      "display_end": 252.25
+      "start": 305.546,
+      "end": 323.074,
+      "display_end": 323.474
     },
     {
       "scene": "S08",
@@ -465,11 +562,14 @@
       "visual": "talk:ooka_m",
       "face": null,
       "text": "金利を予想するより、上がっても耐えられる経営を作る方が重要です。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 252.25,
-      "end": 257.42,
-      "display_end": 258.17
+      "asset": "M_005",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/M_005.mp4",
+      "start": 323.474,
+      "end": 329.406,
+      "display_end": 330.156
     },
     {
       "scene": "S09",
@@ -479,11 +579,14 @@
       "visual": "talk:akari_B",
       "face": "AKARI_FACE_01",
       "text": "今日のポイントを整理します。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 258.17,
-      "end": 260.535,
-      "display_end": 260.935
+      "asset": "AKARI_014",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_014.mp4",
+      "start": 330.156,
+      "end": 332.739,
+      "display_end": 333.139
     },
     {
       "scene": "S09",
@@ -493,11 +596,14 @@
       "visual": "gfx:G10_summary",
       "face": null,
       "text": "今回、日銀は政策金利を1.25％程度へ引き上げました。ただ、大家さんが見るべき数字は3つです。年間返済額。返済比率。DSCR。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_014",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 260.935,
-      "end": 275.67,
-      "display_end": 276.07
+      "start": 333.139,
+      "end": 354.063,
+      "display_end": 354.463
     },
     {
       "scene": "S09",
@@ -507,11 +613,14 @@
       "visual": "gfx:G10b_lending",
       "face": null,
       "text": "そして日銀は、金融機関の貸出態度全般について、引き続き積極的との見方を示しています。ですから、今回の利上げだけを見て、融資が止まると決めつけるのも早いでしょう。",
-      "audio_source": "guide",
+      "asset": "AKARI_VO_015",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "final",
       "clip": null,
-      "start": 276.07,
-      "end": 290.495,
-      "display_end": 291.245
+      "start": 354.463,
+      "end": 374.656,
+      "display_end": 375.406
     },
     {
       "scene": "S10",
@@ -521,11 +630,14 @@
       "visual": "talk:akari_B",
       "face": "AKARI_FACE_01",
       "text": "ニュースを知るだけで終わらず、大家としてどう考えるか。燈の不動産ニュースでは、これからも不動産の最新ニュースを、大家の経営目線で分かりやすくお届けします。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 291.245,
-      "end": 302.83,
-      "display_end": 303.23
+      "asset": "AKARI_015",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_015.mp4",
+      "start": 375.406,
+      "end": 388.912,
+      "display_end": 389.312
     },
     {
       "scene": "S10",
@@ -535,57 +647,60 @@
       "visual": "talk:akari_B",
       "face": "AKARI_FACE_01",
       "text": "よければチャンネル登録をお願いします。それでは、また次のニュースでお会いしましょう。燈でした。",
-      "audio_source": "guide",
-      "clip": null,
-      "start": 303.23,
-      "end": 311.315,
-      "display_end": 311.715
+      "asset": "AKARI_016",
+      "vkeywords": null,
+      "cutaway": null,
+      "audio_source": "clip",
+      "clip": "clips/AKARI_016.mp4",
+      "start": 389.312,
+      "end": 397.505,
+      "display_end": 397.905
     }
   ],
   "cues": [
     {
       "start": 0.6,
-      "end": 2.985,
+      "end": 2.906,
       "speaker": "akari",
       "lines": [
         "こんにちは、燈です。"
       ]
     },
     {
-      "start": 3.385,
-      "end": 7.625,
+      "start": 3.306,
+      "end": 8.854,
       "speaker": "akari",
       "lines": [
         "今日、大家さんにとってかなり重要な変化が始まりました。"
       ]
     },
     {
-      "start": 8.025,
-      "end": 13.045,
+      "start": 9.254,
+      "end": 18.919,
       "speaker": "akari",
       "lines": [
         "日銀の政策金利が、1.25％程度へ引き上げられました。"
       ]
     },
     {
-      "start": 13.445,
-      "end": 17.385,
+      "start": 19.319,
+      "end": 24.185,
       "speaker": "akari",
       "lines": [
         "では、不動産投資はこれから厳しくなるのでしょうか。"
       ]
     },
     {
-      "start": 17.785,
-      "end": 22.195,
+      "start": 24.585,
+      "end": 29.92,
       "speaker": "akari",
       "lines": [
         "今日は、大家が見るべき3つの数字に絞って解説します。"
       ]
     },
     {
-      "start": 22.945,
-      "end": 31.686,
+      "start": 30.67,
+      "end": 39.112,
       "speaker": "akari",
       "lines": [
         "日本銀行は9月18日の金融政策決定会合で、",
@@ -593,8 +708,8 @@
       ]
     },
     {
-      "start": 31.686,
-      "end": 41.555,
+      "start": 39.112,
+      "end": 48.642,
       "speaker": "akari",
       "lines": [
         "オーバーナイト物を1.25％程度で",
@@ -602,8 +717,8 @@
       ]
     },
     {
-      "start": 41.955,
-      "end": 47.0,
+      "start": 49.042,
+      "end": 60.954,
       "speaker": "akari",
       "lines": [
         "それまでの1.0％程度から、",
@@ -611,24 +726,24 @@
       ]
     },
     {
-      "start": 47.4,
-      "end": 52.105,
+      "start": 61.354,
+      "end": 68.799,
       "speaker": "akari",
       "lines": [
         "新しい金利水準は、9月24日から適用されます。"
       ]
     },
     {
-      "start": 52.855,
-      "end": 55.82,
+      "start": 69.549,
+      "end": 72.473,
       "speaker": "akari",
       "lines": [
         "ただし、ここはとても大切です。"
       ]
     },
     {
-      "start": 56.22,
-      "end": 60.767,
+      "start": 72.873,
+      "end": 81.368,
       "speaker": "akari",
       "lines": [
         "日銀の政策金利が",
@@ -636,8 +751,8 @@
       ]
     },
     {
-      "start": 60.767,
-      "end": 66.735,
+      "start": 81.368,
+      "end": 92.517,
       "speaker": "akari",
       "lines": [
         "借りている不動産融資の金利が、その日に",
@@ -645,8 +760,8 @@
       ]
     },
     {
-      "start": 67.135,
-      "end": 73.875,
+      "start": 92.917,
+      "end": 103.68,
       "speaker": "akari",
       "lines": [
         "金融機関、商品、固定か変動か、",
@@ -654,8 +769,8 @@
       ]
     },
     {
-      "start": 74.275,
-      "end": 78.89,
+      "start": 104.08,
+      "end": 110.337,
       "speaker": "akari",
       "lines": [
         "ですから大家が見るべきなのは、",
@@ -663,24 +778,24 @@
       ]
     },
     {
-      "start": 79.14,
-      "end": 82.39,
+      "start": 110.337,
+      "end": 113.465,
       "speaker": "akari",
       "lines": [
         "自分の借入に、いくら影響するのか。"
       ]
     },
     {
-      "start": 82.64,
-      "end": 83.935,
+      "start": 113.465,
+      "end": 114.386,
       "speaker": "akari",
       "lines": [
         "ここです。"
       ]
     },
     {
-      "start": 84.685,
-      "end": 90.96,
+      "start": 115.136,
+      "end": 122.391,
       "speaker": "akari",
       "lines": [
         "例えば、1億円を30年間、",
@@ -688,8 +803,8 @@
       ]
     },
     {
-      "start": 91.36,
-      "end": 98.095,
+      "start": 122.791,
+      "end": 136.382,
       "speaker": "akari",
       "lines": [
         "仮に借入金利が2.00％なら、",
@@ -697,16 +812,16 @@
       ]
     },
     {
-      "start": 98.345,
-      "end": 102.925,
+      "start": 136.382,
+      "end": 145.726,
       "speaker": "akari",
       "lines": [
         "これが2.25％になると、およそ459万円。"
       ]
     },
     {
-      "start": 103.325,
-      "end": 109.22,
+      "start": 146.126,
+      "end": 156.732,
       "speaker": "akari",
       "lines": [
         "0.25ポイントの上昇で、",
@@ -714,8 +829,8 @@
       ]
     },
     {
-      "start": 109.62,
-      "end": 115.735,
+      "start": 157.132,
+      "end": 162.618,
       "speaker": "akari",
       "lines": [
         "1億円だけなら15万円でも、借入額が",
@@ -723,8 +838,8 @@
       ]
     },
     {
-      "start": 116.135,
-      "end": 122.715,
+      "start": 163.018,
+      "end": 171.467,
       "speaker": "akari",
       "lines": [
         "大切なのは、金利が上がったというニュースではなく、",
@@ -732,16 +847,16 @@
       ]
     },
     {
-      "start": 123.465,
-      "end": 126.155,
+      "start": 172.217,
+      "end": 175.142,
       "speaker": "akari",
       "lines": [
         "2つ目は、返済比率です。"
       ]
     },
     {
-      "start": 126.555,
-      "end": 133.395,
+      "start": 175.542,
+      "end": 185.755,
       "speaker": "akari",
       "lines": [
         "家賃収入が同じままで返済額だけが増えれば、",
@@ -749,24 +864,24 @@
       ]
     },
     {
-      "start": 133.795,
-      "end": 137.395,
+      "start": 186.155,
+      "end": 192.244,
       "speaker": "akari",
       "lines": [
         "さらに今は、金利だけを見るわけにはいきません。"
       ]
     },
     {
-      "start": 137.645,
-      "end": 142.07,
+      "start": 192.244,
+      "end": 198.067,
       "speaker": "akari",
       "lines": [
         "修繕費、人件費、設備費なども上昇しています。"
       ]
     },
     {
-      "start": 142.47,
-      "end": 148.49,
+      "start": 198.467,
+      "end": 205.603,
       "speaker": "akari",
       "lines": [
         "金利上昇と経費上昇が同時に起きたとき、",
@@ -774,24 +889,24 @@
       ]
     },
     {
-      "start": 148.74,
-      "end": 151.47,
+      "start": 205.603,
+      "end": 208.496,
       "speaker": "akari",
       "lines": [
         "ここを確認する必要があります。"
       ]
     },
     {
-      "start": 152.22,
-      "end": 155.39,
+      "start": 209.246,
+      "end": 213.237,
       "speaker": "akari",
       "lines": [
         "そして3つ目が、DSCRです。"
       ]
     },
     {
-      "start": 155.79,
-      "end": 166.525,
+      "start": 213.637,
+      "end": 224.739,
       "speaker": "akari",
       "lines": [
         "簡単に言えば、物件が生み出す利益で、借入返済を",
@@ -799,8 +914,8 @@
       ]
     },
     {
-      "start": 166.925,
-      "end": 171.785,
+      "start": 225.139,
+      "end": 230.324,
       "speaker": "akari",
       "lines": [
         "金利上昇局面では、",
@@ -808,24 +923,24 @@
       ]
     },
     {
-      "start": 172.185,
-      "end": 175.65,
+      "start": 230.724,
+      "end": 236.349,
       "speaker": "akari",
       "lines": [
         "金利がもう少し上がった場合でも返済できるか。"
       ]
     },
     {
-      "start": 175.9,
-      "end": 182.675,
+      "start": 236.349,
+      "end": 242.741,
       "speaker": "akari",
       "lines": [
         "ストレスをかけて確認しておくことが重要になります。"
       ]
     },
     {
-      "start": 183.425,
-      "end": 188.73,
+      "start": 243.491,
+      "end": 249.956,
       "speaker": "akari",
       "lines": [
         "では、現役会社員大家Mさんは、",
@@ -833,16 +948,16 @@
       ]
     },
     {
-      "start": 189.13,
-      "end": 193.625,
+      "start": 250.356,
+      "end": 255.029,
       "speaker": "ooka_m",
       "lines": [
         "私なら、まず金利が上がったから買わないとは考えません。"
       ]
     },
     {
-      "start": 193.875,
-      "end": 198.83,
+      "start": 255.029,
+      "end": 261.259,
       "speaker": "ooka_m",
       "lines": [
         "見るのは、金利が上がってもキャッシュフローが",
@@ -850,8 +965,8 @@
       ]
     },
     {
-      "start": 199.23,
-      "end": 208.58,
+      "start": 261.659,
+      "end": 271.496,
       "speaker": "ooka_m",
       "lines": [
         "特にこれから買う物件なら、現在の金利だけではなく、さらに",
@@ -859,40 +974,40 @@
       ]
     },
     {
-      "start": 208.98,
-      "end": 211.18,
+      "start": 271.896,
+      "end": 274.633,
       "speaker": "ooka_m",
       "lines": [
         "それでも返済できるのか。"
       ]
     },
     {
-      "start": 211.43,
-      "end": 214.245,
+      "start": 274.633,
+      "end": 278.055,
       "speaker": "ooka_m",
       "lines": [
         "DSCRがどこまで下がるのか。"
       ]
     },
     {
-      "start": 214.495,
-      "end": 217.105,
+      "start": 278.055,
+      "end": 281.476,
       "speaker": "ooka_m",
       "lines": [
         "返済比率がどこまで上がるのか。"
       ]
     },
     {
-      "start": 217.355,
-      "end": 219.87,
+      "start": 281.476,
+      "end": 284.67,
       "speaker": "ooka_m",
       "lines": [
         "そこまで見てから判断します。"
       ]
     },
     {
-      "start": 220.27,
-      "end": 226.835,
+      "start": 285.07,
+      "end": 292.423,
       "speaker": "ooka_m",
       "lines": [
         "それと、同じ価格の物件でも、融資期間が",
@@ -900,8 +1015,8 @@
       ]
     },
     {
-      "start": 227.085,
-      "end": 234.695,
+      "start": 292.423,
+      "end": 299.941,
       "speaker": "ooka_m",
       "lines": [
         "ですから今後は、物件選びと金融機関選びをセットで",
@@ -909,16 +1024,16 @@
       ]
     },
     {
-      "start": 237.445,
-      "end": 239.505,
+      "start": 302.691,
+      "end": 305.146,
       "speaker": "ooka_m",
       "lines": [
         "今日の大家の一手です。"
       ]
     },
     {
-      "start": 239.905,
-      "end": 249.9,
+      "start": 305.546,
+      "end": 320.775,
       "speaker": "ooka_m",
       "lines": [
         "保有物件と購入候補について、現在金利、プラス0.5％、",
@@ -926,16 +1041,16 @@
       ]
     },
     {
-      "start": 250.15,
-      "end": 251.85,
+      "start": 320.775,
+      "end": 323.074,
       "speaker": "ooka_m",
       "lines": [
         "まずはこれです。"
       ]
     },
     {
-      "start": 252.25,
-      "end": 257.42,
+      "start": 323.474,
+      "end": 329.406,
       "speaker": "ooka_m",
       "lines": [
         "金利を予想するより、上がっても",
@@ -943,56 +1058,56 @@
       ]
     },
     {
-      "start": 258.17,
-      "end": 260.535,
+      "start": 330.156,
+      "end": 332.739,
       "speaker": "akari",
       "lines": [
         "今日のポイントを整理します。"
       ]
     },
     {
-      "start": 260.935,
-      "end": 266.305,
+      "start": 333.139,
+      "end": 342.107,
       "speaker": "akari",
       "lines": [
         "今回、日銀は政策金利を1.25％程度へ引き上げました。"
       ]
     },
     {
-      "start": 266.555,
-      "end": 269.965,
+      "start": 342.107,
+      "end": 348.749,
       "speaker": "akari",
       "lines": [
         "ただ、大家さんが見るべき数字は3つです。"
       ]
     },
     {
-      "start": 270.215,
-      "end": 272.045,
+      "start": 348.749,
+      "end": 350.742,
       "speaker": "akari",
       "lines": [
         "年間返済額。"
       ]
     },
     {
-      "start": 272.295,
-      "end": 273.765,
+      "start": 350.742,
+      "end": 352.403,
       "speaker": "akari",
       "lines": [
         "返済比率。"
       ]
     },
     {
-      "start": 274.015,
-      "end": 275.67,
+      "start": 352.403,
+      "end": 354.063,
       "speaker": "akari",
       "lines": [
         "DSCR。"
       ]
     },
     {
-      "start": 276.07,
-      "end": 284.7,
+      "start": 354.463,
+      "end": 365.064,
       "speaker": "akari",
       "lines": [
         "そして日銀は、金融機関の貸出態度全般について、",
@@ -1000,8 +1115,8 @@
       ]
     },
     {
-      "start": 284.95,
-      "end": 290.495,
+      "start": 365.064,
+      "end": 374.656,
       "speaker": "akari",
       "lines": [
         "ですから、今回の利上げだけを見て、",
@@ -1009,16 +1124,16 @@
       ]
     },
     {
-      "start": 291.245,
-      "end": 295.075,
+      "start": 375.406,
+      "end": 380.142,
       "speaker": "akari",
       "lines": [
         "ニュースを知るだけで終わらず、大家としてどう考えるか。"
       ]
     },
     {
-      "start": 295.325,
-      "end": 302.83,
+      "start": 380.142,
+      "end": 388.912,
       "speaker": "akari",
       "lines": [
         "燈の不動産ニュースでは、これからも不動産の最新ニュースを、",
@@ -1026,24 +1141,24 @@
       ]
     },
     {
-      "start": 303.23,
-      "end": 306.12,
+      "start": 389.312,
+      "end": 392.624,
       "speaker": "akari",
       "lines": [
         "よければチャンネル登録をお願いします。"
       ]
     },
     {
-      "start": 306.37,
-      "end": 309.62,
+      "start": 392.624,
+      "end": 396.634,
       "speaker": "akari",
       "lines": [
         "それでは、また次のニュースでお会いしましょう。"
       ]
     },
     {
-      "start": 309.87,
-      "end": 311.315,
+      "start": 396.634,
+      "end": 397.505,
       "speaker": "akari",
       "lines": [
         "燈でした。"
@@ -1053,15 +1168,15 @@
   "events": [
     {
       "type": "jingle",
-      "start": 235.4450000000001,
-      "end": 237.4450000000001,
+      "start": 300.6907083333333,
+      "end": 302.6907083333333,
       "visual": "gfx:G09_ippo_card",
       "scene": "S08"
     },
     {
       "type": "outro",
-      "start": 311.715,
-      "end": 313.815,
+      "start": 397.905,
+      "end": 400.005,
       "visual": "gfx:G11_ending",
       "scene": "OUTRO"
     }
