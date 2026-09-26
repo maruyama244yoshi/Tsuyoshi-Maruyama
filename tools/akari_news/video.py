@@ -203,6 +203,8 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
     tmp = Path(tempfile.mkdtemp(prefix=f"{tag}_parts_"))
     parts, missing, used_clips, clip_dur, shown_before, boxes = [], set(), set(), {}, {}, {}
     for n, (a, b) in enumerate(zip(pts, pts[1:])):
+        # 区切りをフレーム境界に揃える（部品ごとの端数が積み重なって全体の尺がずれるのを防ぐ）
+        a, b = round(a * FPS) / FPS, round(b * FPS) / FPS
         dur = b - a
         if dur < 1 / FPS / 2:
             continue
@@ -260,7 +262,7 @@ def build(ep_id, shorts=False, draft_label="第2稿・仮音声", bgm=None, shor
             ovl = Image.open(ov)
             # 図表が新しく出た最初の区間だけ、ANIM_SEC 秒アニメーションさせる
             anim = (visual.startswith("gfx:") and key in ANIMATED and shot is not None
-                    and abs(a - shot["start"]) < 1e-3 and shown_before.get(shot["scene"], {}).get(key) is None
+                    and abs(a - shot["start"]) < 1 / FPS and shown_before.get(shot["scene"], {}).get(key) is None
                     and not shorts)
             shown_before.setdefault(shot["scene"] if shot else "_", {})[key] = True
             if anim:
