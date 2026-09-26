@@ -41,6 +41,51 @@ def synth(text, speaker, out: Path):
                    input=text.encode("utf-8"), check=True)
 
 
+def speech_frames(x, hop=0.02, floor_db=-45):
+    """20ms ごとの発話有無（True＝声あり）。"""
+    f = int(SR * hop)
+    n = len(x) // f
+    db = 10 * np.log10((x[:n * f].reshape(n, f) ** 2).mean(1) + 1e-12)
+    return db > floor_db
+
+
+def align_cues(x, cues, hop=0.02, min_pause=0.2, snap=0.8):
+    """実音声 x の中で各字幕キューの (開始, 終了) 秒を推定する。
+    発話区間（無音を除いた時間）に読みのモーラ数比で配分し、境目は ±snap 秒以内の息継ぎ（min_pause 以上の無音）の中央へ寄せる。"""
+    from .qa_assets import mora_count
+    on = speech_frames(x, hop)
+    dur = len(x) / SR
+    idx = np.where(on)[0]
+    if len(cues) == 0:
+        return []
+    if not len(idx):
+        return [(dur * i / len(cues), dur * (i + 1) / len(cues)) for i in range(len(cues))]
+    first, last = idx[0], idx[-1]
+    act = np.cumsum(on[first:last + 1])
+    pauses, run = [], 0
+    for i, v in enumerate(on[first:last + 1]):
+        if not v:
+            run += 1
+        else:
+            if run * hop >= min_pause:
+                pauses.append(((first + i - run) * hop, (first + i) * hop))
+            run = 0
+    w = [max(1, mora_count(tts_text(c))) for c in cues]
+    tot, acc, bounds = sum(w), 0, []
+    for wi in w[:-1]:
+        acc += wi
+        k = int(np.searchsorted(act, act[-1] * acc / tot))
+        b = (first + k) * hop
+        near = [p for p in pauses if abs((p[0] + p[1]) / 2 - b) <= snap]
+        if near:
+            p = min(near, key=lambda p: abs((p[0] + p[1]) / 2 - b))
+            b = (p[0] + p[1]) / 2
+        bounds.append(max(b, bounds[-1] if bounds else 0))
+    start, end = max(0.0, first * hop - 0.05), min(dur, (last + 1) * hop + 0.25)
+    edges = [start, *bounds, end]
+    return [(edges[i], edges[i + 1]) for i in range(len(cues))]
+
+
 def read_wav(p):
     """任意の音声ファイル（16/24bit WAV・任意サンプルレート）を 48kHz モノラル float で読む。"""
     from .video import ffmpeg
@@ -161,15 +206,11 @@ def build(ep_id, shorts=False, use_existing=False, short_no=None):
             else:
                 src = "guide"
                 x = None
+            cue_timing = None
             if x is not None:
-                # ショット単位の音声：文の区切りは文字数比で配分
+                # 実音声：字幕キューは発話区間に読み（モーラ数）比で配分し、境目は近くの息継ぎに合わせる
                 audio.append(x)
-                total = sum(len(z) for z in sentences)
-                acc = 0
-                for sent in sentences:
-                    a0 = t + len(x) / SR * acc / total
-                    acc += len(sent)
-                    sent_timing.append((sent, a0, t + len(x) / SR * acc / total))
+                cue_timing = [(c, t + a, t + b) for c, (a, b) in zip(cue_texts, align_cues(x, cue_texts))]
                 t += len(x) / SR
             else:
                 # 文単位で合成→字幕キューは文内の文字数比で配分
@@ -185,6 +226,9 @@ def build(ep_id, shorts=False, use_existing=False, short_no=None):
                     t += len(x) / SR
             sources[src] = sources.get(src, 0) + 1
             # キュー → 文タイミングへ割付け
+            for c, a0, a1 in cue_timing or []:
+                cues_out.append({"start": round(a0, 3), "end": round(a1, 3), "speaker": shot["speaker"],
+                                 "lines": wrap2(c)})
             ci = 0
             for sent, s0, s1 in sent_timing:
                 acc, total = 0, len(sent)

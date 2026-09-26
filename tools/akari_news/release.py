@@ -11,9 +11,10 @@
 
 判定ルール（QA）：
   - 縦型素材なのに横長映像が余白付きで入っている → 要再生成
-  - 声だけの音声で話速 3.0 文字/秒 未満 → 要確認
+  - 発話速度（原稿モーラ数÷発話区間）が範囲外（速すぎ＝途中欠落、遅すぎ＝余計な間） → 要確認
   - 技術的な問題（デコードエラー・解像度・音ズレ等） → 要確認
-  - review/manual_review.json の目視判定（手振り等）を反映
+  - review/manual_review.json の目視判定（手振り等）を反映。"edit_source" があれば、その素材だけ
+    編集用ファイルを指定の原本から作る（inbox の原本は差し替えずに保存したまま）
   - 発音はすべて「未聴取」（人間が確認）
 音声形式：HeyGen 原本を正本とし、拡張子が.wavで中身がMP3でも原本はそのまま保存（不要な多重圧縮はしない）。
 """
@@ -30,29 +31,35 @@ PRON = ["燈＝あかり", "大家＝おおや", "DSCR＝でぃーえすしー�
         "2.00％＝にてんぜろぜろぱーせんと", "2.25％＝にてんにーごぱーせんと"]
 
 
+def load_manual(d):
+    mp = d / "review" / "manual_review.json"
+    return load_json(mp) if mp.exists() else {}
+
+
 def ingest(d):
     inbox = d / "inbox"
+    manual = load_manual(d)
     (d / "clips").mkdir(exist_ok=True)
     (d / "voice" / "final").mkdir(parents=True, exist_ok=True)
     for f in sorted(inbox.glob("*.mp4")):
-        shutil.copy2(f, d / "clips" / f.name)
-    reps = [convert(f, d / "voice" / "final") for f in sorted(inbox.glob("*_VO_*.wav"))]
+        shutil.copy2(d / manual[f.stem]["edit_source"] if manual.get(f.stem, {}).get("edit_source") else f,
+                     d / "clips" / f.name)
+    reps = []
+    for f in sorted(inbox.glob("*_VO_*.wav")):
+        alt = manual.get(f.stem, {}).get("edit_source")
+        reps.append(convert(d / alt if alt else f, d / "voice" / "final"))
+        if alt:
+            reps[-1]["note"] = f"編集用は {alt} から作成（inbox の {f.name} は差し替えず保存）"
     (d / "review" / "vo_conversion_report.json").write_text(json.dumps(reps, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def judge(d, qa, boxes):
-    manual = {}
-    mp = d / "review" / "manual_review.json"
-    if mp.exists():
-        manual = load_json(mp)
+    manual = load_manual(d)
     out = {}
     for aid, r in qa.items():
         j, notes = "OK", []
         if r["kind"] == "voiceover":
             notes.append(f"原本 {r.get('acodec')} {r.get('sample_rate')}Hz {r.get('channels')}（HeyGen原本を正本として保存。編集用に48kHz/24bit PCMへ1回だけ変換）")
-            if (r.get("chars_per_sec") or 9) < 3.0:
-                j = "要確認"
-                notes.append(f"話速が遅い（{r['chars_per_sec']}文字/秒）。読点ごとの間が多く途切れて聞こえる可能性")
         if r.get("long_silences"):
             inner = [s for s in r["long_silences"] if s[0] > 0.3 and (r["duration"] or 0) - s[1] > 0.3]
             if inner:
@@ -60,7 +67,7 @@ def judge(d, qa, boxes):
         if aid in boxes and boxes[aid]:
             j = "要再生成"
             notes.append(f"縦型画面の中に横長映像が余白付きで入っている（映像部分 {boxes[aid][2]}x{boxes[aid][3]}）。映像部分を切り出して使用")
-        tech = [i for i in r.get("issues", []) if not i.startswith("話速")]
+        tech = r.get("issues", [])
         if tech:
             j = "要確認" if j == "OK" else j
             notes += tech
@@ -125,6 +132,7 @@ def main(argv=None):
     ratio = {k: round(v / tl_main["duration"] * 100, 1) for k, v in screen_ratio(tl_main).items()}
     src = load_json(d / "inbox" / "AKARI_NEWS_EP01_manifest.json")
     vid = {x["id"]: x["heygen_video_id"] for x in src.get("talking_videos", [])}
+    vid.update({k: v["heygen_video_id"] for k, v in load_manual(d).items() if v.get("heygen_video_id")})  # 再生成版
     man = {"episode": "EP01", "version": ver, "generated": datetime.date.today().isoformat(),
            "voice": {"akari": {"name": "Jhenny", "voice_id": "9530fac2d1f148f8b57b51b783b0df13", "speed": 1.0},
                      "ooka_m": {"name": "Satoshi", "voice_id": "662e1397965c484e8f65fa58c77effde", "speed": 1.0}},
@@ -161,7 +169,7 @@ def main(argv=None):
          f"判定：OK {cnt['OK']}本／要確認 {cnt['要確認']}本／要再生成 {cnt['要再生成']}本（再生成はしていない）", "",
          "## 話している動画", "", "| 素材ID | 再生可否 | 発音 | 口パク | 目線 | 表情・動き | 画質 | 音量 | 使用可否 | 判定 | 備考 |",
          "|---|---|---|---|---|---|---|---|---|---|---|"]
-    manual = load_json(d / "review" / "manual_review.json") if (d / "review" / "manual_review.json").exists() else {}
+    manual = load_manual(d)
     for aid, r in qa.items():
         if r["kind"] != "talking":
             continue
@@ -170,14 +178,15 @@ def main(argv=None):
         L.append(f"| {aid} | {'○' if r.get('exists') else '×'} | 未聴取 | 映像と音声の尺差 {r.get('av_duration_diff')}秒 | "
                  f"{mv.get('gaze', 'カメラ目線')} | {mv.get('expression', '自然')} | {r.get('width')}x{r.get('height')} {r.get('fps') or 0:.0f}fps | "
                  f"{r.get('lufs')} LUFS | {'○（切り出し）' if boxes.get(aid) else '○'} | **{j}** | {'<br>'.join(n) or '—'} |")
-    L += ["", "## 声だけの音声", "", "| 素材ID | 再生可否 | 発音 | 原本形式 | 尺 | 話速 | 音量 | 使用可否 | 判定 | 備考 |",
+    L += ["", "## 声だけの音声", "", "| 素材ID | 再生可否 | 発音 | 原本形式 | 尺 | 発話速度 | 音量 | 使用可否 | 判定 | 備考 |",
           "|---|---|---|---|---|---|---|---|---|---|"]
     for aid, r in qa.items():
         if r["kind"] != "voiceover":
             continue
         j, n = J[aid]
         L.append(f"| {aid} | {'○' if r.get('exists') else '×'} | 未聴取 | {r.get('acodec')} {r.get('sample_rate')}Hz | "
-                 f"{(r.get('duration') or 0):.1f}秒 | {r.get('chars_per_sec')}文字/秒 | {r.get('lufs')} LUFS | ○ | **{j}** | {'<br>'.join(n)} |")
+                 f"{(r.get('duration') or 0):.1f}秒 | {r.get('mora_per_sec')}モーラ/秒 | {r.get('lufs')} LUFS | "
+                 f"{'△（' + manual[aid]['edit_source'] + ' で代替）' if manual.get(aid, {}).get('edit_source') else '○'} | **{j}** | {'<br>'.join(n)} |")
     L += ["", "## 成果物", "", "| 成果物 | 尺 | 備考 |", "|---|---|---|",
           f"| {names['master']}.mp4 | {int(tl_main['duration'] // 60)}分{tl_main['duration'] % 60:.0f}秒 | 燈 {ratio['akari']}％／大家M {ratio['ooka_m']}％／図表 {ratio['graphics']}％ |"]
     for k, t in tls.items():

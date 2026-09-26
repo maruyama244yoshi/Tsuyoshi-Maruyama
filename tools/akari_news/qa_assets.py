@@ -4,7 +4,8 @@
 
 検査：欠損・破損（全フレームをデコードしてエラー検出）・解像度・フレームレート・縦横比・尺・
 サンプリングレート・ビット深度・ラウドネス・無音区間・クリッピング（ピーク）・映像と音声の尺の差（音ズレの目安）・
-文字数に対する話速（原稿違い・途切れの目安）。
+文字数に対する話速（原稿違い・途切れの目安）・読み上げ原稿のモーラ数に対する発話速度
+（発話区間のみ。速すぎる＝読み飛ばし・途中欠落、遅すぎる＝余計な間の疑い）。
 発音・口パク・目線・表情は機械では判定できないため、代表フレームの一覧画像を作り、人間の確認項目として残す。
 出力：review/asset_qa.json、review/asset_contact_sheet.png
 """
@@ -62,6 +63,38 @@ def audio_stats(p):
     return {"lufs": float(i[-1]) if i else None, "true_peak": float(tp[-1]) if tp and tp[-1] != "-inf" else None,
             "sample_peak_db": float(peak[-1]) if peak and "inf" not in peak[-1] else None,
             "long_silences": [(round(a, 2), round(b, 2)) for a, b in sil]}
+
+
+MORA_RANGE = (4.5, 10.0)  # 発話区間 1 秒あたりのモーラ数。燈（Jhenny 1.0）は実測 6〜7、大家M（Satoshi 1.0）は 8〜9
+
+
+def mora_count(reading):
+    """Open JTalk のラベルから読み上げ原稿のモーラ数を数える（母音・撥音・促音）。"""
+    import tempfile
+    from .timeline import JTALK_DIC, JTALK_VOICE
+    with tempfile.NamedTemporaryFile(suffix=".trace") as tr:
+        subprocess.run(["open_jtalk", "-x", JTALK_DIC, "-m", JTALK_VOICE, "-ot", tr.name, "-ow", "/dev/null"],
+                       input=reading.encode("utf-8"), check=True)
+        # 時刻付きの出力ラベル行（"開始 終了 ラベル"）だけを数える（トレースには同じラベルが複数回出る）
+        ph = re.findall(r"^\s*\d+\s+\d+\s+\S*?-(\w+)\+", Path(tr.name).read_text(encoding="utf-8", errors="ignore"), re.M)
+    return sum(1 for x in ph if x in ("a", "i", "u", "e", "o", "A", "I", "U", "E", "O", "N", "cl"))
+
+
+def speech_sec(p, floor_db=-45, min_gap=0.35):
+    """発話区間の合計秒（先頭・末尾の無音と min_gap 以上の間を除く）。"""
+    import numpy as np
+    from .timeline import read_wav
+    x = read_wav(p)
+    f = 960  # 20ms @48kHz
+    n = len(x) // f
+    if not n:
+        return 0.0
+    db = 10 * np.log10((x[:n * f].reshape(n, f) ** 2).mean(1) + 1e-12)
+    on = np.where(db > floor_db)[0]
+    if not len(on):
+        return 0.0
+    gaps = np.diff(on) - 1
+    return round((on[-1] - on[0] + 1 - gaps[gaps * 0.02 >= min_gap].sum()) * 0.02, 2)
 
 
 def main(argv=None):
@@ -126,8 +159,16 @@ def main(argv=None):
         if res.get("duration"):
             cps = chars / res["duration"]
             res["chars_per_sec"] = round(cps, 2)
-            if cps < 3.0 or cps > 11.0:
-                issues.append(f"話速が不自然（{cps:.1f}文字/秒）→ 原稿違い・途切れ・余計な無音の可能性")
+        if res.get("sample_rate"):
+            from .build_episode import tts_text
+            mora, sp = mora_count(r.get("tts_text") or tts_text(r["text"])), speech_sec(p)
+            res["mora"], res["speech_sec"] = mora, sp
+            if sp:
+                res["mora_per_sec"] = round(mora / sp, 1)
+                if res["mora_per_sec"] > MORA_RANGE[1]:
+                    issues.append(f"発話が速すぎる（{res['mora_per_sec']}モーラ/秒、原稿{mora}モーラに対し発話{sp}秒）→ 読み飛ばし・途中欠落の疑い")
+                elif res["mora_per_sec"] < MORA_RANGE[0]:
+                    issues.append(f"発話が遅すぎる（{res['mora_per_sec']}モーラ/秒）→ 余計な間・原稿違いの疑い")
         res["issues"], res["notes"] = issues, notes
         results.append(res)
     out = d / "review" / "asset_qa.json"
